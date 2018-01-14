@@ -3,7 +3,7 @@
 * [README](README.md)
 * [Bitcoin](bitcoin.md)
 * [Blockchain](blockchain.md)
-* [Ethereunm](ethereunm.md)
-* [Ripple](Ripple.md)
+* [Ethereum](ethereum.md)
+* [Ripple](ripple.md)
 * [Resources](res.md)
 
