@@ -6,4 +6,5 @@
 * [Ethereum](ethereum.md)
 * [Ripple](ripple.md)
 * [Resources](res.md)
+* [HR 面](hr.md)
 
