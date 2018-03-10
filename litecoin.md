@@ -1,3 +1,3 @@
 # Litecoin
 
-## Scrpyt
+## Scrypt
