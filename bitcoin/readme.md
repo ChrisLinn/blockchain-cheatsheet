@@ -1,5 +1,7 @@
 # Bitcoin
 
+比特币采用SHA-256、RIPEMD-160哈希算法生成密钥，使用SHA-256作nonce碰撞以挖矿。
+
 
 + 为什么 block 设计为 1M？
 
