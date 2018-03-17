@@ -1,6 +1,6 @@
 # Scrypt 家族 
 
-莱特币狗币撕逼史: [转：盛世危言：scrypt系统崩溃已进入倒计时](https://bitcointalk.org/index.php?topic=763157.msg8598872#msg8598872)
+__莱特币狗币撕逼史__: [转：盛世危言：scrypt系统崩溃已进入倒计时](https://bitcointalk.org/index.php?topic=763157.msg8598872#msg8598872)
 
 ## Scrypt 算法
 比特币采用 SHA-256作nonce碰撞以挖矿。SHA-256 性能与内存空间没有关系，只与CPU处理速度有关，导致矿机泛滥。
