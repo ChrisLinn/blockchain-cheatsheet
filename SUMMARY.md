@@ -4,7 +4,7 @@
 * [Bitcoin](bitcoin/readme.md)
 * [Blockchain](blockchain/readme.md)
 * [Ethereum](ethereum/readme.md)
-* [Litecoin](litecoin.md)
+* [Scrypt](scrypt.md)
 * [Ripple](ripple.md)
 * [Filecoin](filecoin.md)
 * [Zcash](zcash.md)
