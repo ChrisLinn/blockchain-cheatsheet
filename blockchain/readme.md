@@ -1,5 +1,7 @@
 # Blockchain
 
+不同币种的区块链结构可能不同，但 PoW 系的结构基本相似。此处以 Bitcoin 的区块链结构为例。
+
 ## Bitcoin 区块文件结构
 __Block__
 
@@ -16,8 +18,10 @@ __Block Header__
 | - | - | - |
 | 4 bytes | Version | A version number to track software/protocol upgrades. |
 | 32 bytes | Previous Hash | A reference to the hash of the previous (parent) block in the chain. |
-
-
+| 32 bytes | Merkle Root | A hash of the mekle tree of this block's transactions |
+| 4 bytes | Timestamp | The approximate creation time of this block (seconds from Unix Epoch) |
+| 4 bytes | [Difficulty Target](#pow-proof-of-work) | The Proof-of-Work algorithm difficulty target for this block |
+| 4 bytes | [Nounce](#pow-proof-of-work) | A counter used for the Proof-of-Work Algorithm |
 
 
 + merkle tree root hash 作用
@@ -30,7 +34,7 @@ __Block Header__
 
 没有 confirmations 的是无法防止双花的。
 
-但是采用多次confirmations可以降低其发生的概率。如果攻击者拥有的算力不到25%，那么发生双花攻击的概率将降到千分之一。
+但是采用多次confirmations可以降低其发生的概率。如果攻击者拥有的算力不到25%，那么发生双花攻击的概率将降到千分之一 ( (25%/75%)^6 , 倘若掌握了全网 25% 的算力)。
 
 比特币运用了经济学原理，来防止双花发生，攻击者的第二次交易要被更快确认，要控制强大的算力来追赶分块增长，成为最长链。从经济的角度考虑，拥有如此强大算力的人做这个事是不划算的，这个过程中浪费的资源用来正经挖矿得到的收益更高。
 
@@ -101,9 +105,9 @@ target 目标值 = 最大目标值（恒定值） / 难度值
 
 ## BGP攻击
 我觉得，比起double-spending 和 51%，其实更容易被黑客组织实施——通过攻击 ISP 网络服务提供商进行 BGP（边界网关协议，一种简单时代产物）攻击。考虑到，30%的比特币网络存在在13个主机中，60%的比特币流量在3个ISP中可见，BGP攻击的威胁性很大。 [研究者揭露比特币区块链遭遇安全漏洞威胁](https://bitcointalk.org/index.php?topic=1873692.0)
-### partition attack 分区攻击
+### Partition Attack 分区攻击
 阻止比特网络的两/多部分连接起来，一般来说这样的ISP是连接这些比特连接网络的唯一路径。当然被分割的区块还会分别继续拓展，但是当重新连接的时候，必然有一边需要被丢弃——如果你这边展的慢，那么开采的币、交易、采矿收入就不得不被丢弃。
-### delayed attack 延迟攻击
+### Delayed Attack 延迟攻击
 带来更大问题的可能是延迟攻击。延迟攻击没有好办法检测，商户们在遭遇到这种攻击后，可以重复消费（交易没被确认没被广播出去）。矿工们的交易处理能力也将被浪费，普通的节点无法广播区块链的最新版本。
 
 ### 主网
