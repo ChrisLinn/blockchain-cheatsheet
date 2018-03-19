@@ -1,7 +1,7 @@
 # 区块链工程师面试宝典
 区块链工程师、区块链研究员、区块链架构师面试宝典。
 
-+ [Gitbook 地址](https://www.gitbook.com/read/book/chrislinn/blockchain-cheatsheet), 推荐使用 Gitbook 阅读
++ [Gitbook 地址](https://www.gitbook.com/read/book/chrislinn/blockchain-cheatsheet) (推荐使用 Gitbook 阅读)
 + [Github Repo](https://github.com/ChrisLinn/blockchain-cheatsheet)
 
 
