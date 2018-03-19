@@ -2,7 +2,6 @@
 
 比特币采用SHA-256、RIPEMD-160哈希算法生成密钥，使用SHA-256作nonce碰撞以挖矿。
 
-+ bitcoin 的 p2p 怎么实现
 
 + 为什么 block 设计为 1M？
 
@@ -30,6 +29,13 @@
 + 为什么用 little endian，而不是 big endian（network order）？
 
 
+## P2P
++ bitcoin 的 p2p 怎么实现
+    * [代码中写死了几个域名](???)，通过 DNS 得到 __种子节点__ IP列表
+        - 另外亦可通过 种子文件/命令行传入其他节点ip 
+    * 默认连接8个节点，允许最多125个
++ 全节点
++ SPV 轻节点
 
 ## UXTO
 
