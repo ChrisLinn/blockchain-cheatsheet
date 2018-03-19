@@ -4,6 +4,12 @@
     * 公共交易总帐（区块链）
     * 独立交易确认和货币发行的一套规则（共识规则）
     * 实现有效的区块链全球去中心化共识的机制（工作量证明算法）
++ 比特币单位
+    * bitcoin，BTC，1比特币
+    * centi-bitcoin，cBTC，1分比特币，百分之一比特币（之前最常用）
+    * milli-bitcoin，mBTC，1毫比特币，千分之一比特币（偶尔用）
+    * micro-bitcoin，μBTC，1微比特币，1^(-6)比特币（最常用）
+    * satoshi，sat，1聪比特币，一亿分之一比特币（最小单位）
 
 
 ## 一些历史
@@ -19,7 +25,7 @@
     * 2004: Hal Finney 创造出了第一个可重复使用的工作量证明系统 [Reusable proof of work system](http://en.wikipedia.org/wiki/Proof-of-work_system)
         - 比特币史上的第一笔交易就是发生在中本聪与哈尔芬尼之间，是第一位得到比特币的人。
 + Bitcoin
-    * 2008, Satoshi Nakamoto, “Bitcoin：A Peer-to-Peer  Electronic  Cash    System”
+    * 2008, Satoshi Nakamoto,[ “Bitcoin：A Peer-to-Peer  Electronic  Cash    System”](https://bitcoin.org/bitcoin.pdf)
     * 2009, 比特币网络
 
 
@@ -32,16 +38,10 @@
 + 为什么交易速度如此之慢，只有若干 tx / s？
 + 为什么 PoW？现有的方法为什么不可用？（呃，现有有什么方法？）
 + 为什么给矿工生成看似无意义的空区块的空间？
-
 + 为什么钱包的地址要 hash 一遍，而不是直接用 public key 的 base58?
-
-
 + 为什么需要 merkle tree？
-
 + 为什么用 ECDSA 而不是 RSA？
-
 + 为什么 double hash？
-
 + 为什么用 little endian，而不是 big endian（network order）？
 
 
