@@ -3,6 +3,7 @@
 __目录：__
 - Bitcoin 区块文件结构
 - 公有链 vs 联盟链 vs 私有链
+- 拜占庭将军问题
 - Consensus 共识
     - PoW, Proof of Work, 工作量证明
     - PoS, Proof of Stake,权益证明
@@ -56,6 +57,7 @@ __Block Header__
 
 ## 公有链 vs 联盟链 vs 私有链
 
+## 拜占庭将军问题
 
 ## Consensus 共识
 针对非拜占庭错误的情况，一般包括 Paxos、Raft 及其变种。其中Raft比起Paxos容易理解，容易实现。

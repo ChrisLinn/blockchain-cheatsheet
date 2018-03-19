@@ -7,14 +7,14 @@ __目录：__
 - [DoS with Block Gas Limit](#dos-with-block-gas-limit)
 - [N@S Attack](#ns-nothing-at-stake-attack)
 - [Long-Range Attack](l#long-range-attack)
-- [未来区块时间攻击](#_1)
-- [BGP攻击](#bgp)
+- [未来区块时间攻击]
+- [BGP Attack](#bgp-attack)
     - [Partition Attack](#partition-attack)
     - [Delayed Attack](#delayed-attack)
 
 
-## Double-spending Attack，双重花费攻击，双花攻击
-区块链不能完全防止 double-spending attack 双花攻击。
+## Double-spending Attack
+区块链不能完全防止 double-spending attack（双重花费攻击，双花攻击）。
 
 没有 confirmations 的是无法防止双花的。
 
@@ -40,10 +40,13 @@ __目录：__
     - 元界Metaverse硬分叉事件
         + 没有深刻理解共识时间的参数, 用了libbitcoin的库 比特币10分钟情况下的 timestamp偏移, 而他自己本身是10s左右一个块
 
-## BGP攻击
-我觉得，比起double-spending 和 51%，其实更容易被黑客组织实施——通过攻击 ISP 网络服务提供商进行 BGP（边界网关协议，一种简单时代产物）攻击。考虑到，30%的比特币网络存在在13个主机中，60%的比特币流量在3个ISP中可见，BGP攻击的威胁性很大。 [研究者揭露比特币区块链遭遇安全漏洞威胁](https://bitcointalk.org/index.php?topic=1873692.0)
-### Partition Attack 分区攻击
-阻止比特网络的两/多部分连接起来，一般来说这样的ISP是连接这些比特连接网络的唯一路径。当然被分割的区块还会分别继续拓展，但是当重新连接的时候，必然有一边需要被丢弃——如果你这边展的慢，那么开采的币、交易、采矿收入就不得不被丢弃。
-### Delayed Attack 延迟攻击
-带来更大问题的可能是延迟攻击。延迟攻击没有好办法检测，商户们在遭遇到这种攻击后，可以重复消费（交易没被确认没被广播出去）。矿工们的交易处理能力也将被浪费，普通的节点无法广播区块链的最新版本。
+## BGP Attack
+我觉得，比起double-spending 和 51%，其实更容易被黑客组织实施——通过攻击 ISP 网络服务提供商进行 BGP（边界网关协议，一种简单时代产物）攻击。考虑到，30%的比特币网络存在在13个主机中，60%的比特币流量在3个ISP中可见，BGP攻击的威胁性很大。 
+
+[研究者揭露比特币区块链遭遇安全漏洞威胁](https://bitcointalk.org/index.php?topic=1873692.0)
+
+### Partition Attack
+Partition Attack 分区攻击阻止比特网络的两/多部分连接起来，一般来说这样的ISP是连接这些比特连接网络的唯一路径。当然被分割的区块还会分别继续拓展，但是当重新连接的时候，必然有一边需要被丢弃——如果你这边展的慢，那么开采的币、交易、采矿收入就不得不被丢弃。
+### Delayed Attack
+带来更大问题的可能是 Delayed Attack 延迟攻击。延迟攻击没有好办法检测，商户们在遭遇到这种攻击后，可以重复消费（交易没被确认没被广播出去）。矿工们的交易处理能力也将被浪费，普通的节点无法广播区块链的最新版本。
 
