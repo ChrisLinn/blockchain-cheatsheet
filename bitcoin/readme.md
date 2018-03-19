@@ -1,5 +1,17 @@
 # Bitcoin
 
+## 一些历史
++ 非对称加密
+    * 1976: RSA
+    * 1985： ECC 椭圆曲线函数加密
++ P2P
+    * 1969: 首次提出
+    * 1999: Shawn Fanning 创造全球第一个走红的P2P共享平台 Napster
++ PoW
+    * 1997: Adam Back 发明 HashCash 哈希现金
+        - 最初创造 HashCash 的目的是对抗 DoS
+    * 2004: 哈尔·芬尼 RPOW 可复用工作量证明
+
 比特币采用SHA-256、RIPEMD-160哈希算法生成密钥，使用SHA-256作nonce碰撞以挖矿。
 
 
