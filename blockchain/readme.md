@@ -1,5 +1,28 @@
 # Blockchain
 
+__目录：__
+- Bitcoin 区块文件结构
+- 公有链 vs 联盟链 vs 私有链
+- Consensus 共识
+    - PoW, Proof of Work, 工作量证明
+    - PoS, Proof of Stake,权益证明
+    - DPoS, Delegated Proof of Stake, 委托股权证明
+    - PBFT 实用拜占庭容错算法
+    - Tendermint
+- 多链技术
+    - Polkadot
+    - COSMOS
+- Chain
+- OpenLedger
+- Cardano
+- SegWit 隔离见证
+* 主网
+* 侧链
+* 跨链
+* 链池
+
+
+
 不同币种的区块链结构可能不同，但 PoW 系的结构基本相似。此处以 Bitcoin 的区块链结构为例。
 
 ## Bitcoin 区块文件结构
@@ -94,8 +117,6 @@ target 目标值 = 最大目标值（恒定值） / 难度值
 
 
 ## Cardano
-
-## BitShares
 
 ## SegWit 隔离见证
 
