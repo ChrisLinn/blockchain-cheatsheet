@@ -44,8 +44,8 @@
 
 
 ## P2P
-+ www.jianshu.com/p/a737d79501f2 P2P网络-比特币开发指南
-+ cnblogs mazhiyong p 8431455 比特币网络架构及节点发现分析
++ [P2P网络-比特币开发指南](https://www.jianshu.com/p/a737d79501f2)
++ [比特币网络架构及节点发现分析](http://www.cnblogs.com/mazhiyong/p/8431455.html)
 + bitcoin 的 p2p 怎么实现
     * `chainparams.cpp` 代码中写死了几个域名，通过 DNS 得到 __种子节点__ IP列表
         - 另外亦可通过 种子文件/命令行传入其他节点ip 
