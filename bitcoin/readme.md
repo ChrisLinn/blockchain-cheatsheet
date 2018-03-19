@@ -10,7 +10,8 @@
 + PoW
     * 1997: Adam Back 发明 HashCash 哈希现金
         - 最初创造 HashCash 的目的是对抗 DoS
-    * 2004: 哈尔·芬尼 RPOW 可复用工作量证明
+    * 2004: Hal Finney 创造出了第一个可重复使用的工作量证明系统 [Reusable proof of work system](http://en.wikipedia.org/wiki/Proof-of-work_system)
+        - 比特币史上的第一笔交易就是发生在中本聪与哈尔芬尼之间，是第一位得到比特币的人。
 
 比特币采用SHA-256、RIPEMD-160哈希算法生成密钥，使用SHA-256作nonce碰撞以挖矿。
 
