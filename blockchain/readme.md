@@ -1,7 +1,25 @@
 # Blockchain
 
+## Bitcoin 区块文件结构
+__Block__
 
-+ 区块文件结构
+| Size | Field | Description|
+| - | - | - |
+| 4 bytes | Block Size | The size of the block, in bytes, following this field. |
+| 80 bytes | Block Header | Metadata for the block. |
+| 1-9 bytes (VarInt) | Transaction Counter | How many transactions follow. 平均每个区块至少包含超过 500 个交易。 |
+| Variable | Transations | The transavtions recorded in this block. 平均每个交易至少是 250 Bytes. |
+
+__Block Header__
+
+| Size | Field | Description |
+| - | - | - |
+| 4 bytes | Version | A version number to track software/protocol upgrades. |
+| 32 bytes | Previous Hash | A reference to the hash of the previous (parent) block in the chain. |
+
+
+
+
 + merkle tree root hash 作用
 + 如果给定一个 tx hash，最少还需要知道哪些信息才能确定该 tx 是否在一个block中
 + 

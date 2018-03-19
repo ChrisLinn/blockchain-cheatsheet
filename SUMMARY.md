@@ -10,6 +10,7 @@
 * [Filecoin](filecoin.md)
 * [Zcash](zcash.md)
 * [网络](network.md)
+* [架构](architect.md)
 * [Miscs](misc.md)
 * [Resources](res.md)
 * [HR 面](hr.md)
