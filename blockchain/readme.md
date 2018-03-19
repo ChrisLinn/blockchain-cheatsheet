@@ -29,16 +29,6 @@ __Block Header__
 + 
 
 
-## Double-spending Attack
-区块链不能完全防止 double-spending attack 双花攻击。
-
-没有 confirmations 的是无法防止双花的。
-
-但是采用多次confirmations可以降低其发生的概率。如果攻击者拥有的算力不到25%，那么发生双花攻击的概率将降到千分之一 ( (25%/75%)^6 , 倘若掌握了全网 25% 的算力)。
-
-比特币运用了经济学原理，来防止双花发生，攻击者的第二次交易要被更快确认，要控制强大的算力来追赶分块增长，成为最长链。从经济的角度考虑，拥有如此强大算力的人做这个事是不划算的，这个过程中浪费的资源用来正经挖矿得到的收益更高。
-
-## 51% Attack
 
 
 ## 公有链 vs 联盟链 vs 私有链
@@ -68,9 +58,7 @@ target 目标值 = 最大目标值（恒定值） / 难度值
 ### PoS, Proof of Stake,权益证明
 为了使每个 Block 更快被生成，PoS 机制 __去掉了穷举 nonce__，一个账户的 __余额__ 越多，在同等算力下，就越容易发现下一个区块。将导致 __大户集中__ 。
 
-在PoS对PoW进行改进后，又引进了新的问题 N@S (Nothing at stake) Attack 和 Long-Range Attack。
-#### N@S (Nothing at stake) Attack
-#### Long-Range Attack
+在PoS对PoW进行改进后，又引进了新的问题 [N@S (Nothing at stake) Attack 和 Long-Range Attack](./attack.md)。
 
 
 
@@ -109,7 +97,7 @@ target 目标值 = 最大目标值（恒定值） / 难度值
 
 ## BitShares
 
-## 隔离见证
+## SegWit 隔离见证
 
 
 ## BGP攻击
@@ -121,4 +109,8 @@ target 目标值 = 最大目标值（恒定值） / 难度值
 
 ### 主网
 
-### 资产上链
+### 侧链
+
+### 跨链
+
+### 链池
