@@ -84,6 +84,14 @@ target 目标值 = 最大目标值（恒定值） / 难度值
 
 存在的问题是  可扩展性（scalability）差
 
+### Tendermint
+
+
+## 多链技术
+
+### Polkadot
+
+### COSMOS
 
 
 ## [Chain](https://github.com/chain/chain)
@@ -96,9 +104,6 @@ target 目标值 = 最大目标值（恒定值） / 难度值
 
 为什么要搞 open ledger？大型交易所失窃案件揭示了去中心化交易所的重要性。
 
-## Tendermint
-
-## Polkadot
 
 ## Cardano
 
