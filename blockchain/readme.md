@@ -67,7 +67,6 @@ __Block Header__
 
 + 下面哪种共识机制效率最低？（__A__）
     * __A.__ PoW __B.__ Pos __C.__ DPoS  __D.__ PBFT
-+ 
 
 ### PoW, Proof of Work, 工作量证明
 __穷举 nounce__，参与计算 hash，将结果值与当前网络的目标值 target
@@ -99,6 +98,7 @@ target 目标值 = 最大目标值（恒定值） / 难度值
 
 ### Tendermint
 
++ Tendermint共识引擎通过Tendermint套接字协议（TMSP）与应用程序进行连接。
 
 ## 多链技术
 
