@@ -1,18 +1,5 @@
 # Attack
 
-__目录：__
-- [Double-spending Attack](#double-spending-attack)
-- [51% Attack](#51-attack)
-- [Gas Limit Attack](#gas-limit-attack)
-- [DoS with Block Gas Limit](#dos-with-block-gas-limit)
-- [N@S Attack](#ns-nothing-at-stake-attack)
-- [Long-Range Attack](l#long-range-attack)
-- [未来区块时间攻击]()
-- [BGP Attack](#bgp-attack)
-    - [Partition Attack](#partition-attack)
-    - [Delayed Attack](#delayed-attack)
-
-
 ## Double-spending Attack
 区块链不能完全防止 double-spending attack（双重花费攻击，双花攻击）。
 

@@ -30,7 +30,6 @@
         - 北京时间2009年1月4日02:15:05 Genesis block 创世区块
             + 《泰晤士报》当天头版文章标题
             + The Times 03/Jan/2009 Chancellor on brink of second bailout for banks
-            + 
 
 
 ## 设计思想
