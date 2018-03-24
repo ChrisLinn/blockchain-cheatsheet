@@ -1,9 +1,7 @@
 # 区块链工程师面试宝典
-区块链工程师、区块链研究员、区块链架构师面试宝典。
+区块链工程师、区块链研究员、区块链架构师面试宝典。这个 repo 总结了一些区块链的基础知识，为各位求职者增加求职信心。推荐使用 [Gitbook 阅读](https://www.gitbook.com/read/book/chrislinn/blockchain-cheatsheet)。
 
-+ [Gitbook 地址](https://www.gitbook.com/read/book/chrislinn/blockchain-cheatsheet) (推荐使用 Gitbook 阅读)
-+ [Github Repo](https://github.com/ChrisLinn/blockchain-cheatsheet)
-
+---
 
 AI 开始冷静，快来搭上区块链这趟车。新闻链接：
 
@@ -12,6 +10,7 @@ AI 开始冷静，快来搭上区块链这趟车。新闻链接：
 + [网上相亲数月没人理的杭州小伙，亮出区块链工程师身份，涌来数百封私信](https://zj.zjol.com.cn/news/861631.html)
 + [区块链人才需求爆发 苏宁开出10万月薪](http://www.jinse.com/lives/17711.htm)
 
+---
 
 哪些公司在招聘区块链人才:
 
@@ -21,4 +20,3 @@ AI 开始冷静，快来搭上区块链这趟车。新闻链接：
 + 或者上 拉勾网 查看企业招聘信息
 
 
-这个 repo 总结了一些区块链的基础知识，为各位求职者增加求职信心。
