@@ -25,11 +25,17 @@
     * 2004: Hal Finney 创造出了第一个可重复使用的工作量证明系统 [Reusable proof of work system](http://en.wikipedia.org/wiki/Proof-of-work_system)
         - 比特币史上的第一笔交易就是发生在中本聪与哈尔芬尼之间，是第一位得到比特币的人。
 + Bitcoin
-    * 2008, Satoshi Nakamoto,[ “Bitcoin：A Peer-to-Peer  Electronic  Cash    System”](https://bitcoin.org/bitcoin.pdf)
-    * 2009, 比特币网络
+    * 2008, Satoshi Nakamoto,[“Bitcoin：A Peer-to-Peer  Electronic  Cash    System”](https://bitcoin.org/bitcoin.pdf)
+    * 2009, 比特币网络运行
+        - 北京时间2009年1月4日02:15:05 Genesis block 创世区块
+            + 《泰晤士报》当天头版文章标题
+            + The Times 03/Jan/2009 Chancellor on brink of second bailout for banks
+            + 
 
 
 ## 设计思想
++ 每4年发行新比特币的比例降低一半
++ 2140年将达到2100w
 + 比特币采用SHA-256、RIPEMD-160哈希算法生成密钥，使用SHA-256作nonce碰撞以挖矿。
 + 为什么 block 设计为 1M？
 + 为什么总体供给是 2100w？

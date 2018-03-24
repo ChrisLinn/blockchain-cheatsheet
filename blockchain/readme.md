@@ -52,7 +52,7 @@ __Block Header__
 + 如果给定一个 tx hash，最少还需要知道哪些信息才能确定该 tx 是否在一个block中
 + 
 
-
+### Coinbase
 
 
 ## 公有链 vs 联盟链 vs 私有链
