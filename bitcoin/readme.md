@@ -29,7 +29,9 @@
     * 2009, 比特币网络运行
         - 北京时间2009年1月4日02:15:05 Genesis block 创世区块
             + 《泰晤士报》当天头版文章标题
-            + The Times 03/Jan/2009 Chancellor on brink of second bailout for banks
+            ```
+            The Times 03/Jan/2009 Chancellor on brink of second bailout for banks
+            ```
 
 
 ## 设计思想
@@ -62,8 +64,11 @@
 + SPV 轻节点
 
 ## Transaction
-+ 比特币有哪几种交易类型？
-    * Generation（挖矿）, Pay to Pubkey Hash, Pay to Script Hash 
++ 比特币有哪几种[交易类型](https://en.bitcoin.it/wiki/Transaction#Types_of_Transaction)？
+    * Generation（挖矿）
+        - While regular transactions use the 'inputs' section to refer to their parent transaction outputs, a generation transaction has no parent, and creates new coins from nothing.
+    * Pay to Pubkey Hash
+    * Pay to Script Hash 
 
 ## UXTO
 + 为什么设计 UTXO？

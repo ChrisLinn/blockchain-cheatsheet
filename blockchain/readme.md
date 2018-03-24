@@ -28,7 +28,13 @@ __Block Header__
 + 如果给定一个 tx hash，最少还需要知道哪些信息才能确定该 tx 是否在一个block中
 + 
 
-### Coinbase
+### [Coinbase](https://en.bitcoin.it/wiki/Coinbase)
+挖矿类型交易(generation)的“输入”的内容。可包含任意信息，比如创始区块中包含的是:
+```
+The Times 03/Jan/2009 Chancellor on brink of second bailout for banks
+```
+
+扩展阅读: [比特币有哪几种交易类型?](/bitcoin/readme.md#transaction)
 
 
 ## 公有链 vs 联盟链 vs 私有链
