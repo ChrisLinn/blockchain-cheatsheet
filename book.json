@@ -2,7 +2,6 @@
     "title": "区块链工程师面试宝典",
     "author": "Haoyu LIN",
     "output.name": "site",
-    "language": "zh-hans",
     "gitbook": "3.2.3",
     "root": "./",
     "styles": {
@@ -28,7 +27,6 @@
         "splitter@^0.0.8",
         "mermaid-gb3@2.1.0",
         "tbfed-pagefooter@^0.0.1",
-        "expandable-chapters-small@^0.1.7",
         "sectionx@^3.1.0",
         "local-video@^1.0.1",
         "anchor-navigation-ex@0.1.8",
@@ -72,7 +70,7 @@
         "sharing": {
            "douban": false,
            "facebook": false,
-           "google": true,
+           "google": false,
            "hatenaBookmark": false,
            "instapaper": false,
            "line": false,
@@ -82,7 +80,7 @@
            "qq": false,
            "qzone": false,
            "stumbleupon": false,
-           "twitter": true,
+           "twitter": false,
            "viber": false,
            "vk": false,
            "weibo": false,
