@@ -1,19 +1,13 @@
 {
     "title": "区块链工程师面试宝典",
-    // "description": "从基本原型，工作量证明，到交易，网络等各部分的区块链系列教程",
     "author": "Haoyu LIN",
-    // "output.name": "site",
+    "output.name": "site",
     "language": "zh-hans",
     "gitbook": "3.2.3",
-    // "root": "./",
-    // "links": {
-    //     "sidebar": {
-    //         "Home": "https://github.com/liuchengxu/blockchain-tutorial"
-    //     }
-    // },
-    // "styles": {
-    //     "website": "styles/website.css"
-    // },
+    "root": "./",
+    "styles": {
+        "website": "styles/website.css"
+    },
     "plugins": [
         "-lunr",
         "-search",
@@ -110,13 +104,6 @@
             "maxDepth": 3,
             "skipFirstH1": true
         },
-        // "edit-link": {
-        //     "base": "https://github.com/liuchengxu/blockchain-tutorial/edit/master",
-        //     "label": "Edit This Page"
-        // },
-        // "sitemap-general": {
-        //     "prefix": "http://blockchain.liuchengxu.org"
-        // },
         "anchor-navigation-ex": {
             "isRewritePageTitle": false,
             "tocLevel1Icon": "fa fa-hand-o-right",
@@ -134,8 +121,8 @@
             "caption": "_PAGE_LEVEL_._PAGE_IMAGE_NUMBER_ -- _CAPTION_"
         },
         "donate": {
-            // "wechat": "https://raw.githubusercontent.com/liuchengxu/img/master/gitbook/wechat.jpeg",
-            // "alipay": "https://raw.githubusercontent.com/liuchengxu/img/master/gitbook/alipay.jpeg",
+            "wechat": "",
+            "alipay": "",
             "title": "",
             "button": "赞赏 👍  ",
             "alipayText": "支付宝打赏",
