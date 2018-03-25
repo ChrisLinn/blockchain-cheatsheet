@@ -17,6 +17,7 @@ AI 开始冷静，快来搭上区块链这趟车。新闻链接：
 + [2018区块链项目名录完整版](https://github.com/ChrisLinn/blockchain-cheatsheet/blob/master/docs/2018-blockchain-projects.pdf)
 + [这是一份完整的中国区块链城市地图](https://36kr.com/p/5122683.html)
 + [失之互联网，收之区块链，上海这次想好了伐？](https://36kr.com/p/5117614.html)
++ [杭州哪些公司在做区块链？](https://www.zhihu.com/question/52507163)
 + 或者上 拉勾网 查看企业招聘信息
 
 
