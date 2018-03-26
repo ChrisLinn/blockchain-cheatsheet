@@ -64,8 +64,61 @@ target 目标值 = 最大目标值（恒定值） / 难度值
 ### PoS, Proof of Stake,权益证明
 为了使每个 Block 更快被生成，PoS 机制 __去掉了穷举 nonce__，一个账户的 __余额__ 越多，在同等算力下，就越容易发现下一个区块。将导致 __大户集中__ 。
 
-在PoS对PoW进行改进后，又引进了新的问题 [N@S (Nothing at stake) Attack 和 Long-Range Attack](./attack.md)。
+```
+区块收益=(币龄/365)*年化收益率
+币龄=持币量*持币时间, 当发现一个区块，币龄清零。
 
+每个币每天产生1币龄，如持有100个币，总共持有30天，那么币龄就为3000，如果发现了一个POS区块，你的币龄就会被清空为0。每被清空365币龄，将从区块中获得XXX个币的利息(可理解为年利率)
+```
+
+
+例子:
+
++ 宇宙币CosmosCoin
++ 将来的以太坊ETH
++ Peercoin
+    * Coin age-based selection
+        - Staking generally requires those that are staking to __lock up their coins for some period of time__ (i.e. can't spend the coins) for a staker to have a chance of __being selected__ to produce a block and collect the block reward.
++ Nxt
+    * Randomized block selection
++ BlackCoin
+    * Randomized block selection
+
+POS的设计理念：
+
++ 比特币的区块产量每4年会减半，产量越来越低，大家挖矿的动力不断下降，矿工人数越来越少，整个比特币网络有可能会逐渐陷入瘫痪(因为大家都减少了运行比特币客户端的时间，因此越来越难找到一个P2P节点去连接和同步网络数据)。
+    * POS解决方案：在POS体系中，只有打开钱包客户端程序，才能发现POS区块，才会获得利息，这促使很多不想挖矿的人，也会常常打开自己的钱包客户端，这帮助了P2P货币网络的健壮。
++ PoW 很有可能被一些高算力的人、或团队、或矿池，进行51%攻击，导致整个网络崩溃。
+    * POS解决方案：在POS体系中，即使你拥有了全球51%的算力，也未必能够进行51%攻击。
++ 比特币其实是一个通货紧缩的体系。因为重装系统或忘记钱包密钥时，永远无法再拿回钱包里的钱，这意味着，每年都会有一些比特币随着钱包的丢失而永远被锁定，这就形成了实质上的通货紧缩。
+    * POS解决方案：提供一定的年利率，尽可能保证既不通货膨胀，也不通货紧缩。
+
+在PoS对PoW进行改进后，又引进了新的问题 :
+
++ 不公平的话语权, 
+    * 和股票很像，持币越多的话语权也越多，只要持币就可以不断获得新币（相当于利息），不需要付出其他任何成本
++ 无法抵抗硬分叉
+    * POS币如果一旦发生硬分叉，所有持币人都会在两条链上持有相同数量的币，因为POS币挖矿不需要任何成本，所有持币人都会在新的分支上获得收益（不像POW币的矿工只能挖其中一条链），这就会很容易导致大多数持币人都默许分叉的存在。分叉出来的链很容易存活
++ [N@S (Nothing at stake) Attack](./attack.md#ns-nothing-at-stake-attack)
++ [Long-Range Attack](./attack.md#long-range-attack)
+
+### PoW + PoS
+POS问题，有人持有了大量币种，自动产生源源不断的利息，马太效应将使得大户越来越有钱
+
+PoW+PoS机制共同作用的数字货币，其工作原理是， __除了通过持币产生利息外，还能通过POW的方式挖矿获得新币__. 采用POS+POW机制后，难度目标值还和币龄相关, 
+```
+目标值=F(币龄，难度值）
+```
+其中目标值和币龄呈负相关关系， __持币时间越久，挖矿难度越低__ ，这样即使是普通电脑也有机会发现新区块并获得奖励，一旦找到新区块，原本的币龄将被归零，保证了整个网络的公平性，避免出现中心化趋势
+
+[采用POS+POW混合机制发行的数字币有](https://zhuanlan.zhihu.com/p/31011138):
+
++ ~~点点币PPCoin~~
++ ~~雅币YaCoin~~
++ 新星币NovaCoin
++ Ethereum (currently)
++ Dash
++ Stratis
 
 
 ### DPoS, Delegated Proof of Stake, 委托股权证明
