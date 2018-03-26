@@ -3,7 +3,6 @@
 * [README](README.md)
 * [Bitcoin](bitcoin/readme.md)
 * [Blockchain](blockchain/readme.md)
-    - [HyperLedger](blockchain/hyperledger.md)
     - [Attack](blockchain/attack.md)
 * [AltCoin](altcoin/readme.md)
     - [Ethereum](altcoin/ethereum/readme.md)

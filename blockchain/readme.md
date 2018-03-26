@@ -113,7 +113,7 @@ target 目标值 = 最大目标值（恒定值） / 难度值
 为什么要搞 open ledger？大型交易所失窃案件揭示了去中心化交易所的重要性。
 
 
-### Cardano
+### Cardano 卡尔达诺
 + 智能合约平台
     * 使用第三代基于 EVM 的虚拟机 [IELE](https://iohk.io/blog/iele-a-new-virtual-machine-for-the-blockchain) ，通过侧链来实现跨链功能
 + 以可证的权益证明共识（provable PoS）[Ouroboros 乌洛波罗斯](#ouroboros) 为中心
