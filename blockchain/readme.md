@@ -82,17 +82,30 @@ target 目标值 = 最大目标值（恒定值） / 难度值
 
 + Tendermint共识引擎通过Tendermint套接字协议（TMSP）与应用程序进行连接。
 
+### Ouroboros 乌洛波罗斯
+
+## 主网
+
+## 侧链
+
+## 跨链
+
+## 链池
+
 ## 多链技术
 
 ### Polkadot
 
 ### COSMOS
 
+## SegWit 隔离见证
 
-## [Chain](https://github.com/chain/chain)
+## Projects
+
+### [Chain](https://github.com/chain/chain)
 企业级的区块链平台架构，针对金融领域，金融机构可以在上面创建和发行数字资产。共识协议采用联邦拜占庭协议，支持多种数字资产，适合联盟链。
 
-## OpenLedger
+### OpenLedger
 去中心化交易平台。用户可以拥有自己的私钥，交易期间用户的资金仍在自己的手上，交易所的资金全部都在区块链上，完全透明，同时用户可以保持他们的隐私，而交易所的资金则可以被任何人在任何时候进行审计。
 
 交易速度可高达10万次/秒，纳斯达克级别。
@@ -100,15 +113,21 @@ target 目标值 = 最大目标值（恒定值） / 难度值
 为什么要搞 open ledger？大型交易所失窃案件揭示了去中心化交易所的重要性。
 
 
-## Cardano
+### Cardano
++ 智能合约平台
+    * 使用第三代基于 EVM 的虚拟机 [IELE](https://iohk.io/blog/iele-a-new-virtual-machine-for-the-blockchain) ，通过侧链来实现跨链功能
++ 以可证的权益证明共识（provable PoS）[Ouroboros 乌洛波罗斯](#ouroboros) 为中心
+    * 集比特币（Bitcoin），以太坊（Ethereum，智能合约），波卡（Polkadot，跨链）之大成。
++ 目前第一个通过学术界同行评审的区块链项目
++ 由 Haskell 语言实现，被认为最安全的编程语言之一
++ 代币（token）: ADA
++ 背后主要组织
+    * IOHK
+    * 卡尔达诺基金会(创立于瑞士, 非营利组织)
+    * Emurgo
 
-## SegWit 隔离见证
-
-
-### 主网
-
-### 侧链
-
-### 跨链
-
-### 链池
+### HyperLedger
+#### Fabric
++ 简述 fabric 中 channel、org、peer 的关系？ 
++ fabric 中的智能合约是如何被加载运行的？
++ fabric 中有哪几类证书类型各有什么作用？ 
