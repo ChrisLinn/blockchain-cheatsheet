@@ -118,7 +118,7 @@ target 目标值 = 最大目标值（恒定值） / 难度值
 ### Cardano 卡尔达诺
 + 智能合约平台
     * 使用第三代基于 EVM 的虚拟机 [IELE](https://iohk.io/blog/iele-a-new-virtual-machine-for-the-blockchain) ，通过侧链来实现跨链功能
-+ 以可证的权益证明共识（provable PoS）[Ouroboros 乌洛波罗斯](#ouroboros) 为中心
++ 以可证的权益证明共识（provable PoS）[Ouroboros 乌洛波罗斯](#ouroboros-%E4%B9%8C%E6%B4%9B%E6%B3%A2%E7%BD%97%E6%96%AF) 为中心
     * 集比特币（Bitcoin），以太坊（Ethereum，智能合约），波卡（Polkadot，跨链）之大成。
 + 目前第一个通过学术界同行评审的区块链项目
 + 由 Haskell 语言实现，被认为最安全的编程语言之一
