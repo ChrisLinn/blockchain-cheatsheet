@@ -51,6 +51,10 @@
 + 为什么 double hash？
 + 为什么用 little endian，而不是 big endian（network order）？
 
+## 图灵完备
+图灵完备指的是可以描述一系列操作来描述所有可计算问题。
+
+比特币不是图灵完备的，因为它没有条件判断语句，不能执行循环，也不会产生递归。
 
 ## P2P
 + [P2P网络-比特币开发指南](https://www.jianshu.com/p/a737d79501f2)
