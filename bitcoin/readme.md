@@ -104,3 +104,7 @@
 ## ECDSA Failures
 
 ## Colored Coin
+
+## 比特币分叉
+### 硬分叉
+### 软分叉
