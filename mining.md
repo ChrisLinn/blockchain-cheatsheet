@@ -17,6 +17,7 @@ Anti-ASIC 算法,试图达到这一目标,但这些算法都不尽人意。这�
 ## Mining pool
 + extra nonce
 + stratumn protocol
+    * 
 + keep lives
 + (pool) difficulty
 + hashrate

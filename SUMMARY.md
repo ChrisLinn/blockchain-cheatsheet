@@ -15,6 +15,7 @@
 * [Mining](mining.md)
 * [网络](network.md)
 * [架构](architect.md)
+* [Exchange](exchange.md)
 * [Miscs](misc.md)
 * [Resources](res.md)
 * [HR 面](hr.md)
