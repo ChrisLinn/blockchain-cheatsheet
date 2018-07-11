@@ -8,7 +8,8 @@ Anti-ASIC 算法,试图达到这一目标,但这些算法都不尽人意。这�
 + 第一类是试图增加完成 PoW 所需要的局部存储,例如 LiteCoin 需要 128KB 的存储,而 Monero 需要 2MB 的存储。但在 28nm 以及更先进的工艺下,在集成电路片上集成 2MB 的 SRAM 已经不再困难。LiteCoin 的 ASIC 矿机早已诞生。而 Monero 的矿机最近也被生产出来了
 + 第二类是试图增加完成 PoW 所需要的 DRAM 带宽和 DRAM 空间,典型的代表是以太坊和 ZCash。这两种数字货币目前的矿机以显卡矿机为主。但值得注意的是,比特大陆已经量产了以太坊矿机 E3。可以预见,ASIC 矿机逐步替代显卡矿机将是不可避免的趋势。原因在于带宽密集的挖矿算法仅仅使用了显卡的 DRAM 访存带宽,对于显卡上的计算资源几乎没有使用,因此,可以设计类似显卡但计算资源大幅缩减的芯片,它的功耗和成本极低,但仍可执行带宽密集型的 PoW 算法。
 
-## [Scrypt 算法](altcoin/scrypt.html#scrypt-%E7%AE%97%E6%B3%95)
+## Scrypt 算法
++ [Scrypt 算法](altcoin/scrypt.html#scrypt-%E7%AE%97%E6%B3%95)
 
 ## PoS
 + [币龄](blockchain/readme.html#pos-proof-of-stake%E6%9D%83%E7%9B%8A%E8%AF%81%E6%98%8E)
