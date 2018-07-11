@@ -100,6 +100,10 @@
     * 第八步，取上一步结果的前 4 个字节。
     * 第九步，把这 4 个字节加在第五步的结果后面，作为校验。
     * 第十步，用 base58 表示法变换一下地址。
++ bech32
+    * [segwit](#%E9%97%AA%E7%94%B5%E7%BD%91%E7%BB%9C)
+    * P2SH
+        - https://bitcoin.stackexchange.com/questions/65856/how-do-bech32-addresses-compare-to-p2sh-addresses-in-transaction-size
 
 ## mul-sig 多重签名
 

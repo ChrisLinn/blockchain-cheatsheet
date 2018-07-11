@@ -12,6 +12,7 @@
     * Filecoin
     * Zcash
 * [Wallet](wallet.md)
+* [Mining](mining.md)
 * [网络](network.md)
 * [架构](architect.md)
 * [Miscs](misc.md)
