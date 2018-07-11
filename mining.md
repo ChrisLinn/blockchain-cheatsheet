@@ -17,7 +17,9 @@ Anti-ASIC 算法,试图达到这一目标,但这些算法都不尽人意。这�
 ## Mining pool
 + extra nonce
 + stratumn protocol
-    * 
+    * https://github.com/sammy007/open-ethereum-pool
+    * https://github.com/sammy007/monero-stratum
+    * https://github.com/luke-jr/eloipool
 + keep lives
 + (pool) difficulty
 + hashrate
