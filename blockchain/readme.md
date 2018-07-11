@@ -223,3 +223,22 @@ __两个不同账本上价值的流通。__ 从业务角度看，跨链技术就
 + 简述 fabric 中 channel、org、peer 的关系？ 
 + fabric 中的智能合约是如何被加载运行的？
 + fabric 中有哪几类证书类型各有什么作用？ 
+
+
+### BigchainDB
++ 一款企业级解决方案
++ 暂不支持智能合约，但有 condition-fulfillments 机制
++ 使用成熟的分布式数据库 RethinkDB/MongoDB
+    * 每个节点存储本地 MongoDB 数据库。
+    * v1.0
+        - 多节点共识原本使用 RethinkDB/MongoDB 集群之间节点的同步来做, 不能 BFT
+    * v2.0
+        - 节点间的通信采用 Tendermint 协议，支持 BFT
++ Decentralize
+    * v1.0
+        - 中心化严重 (单点控制, 单点故障...)
+            + 有且仅有一个主节点进行所有的写入工作，其他节点只是同步主节点写入的内容。
+            + 在底层架构设计中仅有一个logical databse，admin权限可删除整个数据库。
+    * v2.0
+        - 禁止使用 BigchainDB 的 API 对以存储的数据的改变或擦除
+        - 每一个节点都在一个独立的 MongoDB 数据库里有完全复制品, 不受数据篡改影响, 并可追查数据篡改
