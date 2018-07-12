@@ -43,15 +43,28 @@ Anti-ASIC 算法,试图达到这一目标,但这些算法都不尽人意。这�
     * important otherwise too late to start mining
     * num of conn isnt the key, unless there are only a few
 + avoid orphan block
-    * 矿池与用户的带宽足够
-    * 钱包上行速度足够
-    * 多钱包
-    * 高速传播网络? 如果区块能在高速传播，孤块率会降低了?
-        - [BTC 的 fibre 网络](http://bitcoinfibre.org/)
-        - eth 上全网到处搞节点, 最终的效果还不如不连节点, 就让自己发现
-            + 但如果是 连接较差(比如海外)IP / 个人IP, 孤块概率就会较大
-    * 每次生成新块时udp通知
-    * 生成新块的时机，除了每秒轮询、自己submit之外，对同步过来的块也主动生成
+    * __Information Propagation in the Bitcoin Network__ 中提出了几个优化传播的建议
+        - Pipelining block propagation
+        - Minimize verification
+        - Connectivity increase
+    * 并指出了 _Pipelining block propagation_ 和 _Minimize verification_ 只能达到不显著的优化效果，重点还是 _Connectivity increase_
+        - Pipelining block propagation
+            + 就是及时告诉别人有新块, 叫别人来拿
+                * 针对矿池
+                    - pool 每秒轮询wallet
+                    - wallet 主动udp通知 pool
+                        + wallet 生成新块的时机，除了 pool submit to wallet 之外，对wallet收到同步的块也主动生成
+        - Minimize verification
+            + 先 验过 difficulty，尚未验 merkle 就把新块告诉别人（因为要伪造能过 difficulty check 的成本也很高，所以不必担心这方面的攻击）
+        - Connectivity increase
+            * __Information Propagation in the Bitcoin Network__ 采用了星型连接
+            + 矿池与用户的带宽足够
+            + 钱包上行速度足够
+            + 多钱包
+            + 高速传播网络? 如果区块能在高速传播，孤块率会降低了?
+                * [BTC 的 fibre 网络](http://bitcoinfibre.org/)
+                * eth 上全网到处搞节点, 最终的效果还不如不连节点, 就让自己发现
+                    - 但如果是 连接较差(比如海外)IP / 个人IP, 孤块概率就会较大
     * 算力大的会好些, 算力大了连爆几个块，自己的不会成为孤块
         - 刚开的时候没算力肯定纠结
 + DDoS
