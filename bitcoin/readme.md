@@ -45,6 +45,9 @@
 + 比特币采用SHA-256、RIPEMD-160哈希算法生成密钥，使用SHA-256作nonce碰撞以挖矿。
 + 为什么总体供给是 2100w？
 + 为什么 10 分钟出一个区块？为什么 6 个区块之后就可以认为之前生成的区块被确认了？
++ 为什么交易需要6次确认，coinbase 却需要 100 次才能成熟？
+    * https://bitcoin.stackexchange.com/questions/1991/what-is-the-block-maturation-time
+    * https://bitcoin.stackexchange.com/questions/40655/coinbase-transactions-100-block-cooldown-period
 + 为什么用 base58？为什么不用我们熟知的 base64？
 + 为什么交易速度如此之慢，只有若干 tx / s？
 + 为什么 PoW？现有的方法为什么不可用？（呃，现有有什么方法？）
