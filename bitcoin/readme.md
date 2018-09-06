@@ -55,7 +55,8 @@
 + 为什么钱包的地址要 hash 一遍，而不是直接用 public key 的 base58?
 + 为什么需要 merkle tree？
 + 为什么用 ECDSA 而不是 RSA？
-+ 为什么 double hash？
++ 为什么 double hash？ 
+    * 长度不够可能多0导致碰撞
 + [为什么tx&block hashes用 little endian，而不是 big endian（network order）？ ](https://bitcoin.stackexchange.com/questions/2063/why-does-the-bitcoin-protocol-use-the-little-endian-notation)
     * 比特币的区块链要靠HASH值来标识区块，这就要求所有系统（不管是什么架构），存储的数据必须每个字节（包括顺序）都完全一致，因此必须规定出一种统一的字节顺序才行。哪一种都可以，但必须选一个。现代计算机 __几乎都是使用little endian__ ，所以内置的数据类型首选little endian。
         - Bitcoin transaction and block hashes are considered little-endian when treating them as integers.
