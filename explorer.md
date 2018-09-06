@@ -16,11 +16,13 @@
     ```
 + store_block
     * 对于一个 block:
+        ```
         1.存 txs
             2.txs 中tx，存 input & output
                 3.更新 token
                 4.更新 数额
         5.存 raw_block
+        ```
 + 故障回滚
     * verify_db_data(height)
         - if block(height+1) marked as orphan in db?
@@ -43,8 +45,8 @@
         - mark height orphan_block
         - txs = get_db_txs(height)
         - rollback_db_data_txs(txs)
-            + update balance accoring to timstamp
-            + update token accoring to timstamp
+            + update balance accoring to timestamp
+            + update token accoring to timestamp
             + rollback_db_data_txs only marks txs as orphan, but will delete txs if called by verify_db_data 
 + 读写效率
 + 网络难度、算力变化
