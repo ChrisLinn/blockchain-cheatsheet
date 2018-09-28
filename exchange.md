@@ -11,7 +11,6 @@
     * 分红
     * 交易挖矿
     * 投票上币
-+ 去中心化交易所
 + 交易所安全
     * 中心化交易所回滚
 + [viabtc_exchange_server](https://github.com/viabtc/viabtc_exchange_server)
