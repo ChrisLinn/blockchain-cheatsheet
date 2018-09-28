@@ -20,3 +20,4 @@
 + kijiji
 + https://github.com/etherex/etherex
 + https://github.com/eostoken/ET-exchange/blob/master/WhitePaper.md
++ https://openledger.io/market/bitUSD_BTS
