@@ -1,5 +1,6 @@
 # Exchange
 
+## 中心化交易所
 + 平台币
     * 庄家
         - 控盘
@@ -14,3 +15,9 @@
 + 交易所安全
     * 中心化交易所回滚
 + [viabtc_exchange_server](https://github.com/viabtc/viabtc_exchange_server)
+
+
+## 去中心化交易所
++ kijiji
++ https://github.com/etherex/etherex
++ https://github.com/eostoken/ET-exchange/blob/master/WhitePaper.md
