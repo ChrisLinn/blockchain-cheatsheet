@@ -21,10 +21,12 @@ Anti-ASIC 算法,试图达到这一目标,但这些算法都不尽人意。这�
     * https://github.com/sammy007/open-ethereum-pool
     * https://github.com/sammy007/monero-stratum
     * https://github.com/luke-jr/eloipool
-+ keep lives
-+ (pool) difficulty
-+ hashrate
-+ retarget
++ keep alive
++ bits, int, difficulty, hashrate
+    * 用前导零来估算 int
+    * (pool miner) difficulty
+        - 收益计算
+    * retarget
 + 什么是拒绝数？拒绝率？
     * 根据矿池的工作原理，矿池不断给矿机下发新的计算任务，矿机将计算结果提交给矿池。但是由于矿机与矿池的网络连接是有延迟的，从矿池下发新的挖矿高度的任务给矿机，到矿机接收到任务，在这段时间提交的结果已经过时，将不被矿池承认。拒绝率即无效提交与总提交结果之比。
     * 拒绝数是指矿机提交的算力不符合服务器要求，被服务器拒绝的工作量。拒绝率是指拒绝数占总提交数的比例，数值越小，矿机的工作效率就越高。
