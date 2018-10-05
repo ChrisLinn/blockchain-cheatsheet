@@ -39,35 +39,43 @@ Anti-ASIC 算法,试图达到这一目标,但这些算法都不尽人意。这�
         - 收益与矿池幸运值有关，矿池幸运值高，收益高；矿池幸运值低，收益低
     * SOLO
         - 矿机爆块才有收益，如果矿机爆块可获得该块扣除挖矿手续费的所有收益，如果矿机不爆块则没有收益
-+ latency
-    * important otherwise too late to start mining
-    * num of conn isnt the key, unless there are only a few
-+ avoid orphan block
-    * __Information Propagation in the Bitcoin Network__ 中提出了几个优化传播的建议
-        - Pipelining block propagation
-        - Minimize verification
-        - Connectivity increase
-    * 并指出了 _Pipelining block propagation_ 和 _Minimize verification_ 只能达到不显著的优化效果，重点还是 _Connectivity increase_
-        - Pipelining block propagation
-            + 就是及时告诉别人有新块, 叫别人来拿
-                * 针对矿池
-                    - pool 每秒轮询wallet
-                    - wallet 主动udp通知 pool
-                        + wallet 生成新块的时机，除了 pool submit to wallet 之外，对wallet收到同步的块也主动生成
-        - Minimize verification
-            + 先 验过 difficulty，尚未验 merkle 就把新块告诉别人（因为要伪造能过 difficulty check 的成本也很高，所以不必担心这方面的攻击）
-        - Connectivity increase
-            * __Information Propagation in the Bitcoin Network__ 采用了星型连接
-            + 矿池与用户的带宽足够
-            + 钱包上行速度足够
-            + 多钱包
-            + 高速传播网络? 如果区块能在高速传播，孤块率会降低了?
-                * [BTC 的 fibre 网络](http://bitcoinfibre.org/)
-                * eth 上全网到处搞节点, 最终的效果还不如不连节点, 就让自己发现
-                    - 但如果是 连接较差(比如海外)IP / 个人IP, 孤块概率就会较大
-    * 算力大的会好些, 算力大了连爆几个块，自己的不会成为孤块
-        - 刚开的时候没算力肯定纠结
-+ DDoS
-    * 一层硬件防火墙
-    * 软件防火墙不太行
-+ 藏块攻击
++ 矿池优化指南
+    * avoid orphan block
+        - __Information Propagation in the Bitcoin Network__ 中提出了几个优化传播的建议
+            + Pipelining block propagation
+            + Minimize verification
+            + Connectivity increase
+                * latency
+                    - important otherwise too late to start mining
+                    - num of conn isnt the key, unless there are only a few
+        - 并指出了 _Pipelining block propagation_ 和 _Minimize verification_ 只能达到不显著的优化效果，重点还是 _Connectivity increase_
+            + Pipelining block propagation
+                * 就是及时告诉别人有新块, 叫别人来拿
+                    - 针对矿池
+                        + pool 每秒轮询wallet
+                        + wallet 主动udp通知 pool
+                            * wallet 生成新块的时机，除了 pool submit to wallet 之外，对wallet收到同步的块也主动生成
+            + Minimize verification
+                * 先 验过 difficulty，尚未验 merkle 就把新块告诉别人（因为要伪造能过 difficulty check 的成本也很高，所以不必担心这方面的攻击）
+            + Connectivity increase
+                - __Information Propagation in the Bitcoin Network__ 采用了星型连接
+                * 矿池与用户的带宽足够
+                * 钱包上行速度足够
+                * 多钱包
+                * 高速传播网络? 如果区块能在高速传播，孤块率会降低了?
+                    - [BTC 的 fibre 网络](http://bitcoinfibre.org/)
+                    - eth 上全网到处搞节点, 最终的效果还不如不连节点, 就让自己发现
+                        + 但如果是 连接较差(比如海外)IP / 个人IP, 孤块概率就会较大
+        - 算力大的会好些, 算力大了连爆几个块，自己的不会成为孤块
+            + 刚开的时候没算力肯定纠结
+        - ETH 叔块率高. 运气好 ~8%。运气不好 10~20%
+            + 出块时间快，网络传输延迟(国外也有不少算力，国外传播过来的延迟影响比较显著)导致
+            + 为了降低叔块就要自己建立网络
+            + 像 btc 这类，可以使用 get-block-template 挖出后向自己在全球部署的多个节点同时 submit-block
+                * 而不是 打包过后的 header hash，即work，但 eth 和 btm 目前都只有 get-work 。
+            + 鱼池的做法是，如果现在获取的是 a 钱包的任务对应的 get-work，就把这个任务的数据同步到其他钱包，然后同时 submit
+                * 比起自己的节点之间保持直连，挖出后才用区块同步机制进行同步，效果更好
+    * DDoS
+        - 一层硬件防火墙
+        - 软件防火墙不太行
+    * 藏块攻击
