@@ -37,6 +37,19 @@ The Times 03/Jan/2009 Chancellor on brink of second bailout for banks
 扩展阅读: [比特币有哪几种交易类型?](/bitcoin/readme.md#transaction)
 
 
+## GHOST rule
++ __GHOST (Greedy Heaviest-Observed Sub-Tree) rule/protocol__
+    + Sompolinsky, Y., and Zohar, A. Accelerating Bitcoin’s transaction processing. fast money grows on trees, not chains. In Financial Cryptography (Puerto Rico, 2015).
+    + Yonatan Sompolinsky and Aviv Zohar. Secure high-rate transaction processing in Bitcoin. In Financial Cryptography and Data Security - 19th International Conference, FC 2015, pages 507–527, 2015.
++ [The Quest for Scalable Blockchain Fabric: Proof-of-Work vs. BFT Replication](https://allquantor.at/blockchainbib/pdf/vukolic2015quest.pdf)
+    * 通过区块子树的权重，而非给定区块的最长子链，解决 pow 区块链冲突。 尽管 GHOST 本质上只是一个冲突解决策略，但它提供了比比特币的标准最长（最重）链规则更好的性能：它提供了更安全地增加区块频率和区块大小的方法。因为它更加公正，而且更加充分地利用了算力。
+    * ETH也使用了一个 GHOST的变种，尽管 GHOS-POW 的性能还没有被充分地用高负荷压测。
++ [Bitcoin-NG: A Scalable Blockchain Protocol](https://arxiv.org/pdf/1510.02037.pdf)
+    * GHOST 升级版
+    * bitcoin 原本的规则可以保证在任何时候至少有一个节点知道主链是什麽——因为它知道所有的区块。GHOST 则无法保证这一点。(虽然通过广播所有的区块可以解决，但是这又带来 DoS 的风险——恶意节点狂发低难度的区块。这种情况下，GHOST表现得比原生协议要差，因为广播区块开销超过了选链规则带来的好处等到GHOST有实用解决方案，比如说广播区块头而非整个块，可以用来补足 bitcoin-NG)
+    * GHOST 中，被剪枝的子树上的区块只在分岔点影响链选择。Bitcoin-NG 在高带宽和吞吐的情况下分叉很小，使得算力更加充分被利用，选链更加公平。
+
+
 ## 公有链 vs 联盟链 vs 私有链
 
 ## 拜占庭将军问题
