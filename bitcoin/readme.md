@@ -81,6 +81,22 @@
 + 全节点
 + SPV 轻节点
 
+## Verification
+> 比特币节点如何验证一个区块 (适用于 BTC/BCH-ABC/BCH-SV)
+
+当一个节点通过p2p网络获得一个新区块时，都会验证这个区块是不是有效 (CheckBlock 函数) :
+
++ 验证工作量证明，即验证区块头的哈希值小于当前目标值。
++ 验证 Merkle Root 是否是由区块体中的交易得到
+    * 重构区块 Merkle 树得到的树根，看是否和区块头中的 hashMerkleRoot 值相等
++ 验证区块大小是否在设定范围之内
+    * BTC 数据区块体不能大于 1M，隔离验证区块不能大于 3M
+    * BCH-ABC 区块不能大于 32M
+    * BCH-SV 现在是不能大于 128M
++ 验证是否只有一个 Coinbase 交易(一个区块，矿工只能给自己奖励一次)
++ 验证所有的交易，即遍历区块内所有的交易，检查是否是合法的交易。
+
+
 ## Transaction
 + 比特币有哪几种[交易类型](https://en.bitcoin.it/wiki/Transaction#Types_of_Transaction)？
     * Generation（挖矿）
