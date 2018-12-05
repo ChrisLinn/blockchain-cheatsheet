@@ -1,5 +1,8 @@
 # Mining
 
++ [Realtime mining hardware profitability](https://www.asicminervalue.com/)
++ [WhatToMine](https://whattomine.com/)
+
 ## 挖矿进化史
 历史上,各种 PoW 数字货币曾设计了若干种
 Anti-ASIC 算法,试图达到这一目标,但这些算法都不尽人意。这些算法大致可
@@ -16,6 +19,7 @@ Anti-ASIC 算法,试图达到这一目标,但这些算法都不尽人意。这�
     * PoS 矿池, 超级节点
 
 ## Mining pool
++ [miningpoolstats](https://miningpoolstats.stream/)
 + extra nonce
 + stratumn protocol
     * https://github.com/sammy007/open-ethereum-pool
