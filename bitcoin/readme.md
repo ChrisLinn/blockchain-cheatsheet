@@ -155,6 +155,8 @@
     - 希望赚交易费用，而闪电网络把大量小额交易都隔离开了
 
 ##### [闪电网络](#lightning-network)
+[比特币白皮书](https://bitcoin.org/bitcoin.pdf) 发表于 2009 年，[闪电网络白皮书](https://lightning.network/lightning-network-paper.pdf) 发表于 2016 年。闪电网络起源于比特币的扩容问题。闪电网络是基于微支付通道演进而来，创造性的设计出了两种类型的交易合约：序列到期可撤销合约 RSMC（Revocable Sequence Maturity Contract，哈希时间锁定合约 HTLC（Hashed Timelock Contract）。RSMC 解决了通道中币单向流动问题，HTLC 解决了币跨节点传递的问题。这两个类型的交易组合构成了闪电网络。
+
 + 主要支持者:Bitcoin Core
 + 建立在 [隔离见证](/blockchain/readme.html#segwit-%E9%9A%94%E7%A6%BB%E8%A7%81%E8%AF%81) 的基础上
 * 理由:
