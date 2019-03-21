@@ -12,6 +12,7 @@
     * Ripple
     * Filecoin
     * Zcash
+    * [EOS](altcoin/eos/readme.md)
 * [Wallet](wallet.md)
 * [Mining](mining.md)
 * [网络](network.md)
