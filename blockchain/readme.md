@@ -226,6 +226,8 @@ __两个不同账本上价值的流通。__ 从业务角度看，跨链技术就
 + [软硬核：彻底读懂 Cosmos 如何一键发链与万链互联](https://mp.weixin.qq.com/s?__biz=MzI1Mzk4ODIwOA==&mid=2247487918&idx=1&sn=c5fc5d9f952611eba4a97cf2f0ed306e&chksm=e9cd4db1debac4a76c6d31100e385439ab65025ec050789e92d5537f80113b43c6b1e9b70959&mpshare=1&scene=24&srcid=0314oSWk6KTcpDqIJK1AVHqP&pass_ticket=ZXFSXlAoCmg3o1yqnjc%2Fh8k6L%2Fsjw9vfkYkGOa095ZweYpoUSlvB2Cqdd4UBkp%2FV#rd)
 + [Cosmos主网上线了，它将给行业带来哪些改变？](https://mp.weixin.qq.com/s?__biz=MzI5MTQ5NDU3NQ==&mid=2247486805&idx=1&sn=8769bc8f884c89f0bd05e82dd22fd315&chksm=ec0e8295db790b83fbe73bd7ded0dafd0fca93d6b11089bf056e3d05ce667515d46ab48afea3&mpshare=1&scene=1&srcid=&pass_ticket=ZXFSXlAoCmg3o1yqnjc%2Fh8k6L%2Fsjw9vfkYkGOa095ZweYpoUSlvB2Cqdd4UBkp%2FV#rd)
 + https://trycosmos.dev/
+* [Cosmos / ATOM Staking Guide](https://bbs.chainon.io/d/3114)
+* [区块链的互操作性：Cosmos vs Polkadot](https://bbs.chainon.io/d/3113)
 
 去中心化交易所需求的增加，但如何实现跨链的资产转移和交易，又是一个新的难题。为了解决这个问题，Cosmos 提出了链内通讯协议（IBC），任何人都可以建立一个中心港实现跨链资产的交易，这个过程完全自动化且社区监管。这一功能可以实现去中心化交易所的交易功能，让不同链上的代币也能够自如地转入转出。
 

@@ -10,9 +10,9 @@
         * [Solidity](altcoin/ethereum/solidity.md)
     * [Scrypt家族](altcoin/scrypt.md)
     * Ripple
-    * Filecoin
+    * [Filecoin](altcoin/filecoin.md)
     * Zcash
-    * [EOS](altcoin/eos/readme.md)
+    * [EOS](altcoin/eos.md)
 * [Wallet](wallet.md)
 * [Mining](mining.md)
 * [网络](network.md)
