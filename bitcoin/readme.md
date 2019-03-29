@@ -127,6 +127,35 @@
 
 ## mul-sig 多重签名
 
+多重签名用于比如 公司董事会发起转账，对于一个 m-n 地址来说，参与创建者共有 n 人，发出的交易只要有 m 人正确签名就视为有效
+
+比特币中地址其实就是解锁脚本, 多签地址也对应了一个多签脚本，与签名参与者的顺序有关(与参与者的pubkey以及顺序有关)
+
+__创建多签脚本__:(并不是所有的链都是这个顺序，具体还是看 相应 opcode 在虚拟机中的执行)
+```
+m {pubkey1}...{pubkeyn} n OP_CHECKMULTISIG
+```
+
+比如
+```
+OP_2 [A's pubkey] [B's pubkey] [C's pubkey] OP_3 OP_CHECKMULTISIG
+```
+
+__解锁时__:
+```
+OP_0 ...signatures...
+```
+
+(OP_0 is required because of __a bug in OP_CHECKMULTISIG__, a workaround for an off-by-one error in the original implementation; it pops one too many items off the execution stack, so a dummy value must be placed on the stack).
+
+比如
+```
+OP_0 [A's signature] [B's or C's signature] [serialized redeem script]
+```
+
+__注意__:
+签名顺序要和多签脚本中pubkey的顺序相同, 验签时会检查签名数量有否满足，然后虚拟机 逐个 按顺序 Verify(pubkey, msg, sig)
+
 ## Lightning Network
 
 ## ECDSA Failures
