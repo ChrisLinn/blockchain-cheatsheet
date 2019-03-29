@@ -19,6 +19,29 @@ Anti-ASIC 算法,试图达到这一目标,但这些算法都不尽人意。这�
     * PoS 矿池, 超级节点
 
 ## Mining pool
++ difficulty
+    * `difficulty = difficulty_1_target / current_target`
+        - target is a 256 bit number
+        - `difficulty_1_target` can be different for various ways to measure difficulty. Traditionally, it represents a hash where the leading 32 bits are zero and the rest are one (this is known as "`pool difficulty`" or "`pdiff`"). The Bitcoin protocol represents targets as a custom floating point type with limited precision; as a result, Bitcoin clients often _approximate_ difficulty based on this (this is known as "bdiff").
+            + bdiff vs pdiff
+                * 公式算出值 vs 矿池使用的 non-truncated 值
+                * 比如
+                    - bdifficulty_1_target = 0x00000000FFFF0000000000000000000000000000000000000000000000000000
+                    - pdifficulty_1_target = 0x00000000FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF
+    * Each block stores a _packed_ representation (called "Bits") for its actual hexadecimal target. The target can be derived from it via a _predefined formula_.
+    * maximum difficulty
+        - maximum_target / 1
+    * minimum difficulty
+        - maximum_target / maximum_target = 1
+    * hash_rate
+        - hash target for diff_1:  `0xffff*2^208`
+        - hash target for diff_D: `0xffff*2^208 / D`
+        - expected number of hashes we need to calculate to find a block with difficulty D: `D * 2^256 / (0xffff * 2^208)` = `D * 2^48 / 0xffff`
+            + 即概率的倒数
+        - one block found every 10 minutes (600s)
+            + hash_rate = `D * 2^48 / 0xffff / 600` = `D * 2^32 / 600`
+    * time to find a block
+        - `difficulty * 2^32 / hashrate`
 + [miningpoolstats](https://miningpoolstats.stream/)
 + extra nonce
 + stratumn protocol
