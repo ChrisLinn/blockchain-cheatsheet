@@ -158,13 +158,50 @@ __注意__:
 
 ## Lightning Network
 
+浏览器: 
++ https://1ml.com/
++ https://github.com/altangent/lnd-explorer
+
 + [硬核科普闪电网络](https://s1.rylink.com/info_detail/239)
 + [闪电网络很难懂？你需要看看这篇文章 | 硬核科普](https://mp.weixin.qq.com/s?__biz=MzI5MTQ5NDU3NQ==&mid=2247486659&idx=1&sn=94db69d14664c220ca191d5b035e2163&chksm=ec0e8303db790a15f74d30a1d6543ec1304d493ca27d5fbdfd8e28a1c11388426739b4b5780d&mpshare=1&scene=1&srcid=0219PRXw1NHaFPc1NUTUMnut&pass_ticket=ZXFSXlAoCmg3o1yqnjc%2Fh8k6L%2Fsjw9vfkYkGOa095ZweYpoUSlvB2Cqdd4UBkp%2FV#rd)
-+ [闪电网络原理通俗解释 | 闪电HSL](https://mp.weixin.qq.com/s?__biz=MzIxNTA0NDQzMA==&mid=2651799232&idx=1&sn=fa9c747790525cb94c2d667903ae631e&chksm=8c65c6e1bb124ff77c39125236e6b513ca7451895cc95139b87a89117374c723596ca1d27472&mpshare=1&scene=1&srcid=0321ZDJTdLw0mHFJtnuJ5pVy&pass_ticket=ZXFSXlAoCmg3o1yqnjc%2Fh8k6L%2Fsjw9vfkYkGOa095ZweYpoUSlvB2Cqdd4UBkp%2FV#rd)
-* [Lo and Behold ! 已来的比特币闪电网络](https://bbs.chainon.io/d/3082)
 
+Relative Lock Time
+Allows a transaction to be time-locked, preventing its use in a new transaction until a relative time change is confirmed.
+
+
+Breach Remedy Transaction:[1] the transaction Alice creates when Mallory attempts to steal her money by having an old version of the channel state committed to the blockchain. Alice's breach remedy transaction spends all the money that Mallory received but which Mallory can't spend yet because his unilateral spend is still locked by a relative locktime using OP_CSV. This is the third of the maximum of three on-chain transactions needed to maintain a Lightning channel; it only needs to be used in the case of attempted fraud (contract breach).
+
+
+Relative locktime:[7] the ability to specify when a transaction output may be spent relative to the block that included that transaction output. Enabled by BIP68 and made scriptable by BIP112. Lightning uses relative locktime to ensure breach remedy transactions may be broadcast within a time period starting from when an old commitment transaction is added to the blockchain; by making this a relative locktime (instead of an absolute date or block height), Lightning channels don't have a hard deadline for when they need to close and so can stay open indefinitely as long as the participants continue to cooperate.
+
+Revocable Sequence Maturity Contract (RSMC):[1] a contract used in Lightning to revoke the previous commitment transaction. This is allowed through mutual consent in Lightning by both parties signing a new commitment transaction and releasing the data necessary to create breach remedy transactions for the previous commitment transaction. This property allows Lightning to support bi-directional payment channels, recover from failed HTLC routing attempts without needing to commit to the blockchain, as well as provide advanced features such as PILPPs.
 
 [比特币白皮书](https://bitcoin.org/bitcoin.pdf) 发表于 2009 年，[闪电网络白皮书](https://lightning.network/lightning-network-paper.pdf) 发表于 2016 年。闪电网络起源于比特币的扩容问题。闪电网络是基于微支付通道演进而来，创造性的设计出了两种类型的交易合约：序列到期可撤销合约 RSMC（Revocable Sequence Maturity Contract，哈希时间锁定合约 HTLC（Hashed Timelock Contract）。RSMC 解决了通道中币单向流动问题，HTLC 解决了币跨节点传递的问题。这两个类型的交易组合构成了闪电网络。
+
+
+### 优点
++ 小微支付成为可能
+    * 交易金额低至一聪
++ 小额甚至无需手续费
++ 付款实时结算
++ 更好的隐私性：并非每笔交易都会被存在链上
+    * 默认使用洋葱路由器进行分享
+        - Oninion Routing (with the help of the SPHINX paper) in BOLT 04 is that you as the payer of a network hide who is receiving the money. Also you hide that you are the sender (though every node can send back error messages to you). 
+            + If you pay a person with these oninion payments and this person is NOT using TOR for their lightning node you will know who the payee is (at least you know the IP address and to some degree where the computer stands) Others on the way do not know this (only the channel partner knows that the payee is involved in the payment process but it is not clear that it is the receipient to the channel partner).
+    * 可以配置 tor 代理
+        - Tor network is to hide your IP address
++ Securely cross blockchains: payments can be routed across more than one blockchain (including altcoins and sidechains) as long as all the chains support the same hash function to use for the hash lock, as well as the ability the ability to create time locks.
+    * 实现原子交换，在通道内能将比特币交换为 Litecoin，Groestl 或 Dogecoin
++ 由于 P2P 网络的特性，所以闪电网络上的交易是不可阻止的。
+
+### 缺点
++ 节点故障：如果其中一个节点没有响应，用户可能需要等待数小时才能关闭支付通道并再次通过另一条路径重新发送资金
++ 不可离线支付：用户无法向不在线的人进行支付
++ 不适用于大额支付：即使通过不同支付通道的路径可能存在，不同节点的多重签名钱包中的资金也可能不足以转移大额资金
++ 可能会造成支付中继站的中心化
+    * 解决办法是多建闪电网络节点
++ 可能存在的攻击
+    * 女巫攻击把中继站的资金池掳走，耗时很久才返还
 
 ## ECDSA Failures
 
@@ -248,3 +285,9 @@ Core一看被排挤, 在纽约共识约定的隔离见证部署前，提出UASF�
 
 + 扩容，恢复曾经有但被 core 删掉了的操作码，去掉各种限制（比如一个交易内可以使用操作码的数量限制等）
 + tokenized方案，完全利用 OP_RETURN , 在原有网络上增加 token 协议
+
+
+## nodes
++ https://bitnodes.earn.com/
+    * https://bitnodes.earn.com/nodes/live-map/
+    * https://bitnodes.earn.com/nodes/?q=China

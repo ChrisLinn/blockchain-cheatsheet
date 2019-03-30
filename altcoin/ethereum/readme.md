@@ -7,6 +7,9 @@
 
 ## ERC20, ERC721
 
-## Raiden Network
+## Raiden Network 雷电网络 ?
++ 多对一
++ 每个通道都需要部署一个新合约
+
 
 ## The DAO

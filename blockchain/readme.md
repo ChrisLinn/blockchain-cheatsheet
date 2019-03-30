@@ -74,6 +74,8 @@ target 目标值 = 最大目标值（恒定值） / 难度值
 将导致 __算力集中__，计算资源大的有优势
 
 
+### ProgPow
+
 ### PoS, Proof of Stake,权益证明
 为了使每个 Block 更快被生成，PoS 机制 __去掉了穷举 nonce__，一个账户的 __余额__ 越多，在同等算力下，就越容易发现下一个区块。将导致 __大户集中__ 。
 
@@ -239,7 +241,9 @@ Cosmos 的底层是由 Cosmos SDK 构建，Cosmos SDK 可以理解为一个更�
 
 ### Interledger
 
-## SegWit 隔离见证
+## Segregated Witness (SegWit) 隔离见证
+
+Reduces the space required for transactions in a block and eliminates transaction malleability, which allows for significant blockchain pruning optimizations.
 
 ## Projects
 
