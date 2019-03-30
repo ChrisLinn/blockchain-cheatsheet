@@ -81,6 +81,22 @@
 + 全节点
 + SPV 轻节点
 
+## Verification
+> 比特币节点如何验证一个区块 (适用于 BTC/BCH-ABC/BCH-SV)
+
+当一个节点通过p2p网络获得一个新区块时，都会验证这个区块是不是有效 (CheckBlock 函数) :
+
++ 验证工作量证明，即验证区块头的哈希值小于当前目标值。
++ 验证 Merkle Root 是否是由区块体中的交易得到
+    * 重构区块 Merkle 树得到的树根，看是否和区块头中的 hashMerkleRoot 值相等
++ 验证区块大小是否在设定范围之内
+    * BTC 数据区块体不能大于 1M，隔离验证区块不能大于 3M
+    * BCH-ABC 区块不能大于 32M
+    * BCH-SV 现在是不能大于 128M
++ 验证是否只有一个 Coinbase 交易(一个区块，矿工只能给自己奖励一次)
++ 验证所有的交易，即遍历区块内所有的交易，检查是否是合法的交易。
+
+
 ## Transaction
 + 比特币有哪几种[交易类型](https://en.bitcoin.it/wiki/Transaction#Types_of_Transaction)？
     * Generation（挖矿）
@@ -111,6 +127,35 @@
 
 ## mul-sig 多重签名
 
+多重签名用于比如 公司董事会发起转账，对于一个 m-n 地址来说，参与创建者共有 n 人，发出的交易只要有 m 人正确签名就视为有效
+
+比特币中地址其实就是解锁脚本, 多签地址也对应了一个多签脚本，与签名参与者的顺序有关(与参与者的pubkey以及顺序有关)
+
+__创建多签脚本__:(并不是所有的链都是这个顺序，具体还是看 相应 opcode 在虚拟机中的执行)
+```
+m {pubkey1}...{pubkeyn} n OP_CHECKMULTISIG
+```
+
+比如
+```
+OP_2 [A's pubkey] [B's pubkey] [C's pubkey] OP_3 OP_CHECKMULTISIG
+```
+
+__解锁时__:
+```
+OP_0 ...signatures...
+```
+
+(OP_0 is required because of __a bug in OP_CHECKMULTISIG__, a workaround for an off-by-one error in the original implementation; it pops one too many items off the execution stack, so a dummy value must be placed on the stack).
+
+比如
+```
+OP_0 [A's signature] [B's or C's signature] [serialized redeem script]
+```
+
+__注意__:
+签名顺序要和多签脚本中pubkey的顺序相同, 验签时会检查签名数量有否满足，然后虚拟机 逐个 按顺序 Verify(pubkey, msg, sig)
+
 ## Lightning Network
 
 ## ECDSA Failures
@@ -125,8 +170,11 @@
 旧节点接受新节点产生的区块（虽然可能潜在风险）
 
 ## 比特币扩容之争
-### 扩大区块 VS 闪电网络
-#### 扩大区块
+
+### BCH vs BTC
+
+#### 扩大区块 VS 闪电网络
+##### 扩大区块
 * 主要支持者:矿工(比特大陆...)
     - 不过，大区块派并不都反对闪电网络，他们中的一部分并不抵触部署闪电网络，但是坚持在建设闪电网络的同时仍然需要扩大区块。
 * 理由:
@@ -135,7 +183,16 @@
 * 利益:
     - 希望赚交易费用，而闪电网络把大量小额交易都隔离开了
 
-#### [闪电网络](#lightning-network)
+##### [闪电网络](#lightning-network)
+
++ [硬核科普闪电网络](https://s1.rylink.com/info_detail/239)
++ [闪电网络很难懂？你需要看看这篇文章 | 硬核科普](https://mp.weixin.qq.com/s?__biz=MzI5MTQ5NDU3NQ==&mid=2247486659&idx=1&sn=94db69d14664c220ca191d5b035e2163&chksm=ec0e8303db790a15f74d30a1d6543ec1304d493ca27d5fbdfd8e28a1c11388426739b4b5780d&mpshare=1&scene=1&srcid=0219PRXw1NHaFPc1NUTUMnut&pass_ticket=ZXFSXlAoCmg3o1yqnjc%2Fh8k6L%2Fsjw9vfkYkGOa095ZweYpoUSlvB2Cqdd4UBkp%2FV#rd)
++ [闪电网络原理通俗解释 | 闪电HSL](https://mp.weixin.qq.com/s?__biz=MzIxNTA0NDQzMA==&mid=2651799232&idx=1&sn=fa9c747790525cb94c2d667903ae631e&chksm=8c65c6e1bb124ff77c39125236e6b513ca7451895cc95139b87a89117374c723596ca1d27472&mpshare=1&scene=1&srcid=0321ZDJTdLw0mHFJtnuJ5pVy&pass_ticket=ZXFSXlAoCmg3o1yqnjc%2Fh8k6L%2Fsjw9vfkYkGOa095ZweYpoUSlvB2Cqdd4UBkp%2FV#rd)
+* [Lo and Behold ! 已来的比特币闪电网络](https://bbs.chainon.io/d/3082)
+
+
+[比特币白皮书](https://bitcoin.org/bitcoin.pdf) 发表于 2009 年，[闪电网络白皮书](https://lightning.network/lightning-network-paper.pdf) 发表于 2016 年。闪电网络起源于比特币的扩容问题。闪电网络是基于微支付通道演进而来，创造性的设计出了两种类型的交易合约：序列到期可撤销合约 RSMC（Revocable Sequence Maturity Contract，哈希时间锁定合约 HTLC（Hashed Timelock Contract）。RSMC 解决了通道中币单向流动问题，HTLC 解决了币跨节点传递的问题。这两个类型的交易组合构成了闪电网络。
+
 + 主要支持者:Bitcoin Core
 + 建立在 [隔离见证](/blockchain/readme.html#segwit-%E9%9A%94%E7%A6%BB%E8%A7%81%E8%AF%81) 的基础上
 * 理由:
@@ -144,10 +201,10 @@
 * 利益:
     + Core团队中的好几名成员都在研发闪电网络的公司Block Stream工作,推广闪电网络可以赚取专利费
 
-### 香港共识
+#### 香港共识
 各退一步 部署隔离见证的同时把区块大小扩大到2M，由Core来主导开发。
 
-### 纽约共识
+#### 纽约共识
 Core的几个开发者在共识上签完字后，团队里的其他成员却不认同这个共识，不愿意开发，于是香港共识后来连代码都没写，就这样跳票. 矿主对Core失去了信任, 纽约重新召开一个无core团队参与的大会
 
 纽约共识达成的协议跟香港共识很像，也是隔离见证+2M扩容，SegWit2x。区别是纽约共识中，隔离见证和扩容分成了两步进行：
@@ -155,7 +212,7 @@ Core的几个开发者在共识上签完字后，团队里的其他成员却不�
 + 2017年8月1日 激活隔离见证（SegWit）
 + 2017年11月，区块大小扩容到原来的两倍（2x）。
 
-### BCC分叉
+#### BCC分叉
 Core一看被排挤, 在纽约共识约定的隔离见证部署前，提出UASF（用户激活的软分叉），并声称不会对UASF进行任何的 [重放保护](/blockchain/attack.html#%E9%87%8D%E6%94%BE%E6%94%BB%E5%87%BB) 。
 
 但UASF最终因算力小且被 SegWit 兼容，没有真产生分叉，反推动比特大陆投资的矿池 ViaBTC（微比特）团队实施了针对 UASF 的硬分叉 UAHF（用户激活的硬分叉）。
@@ -167,3 +224,28 @@ Core一看被排挤, 在纽约共识约定的隔离见证部署前，提出UASF�
     * 去掉了隔离见证
     * 区块容量大，交易速度的确更快，手续费更低
     * 克隆了比特币原链上的余额, 原比特币用户获得等额比特现金
+
+### BCH-ABC vs BCH-SV
+
+#### BCH-ABC
+更偏向智能合约, 利用二层网络方案
+
++ 短出块时间到2分钟，同时区块奖励也相应减少
+    * 不造成增发
+    * 2分钟说长不长说短不短
+        - 作为线下交易使用是过长了，“买咖啡”类的应用必须依赖零确认
+        - 对于扩容前景来说，2分钟又太短了。出块平均时间设置在两分钟，而出块的时间间隔的分布是泊松分布，会有大量的相隔几秒的出块，在 GB ， TB 级的区块的时候，很容易造成来不及传输和验证。
++ 引入虫洞方案，利用二层网络方案使得BCH上可以新发token
+    * 通过“摧毁”BCH 来获得，是单向的，有去无回。
+    * 不能用零确认的BCH，至少要一确认才能让虫洞上的操作接续下去。
++ 引入DSV操作码
+    * DSV 操作码的全称为 OP_CHECKDATASIGVERIFY 
+    * 允许 BCH 对链外结果和数据进行校验
+        - 这个方案非常激进，哪怕是在以智能合约为主要特性的ETH或者EOS都没有直接提供对ORACLE或者说外部数据的连接，更多的是结果上链，判定在链下完成。
+        - 这个操作码的加入，对bitcoin的原始设定，矿工按打包字节收费这一基础设定有所更改，因为DSV可能是一个复杂操作，但是在字节数上只显示为一个操作码。另外一点，DSV 更改了矿工的定义，矿工从只提供算力校验链上交易的角色码，转变为校验交易和校验数据的双重角色。
+
+#### BCH-SV
+更偏向原始的比特币方案, 不用二层网络方案
+
++ 扩容，恢复曾经有但被 core 删掉了的操作码，去掉各种限制（比如一个交易内可以使用操作码的数量限制等）
++ tokenized方案，完全利用 OP_RETURN , 在原有网络上增加 token 协议
