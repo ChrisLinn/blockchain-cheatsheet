@@ -13,4 +13,6 @@
 + https://zhuanlan.zhihu.com/p/34184347
 + https://juejin.im/post/5ab70c146fb9a028d664203f
 + https://stevenocean.github.io/2018/09/23/generate-hd-wallet-by-bip39.html
++ https://chain.com/docs/1.2/protocol/specifications/chainkd
++ https://juejin.im/post/5b5548fff265da0f9313a5c8
  -->
