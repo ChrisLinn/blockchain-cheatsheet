@@ -35,6 +35,10 @@
             The Times 03/Jan/2009 Chancellor on brink of second bailout for banks
             ```
 
+## nodes
++ https://bitnodes.earn.com/
+    * https://bitnodes.earn.com/nodes/live-map/
+    * https://bitnodes.earn.com/nodes/?q=China
 
 ## 设计思想
 + 为什么 block 设计为 1M？
@@ -287,7 +291,28 @@ Core一看被排挤, 在纽约共识约定的隔离见证部署前，提出UASF�
 + tokenized方案，完全利用 OP_RETURN , 在原有网络上增加 token 协议
 
 
-## nodes
-+ https://bitnodes.earn.com/
-    * https://bitnodes.earn.com/nodes/live-map/
-    * https://bitnodes.earn.com/nodes/?q=China
+## 量子计算对 bitcoin 的威胁
+
+量子计算中已经比较成型的算法：Shor’s algorithm 和 Grover’s algorithm
+
+Shor’s algorithm 解决因式分解的问题 —— 给定一个整数 N，找到其质因数。把指数级的时间复杂度降维成了 polynomial time，也就是多项式时间。
+
+RSA 的基石就是两个大质数 p 和 q 的合数很难被因式分解出 p 和 q。
+
+Shor 对 RSA 体系的破坏性是显而易见的(整个非对称加密体系下的算法都会受到巨大的冲击)，而且，它的变种，对基于椭圆双曲线的 ECDSA 也有类似的降维杀伤力。
+
+然而你还是能信任你的 bitcoin 钱包。虽然 bitcoin 钱包的私钥和钱包地址都来源于 ECDSA 的私钥和公钥，然而钱包地址并非直接是公钥，而是公钥的 hash。因而，你给一个钱包打钱，并不会需要钱包的公钥；只有这个钱包使用里面的钱（给别人打钱）时，才需要把自己的公钥放在 transaction 里。__如果一个钱包只是收钱，那么它是安全的__ —— 即便 Shor 算法也需要公钥去逆向私钥。因为公钥没有暴露出来，Shor 算法无法使用。因而即便量子计算破解了非对称加密算法，对于那些没有使用过的冷钱包（code wallet），也无法破解。对于那些需要 multisig 的钱包，也是类似。
+
+如果非得破解冷钱包，那么需要先把钱包地址逆向出来其公钥，而这个操作 Shor 无法完成，只能借助 Grover 算法。
+
+基本上，Grover 对于函数 f(x) = y，只要给定 y，以及 x 取值的一个列表，它可以以 O(sqrt N) 的时间复杂度，找到这个 x。换句话说，随便一个算法，正常情况下暴力破解（在算法的定义域里一个个试），是 O(N)，Grover 将其降低成 O(sqrt N)，对于时间复杂度来说，这算法虽然看上去不错，但大多数情况下只是聊胜于无。
+
+一个 256bit 的公钥, 256bit 数字的取值范围 n_max: 5.78960446186581e+76
+
+sqrt(n_max) = 2.4061596916800453e+38
+
+而 log(n_max) = 176.75253104278605
+
+虽然 sqrt 后量级已经大大减少，但还是 trillion trillion trillion 级别，在一个可以预见的时间内无法破解。所以，即便使用了 Grover 算法，也无法有效地通过钱包地址破解出公钥，进而进一步使用 Shor 算法从公钥破解出私钥。
+
+## Schnorr签名
