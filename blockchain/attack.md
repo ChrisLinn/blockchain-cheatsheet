@@ -52,3 +52,6 @@ Partition Attack 分区攻击阻止比特网络的两/多部分连接起来，�
 ### Delayed Attack
 带来更大问题的可能是 Delayed Attack 延迟攻击。延迟攻击没有好办法检测，商户们在遭遇到这种攻击后，可以重复消费（交易没被确认没被广播出去）。矿工们的交易处理能力也将被浪费，普通的节点无法广播区块链的最新版本。
 
+## Tor
+
+[Bitcoin over Tor isn’t a good idea](https://arxiv.org/pdf/1410.6079.pdf)
