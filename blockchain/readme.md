@@ -295,3 +295,5 @@ Reduces the space required for transactions in a block and eliminates transactio
     * v2.0
         - 禁止使用 BigchainDB 的 API 对以存储的数据的改变或擦除
         - 每一个节点都在一个独立的 MongoDB 数据库里有完全复制品, 不受数据篡改影响, 并可追查数据篡改
+
+## 隐私
