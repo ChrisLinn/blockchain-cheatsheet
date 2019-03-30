@@ -158,6 +158,14 @@ __注意__:
 
 ## Lightning Network
 
++ [硬核科普闪电网络](https://s1.rylink.com/info_detail/239)
++ [闪电网络很难懂？你需要看看这篇文章 | 硬核科普](https://mp.weixin.qq.com/s?__biz=MzI5MTQ5NDU3NQ==&mid=2247486659&idx=1&sn=94db69d14664c220ca191d5b035e2163&chksm=ec0e8303db790a15f74d30a1d6543ec1304d493ca27d5fbdfd8e28a1c11388426739b4b5780d&mpshare=1&scene=1&srcid=0219PRXw1NHaFPc1NUTUMnut&pass_ticket=ZXFSXlAoCmg3o1yqnjc%2Fh8k6L%2Fsjw9vfkYkGOa095ZweYpoUSlvB2Cqdd4UBkp%2FV#rd)
++ [闪电网络原理通俗解释 | 闪电HSL](https://mp.weixin.qq.com/s?__biz=MzIxNTA0NDQzMA==&mid=2651799232&idx=1&sn=fa9c747790525cb94c2d667903ae631e&chksm=8c65c6e1bb124ff77c39125236e6b513ca7451895cc95139b87a89117374c723596ca1d27472&mpshare=1&scene=1&srcid=0321ZDJTdLw0mHFJtnuJ5pVy&pass_ticket=ZXFSXlAoCmg3o1yqnjc%2Fh8k6L%2Fsjw9vfkYkGOa095ZweYpoUSlvB2Cqdd4UBkp%2FV#rd)
+* [Lo and Behold ! 已来的比特币闪电网络](https://bbs.chainon.io/d/3082)
+
+
+[比特币白皮书](https://bitcoin.org/bitcoin.pdf) 发表于 2009 年，[闪电网络白皮书](https://lightning.network/lightning-network-paper.pdf) 发表于 2016 年。闪电网络起源于比特币的扩容问题。闪电网络是基于微支付通道演进而来，创造性的设计出了两种类型的交易合约：序列到期可撤销合约 RSMC（Revocable Sequence Maturity Contract，哈希时间锁定合约 HTLC（Hashed Timelock Contract）。RSMC 解决了通道中币单向流动问题，HTLC 解决了币跨节点传递的问题。这两个类型的交易组合构成了闪电网络。
+
 ## ECDSA Failures
 
 ## Colored Coin
@@ -183,16 +191,7 @@ __注意__:
 * 利益:
     - 希望赚交易费用，而闪电网络把大量小额交易都隔离开了
 
-##### [闪电网络](#lightning-network)
-
-+ [硬核科普闪电网络](https://s1.rylink.com/info_detail/239)
-+ [闪电网络很难懂？你需要看看这篇文章 | 硬核科普](https://mp.weixin.qq.com/s?__biz=MzI5MTQ5NDU3NQ==&mid=2247486659&idx=1&sn=94db69d14664c220ca191d5b035e2163&chksm=ec0e8303db790a15f74d30a1d6543ec1304d493ca27d5fbdfd8e28a1c11388426739b4b5780d&mpshare=1&scene=1&srcid=0219PRXw1NHaFPc1NUTUMnut&pass_ticket=ZXFSXlAoCmg3o1yqnjc%2Fh8k6L%2Fsjw9vfkYkGOa095ZweYpoUSlvB2Cqdd4UBkp%2FV#rd)
-+ [闪电网络原理通俗解释 | 闪电HSL](https://mp.weixin.qq.com/s?__biz=MzIxNTA0NDQzMA==&mid=2651799232&idx=1&sn=fa9c747790525cb94c2d667903ae631e&chksm=8c65c6e1bb124ff77c39125236e6b513ca7451895cc95139b87a89117374c723596ca1d27472&mpshare=1&scene=1&srcid=0321ZDJTdLw0mHFJtnuJ5pVy&pass_ticket=ZXFSXlAoCmg3o1yqnjc%2Fh8k6L%2Fsjw9vfkYkGOa095ZweYpoUSlvB2Cqdd4UBkp%2FV#rd)
-* [Lo and Behold ! 已来的比特币闪电网络](https://bbs.chainon.io/d/3082)
-
-
-[比特币白皮书](https://bitcoin.org/bitcoin.pdf) 发表于 2009 年，[闪电网络白皮书](https://lightning.network/lightning-network-paper.pdf) 发表于 2016 年。闪电网络起源于比特币的扩容问题。闪电网络是基于微支付通道演进而来，创造性的设计出了两种类型的交易合约：序列到期可撤销合约 RSMC（Revocable Sequence Maturity Contract，哈希时间锁定合约 HTLC（Hashed Timelock Contract）。RSMC 解决了通道中币单向流动问题，HTLC 解决了币跨节点传递的问题。这两个类型的交易组合构成了闪电网络。
-
+##### 闪电网络
 + 主要支持者:Bitcoin Core
 + 建立在 [隔离见证](/blockchain/readme.html#segwit-%E9%9A%94%E7%A6%BB%E8%A7%81%E8%AF%81) 的基础上
 * 理由:
