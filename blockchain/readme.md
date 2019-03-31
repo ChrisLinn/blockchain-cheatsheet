@@ -297,3 +297,121 @@ Reduces the space required for transactions in a block and eliminates transactio
         - 每一个节点都在一个独立的 MongoDB 数据库里有完全复制品, 不受数据篡改影响, 并可追查数据篡改
 
 ## 隐私
+
+### MimbleWimble
+
+可以用来改善区块链的隐私，同时通过将无关数据移出区块链来提高可伸缩性。
+
+MimbleWimble允许将多个交易压缩为一个，这样可以节省空间和计算机资源。
+
+MimbleWimble不需要完整的区块链从头开始同步节点。新节点可以在不使用所有历史区块链数据的情况下，以完全安全的方式验证系统的当前状态。
+
+MimbleWimble允许新用户仅使用“内核（kernel）”来同步链，而不是使用历史交易，这将占用大约100字节的空间。比特币有大约4亿笔交易。如果这些都是MimbleWimble交易，那么所使用的总空间将是40GB左右，而不是220GB。因此，MimbleWimble通过这种方式实现了显著的交易压缩。
+
+MimbleWimble 和 confidential transactions 本质上是相同的技术，只是它从区块链中删除了所有非CT特性，从而获得了额外的可伸缩性优势。
+
+工作原理与比特币非常不同，并且有非常严重的限制：
+
+1. 用户必须信任加密技术，以确保自己没有通货膨胀； 
+2. 量子计算机可以造成看不见的和无法检测的通货膨胀；
+3. 没有能力使用复杂的脚本; 
+4. 所有交易都必须使用热密钥与发送方和接收方交互创建。
+
+MimbleWimble并没完全解决“交易隐私”问题，它让交易在区块链上不会暴露隐私，这个实现确实很漂亮，但由于它交易的特殊性（类似 TCP 三次握手，A 给 B 签发交易记录文件，B 响应文件给 A，A 确认上链），这导致相比其他匿名货币（如门罗币、Zcash），基于 MimbleWimble 实现的在链下隐私与安全会遭遇更大挑战。MimbleWimble不会试图模糊交易图。因此，门罗币和ZCash提供了更好的隐私保障。
+
+### 零知识证明
+
+
++ https://zhuanlan.zhihu.com/p/24440530
++ https://www.leiphone.com/news/201803/egFu5MwIsweBU2WY.html
++ https://www.odaily.com/post/5133827
++ https://www.jianshu.com/p/77b44709ca37
++ https://www.chainnode.com/tutorial/4683
+
+
+> 阿里巴巴知道打开藏着财宝的山洞的咒语。强盗抓住他，让他说出咒语。
+如果阿里巴巴说出咒语，就会因为没有利用价值而被杀死。如果阿里巴巴坚持不说，强盗不会相信他真的掌握咒语，也会杀死他。
+但阿里巴巴想了一个好办法，他对强盗说：“你们离我一箭之地，用弓箭指着我，你们举起右手我就念咒语打开石门，举起左手我就念咒语关上石门，如果我做不到或逃跑，你们就用弓箭射死我。”
+
+校验一个事件正确与否，并不需要验证者重现整个事件，只要看最终测试结果是否通过即可。
+
++ 发送的钱属于发送交易的人
++ 发送者发送的金额等于接收者收到金额
++ 发送者的钱确实被销毁了
+
+零知识证明是一种 __基于概率__ 的验证方式，验证的内容包括“事实类陈述”和“关于个人知识的陈述”。验证者基于一定的随机性向证明者提出问题，如果都能给出正确回答，则说明证明者大概率拥有他所声称的“知识”。
+
+Zerocoin（零币协议）将零知识验证用于铸造零币和赎回零币过程中，以隐藏了一笔交易对应的发送方和接收方信息，Zerocash（零钞协议）采用更新颖的zkSNARKs技术，将需要验证的交易内容转换成证明两个多项式乘积相等，结合同态加密等技术在保护隐藏交易金额的同时进行交易验证。缺点在于若网络收到攻击超发零钞，则无法发现或采取措施；Zerocoin和Zerocash均需要进行预先的“信任设置”，没有达到真正的“去信任”。英特尔SGX、zkSTARKs等新技术有可能解决上述问题，但仍需经过实践的检验。
+
+虽然验证者有瞎蒙的可能，但是多轮交互下来，这种可能会越来越小。这样的证明是一种交互的证明方式。双方需要实时交互，交流信息。对于比特币隐私转帐来说，这种证明方式就不太好了。
+一个问题是，交互方式是一对一的，发交易的人要向所有矿工证明交易是合法的，一个一个证明效率太低了。
+
+另外一个问题是，既然需要交互，就要求证明过程中双方都在线，这个也会给用户代码很大的不便。最好是有一种非交互式的证明方式，只要证明者给出了证明，后续就不再需要交互，任何人都可以验证这个证明是否正确。但是这明显跟我们一开始说的不能完全由证明者给出矛盾。
+一个解决方案就是用公共参考串 ****Common Reference String。
+证明者给出的证明里面虽然不像 cut and choose 策略一样，由验证者挑选问题来决定。但是也不是完全由证明者自己来决定，而是根据事先定好的一个种子产生的随机序列决定的。这样就相当于有一个中立的第三方来出题目，同样也能达到效果。当然前提是这个第三方确实是中立的。
+就像分粥的例子，一个人先分，但不是另外一个人先挑，而是中立第三方产生一个随机数来决定谁拿哪碗粥。同样可以保证结果尽量公平。
+
+**zcash** 系统也是采用了这样的方案。详细信息可以搜索 zcash trust setup。
+
+
+
+#### zk-SNARKS
+zk-SNARKS 可以比 confidential transactions 创建更强的隐私保护，但难以扩展，设置也不可信。 
+
+#### Zcash
+
+比特币的替代品，并声称拥有增强的隐私和安全性。
+
+与Monero不同，使用Zcash时不需要 private transactions。 相反，用户可以选择使用增强的隐私功能来混淆交易详细信息，并使用透明的钱包地址或“屏蔽地址”来保持交易的私密性。 为实现这一目标，Zcash利用zk-SNARK，简称“零知识简洁非交互式知识论证”和零知识安全层（ZSL）。
+
+在 Zcoin 里，交易的金额是可以知道的，而采用zkSNARKs技术的Zerocash连交易金额都可以隐密，账本唯一公开记录的唯一内容就是交易的存在性。可以证明对于NP中的所有问题存在zkSNARKs。它引入了多项创新技术，使它们可以在区块链中使用。最重要的是，zkSNARKs减少了证明的大小和验证它们所需的计算量。
+
+#### Zcoin
+大家共同维护一个作废列表，存着所有已经花费的零币的序列号。矿工在验证这笔花费交易时运用零知识证明的方法，不需要知道具体花掉哪一个零币，也可以验证零币的序列号是否在作废列表里。由于花费交易并没有输入地址和签名的信息，整个交易过程中，矿工也并不知道这个零币的来源，因此也就难以对交易历史进行分析而获取用户身份。
+
+
+#### zcoin vs zcash
+
+Zcoin是基于 [Zerocoin论文](http://spar.isi.jhu.edu/~mgreen/ZerocoinOakland.pdf)，而Zcash则是基于 [Zerocash论文](http://zerocash-project.org/media/pdf/zerocash-extended-20140518.pdf)。虽然Zerocoin和Zerocash的论文为相同作者所著，而且它们都使用了零知识证明，但却是完全不同的加密技术，这两个项目之间没有任何关系。
+
+1. Zcash隐瞒每笔交易中发送的金额，而Zcoin则没有。 所以Zcash比Zcoin更不容易受到 privacy timing attacks。 另一方面， Zcash在Zerocash的货币供应中可能未被发现超高通胀 ，这也是Zcash的一个重大权衡。
+2. Zcash 参数不可信. Zcoin使用25年前RSA Factoring Challenge产生的参数。 Zcash依赖于假设参数生成中的所有参与者不会串通在一起。
+3. Zcash使用 zk-SNARKS 需要的密码学假设还没有经过严格的审查。Zcoin使用1993年推出的RSA累加器作为匿名方案的基础. 除非RSA被破解了，否则无需担心Zcoin。
+4. Zcash需要更多的内存使用，发送私有交易所需的时间明显长于Zcoin。 另一方面，Zcoin目前比Zcash需要更多的存储空间。
+
+
+Zerocash was meant to improve on Zerocoin on these issues:
+a) Zerocoin still requires a basecoin to convert back before being allowed to spend. Zerocash has no more basecoin
+b) Zerocash's proofs are much more efficient and smaller than Zerocoin's
+c) Zerocoin uses fixed denominations to mint (1, 25, 50, 100) while Zerocash is not subject to such limitations
+d) Greater privacy with Zerocash since sender/receiver/amount are all obscured.
+
+However Zerocoin's advantage over Zerocash are as follows:
+a) While still retaining the basecoin and a lot of the Bitcoin core code, it is a lot easier to integrate to existing Bitcoin merchants/etc.
+b) Although Zerocoin's proofs are larger and occupies more storage space, the computational requirements to generate a private transaction are many times faster. Zcash requires large amounts of RAM and minutes of computational time. Zerocoin requires seconds to use and is not memory intensive. Basically Zerocoin uses more storage space but is computationally much less intensive.
+c) Parameter generation for both Zcoin and Zcash requires a trusted setup but Zcoin's parameters are arguably less controversial. (https://github.com/zcoinofficial/zcoin/wiki/Parameters-in-set-up-phase-for-Zerocoin-in-ZCoin)
+d) Most importantly is that in Zcoin, total supply is still visible so if there's a flaw and someone is secretly creating coins for themselves, this can be much more easily detected. With Zcash, because everything is hidden, if a flaw is exploited, it may be almost impossible to detect!
+e) Zerocoin's tech is more peer reviewed and better understood than Zcash's. Zcash's use of zero knowledge proofs uses ZK-Snarks which very few people understand. Even Zooko himself admits he doesn't understand it (https://www.youtube.com/watch?v=P6RLjcGVUnw&feature=youtu.be&t=17m30s). Note that Zerocoin's paper was only like 15 pages. Zcash's paper is more than 50 pages so Zcash's is considerably more complex which means more things that can go wrong. This is why Zcash had to spend so much money on multiple security companies auditing on its critical components and bugs (including some serious ones have been found). A security audit is also not fool proof as the DAO exposed and which is why Zcash also uses multiple companies to audit.
+
+
+
+### Schnorr 签名
+Schnorr的签名，连同Taproot和无脚本脚本，承诺让所有比特币输出看起来都一样，无论它们属于一个人，还是属于许多人，都代表着托管、Liquid挂钩、闪电通道或智能合约。通过这种方式，他们将大大提高比特币的隐私。
+
+### Monero
+Bytecoin 的一个分支
+
+利用秘密地址 （发件人为每笔交易创建的一次性地址）， 环签名 （使用多个签名作为诱饵来混淆发件人地址的方法）和 Ring Confidential Transactions来保护用户隐私, 称为“RingCT”（环签名的改进版本，隐藏了事务中使用的XMR的数量）。
+
+Monero通过独特的拆分机制进一步增加了交易隐私。 每个完整交易被分成不同的金额，并作为单独的较小交易的子集发送，累计达到初始金额。每个金额都有自己的一次性地址。 接下来，在环签名的帮助下，每个单独的交易与各种decoy交易相结合，从而使事务几乎不可能跟踪。
+
+还有 spend keys and view keys. The alphanumeric spend key allows an authorized user to conduct transactions on behalf of the account, while the view key allows permissioned users to look at a specific account’s holdings. This comes in handy when reporting holdings for tax purposes, or auditing a company’s financial reserves.
+
+### Dash
+Litecoin 的分支
+
+Dash并非仅以隐私为目的，而是为用户提供交易隐私保护。 
+
+一般的地址和交易都可以在公共Dash区块链上查看。 但是，用户可以利用PrivateSend功能来混淆交易。 Dash 修改 Proof-of-Stake X11  算法, 使用“ CoinJoin ”进行私人交易。
+
+Dash Masternodes（那些始终持有至少1,000个DASH并使用静态IP的人）通过从您的交易中获取 coins 并将其与在网络上发送的多个其他硬币混合来进一步促进隐私和匿名。

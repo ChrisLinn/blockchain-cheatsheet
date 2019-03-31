@@ -168,7 +168,13 @@ __注意__:
 
 + [硬核科普闪电网络](https://s1.rylink.com/info_detail/239)
 + [闪电网络很难懂？你需要看看这篇文章 | 硬核科普](https://mp.weixin.qq.com/s?__biz=MzI5MTQ5NDU3NQ==&mid=2247486659&idx=1&sn=94db69d14664c220ca191d5b035e2163&chksm=ec0e8303db790a15f74d30a1d6543ec1304d493ca27d5fbdfd8e28a1c11388426739b4b5780d&mpshare=1&scene=1&srcid=0219PRXw1NHaFPc1NUTUMnut&pass_ticket=ZXFSXlAoCmg3o1yqnjc%2Fh8k6L%2Fsjw9vfkYkGOa095ZweYpoUSlvB2Cqdd4UBkp%2FV#rd)
++ https://blog.yiwei.li/%E2%9A%A1%EF%B8%8F%E9%97%AA%E7%94%B5%E7%BD%91%E7%BB%9C%E7%AE%80%E6%98%8E%E6%95%99%E7%A8%8B/
++ https://blog.bitmex.com/zh_cn-the-lightning-network/
++ https://lightning.engineering/technology.html
++ https://en.bitcoin.it/wiki/Hash_Time_Locked_Contracts
++ https://en.bitcoin.it/wiki/Payment_channels
 
+<!-- 
 Relative Lock Time
 Allows a transaction to be time-locked, preventing its use in a new transaction until a relative time change is confirmed.
 
@@ -179,6 +185,8 @@ Breach Remedy Transaction:[1] the transaction Alice creates when Mallory attempt
 Relative locktime:[7] the ability to specify when a transaction output may be spent relative to the block that included that transaction output. Enabled by BIP68 and made scriptable by BIP112. Lightning uses relative locktime to ensure breach remedy transactions may be broadcast within a time period starting from when an old commitment transaction is added to the blockchain; by making this a relative locktime (instead of an absolute date or block height), Lightning channels don't have a hard deadline for when they need to close and so can stay open indefinitely as long as the participants continue to cooperate.
 
 Revocable Sequence Maturity Contract (RSMC):[1] a contract used in Lightning to revoke the previous commitment transaction. This is allowed through mutual consent in Lightning by both parties signing a new commitment transaction and releasing the data necessary to create breach remedy transactions for the previous commitment transaction. This property allows Lightning to support bi-directional payment channels, recover from failed HTLC routing attempts without needing to commit to the blockchain, as well as provide advanced features such as PILPPs.
+
+ -->
 
 [比特币白皮书](https://bitcoin.org/bitcoin.pdf) 发表于 2009 年，[闪电网络白皮书](https://lightning.network/lightning-network-paper.pdf) 发表于 2016 年。闪电网络起源于比特币的扩容问题。闪电网络是基于微支付通道演进而来，创造性的设计出了两种类型的交易合约：序列到期可撤销合约 RSMC（Revocable Sequence Maturity Contract，哈希时间锁定合约 HTLC（Hashed Timelock Contract）。RSMC 解决了通道中币单向流动问题，HTLC 解决了币跨节点传递的问题。这两个类型的交易组合构成了闪电网络。
 
@@ -316,15 +324,26 @@ sqrt(n_max) = 2.4061596916800453e+38
 虽然 sqrt 后量级已经大大减少，但还是 trillion trillion trillion 级别，在一个可以预见的时间内无法破解。所以，即便使用了 Grover 算法，也无法有效地通过钱包地址破解出公钥，进而进一步使用 Shor 算法从公钥破解出私钥。
 
 ## Schnorr签名
+
+可以用来改善区块链的隐私，同时通过将无关数据移出区块链来提高可伸缩性。
+
 任何多重签名协议，如BitGo或闪电网络使用的协议，都将与普通点对点交易一样小。由此节省的空间总量很难估计，但如果每个人都采用这种方法，预计比特币区块链的容量将增加10-20%。
 
 Schnorr签名可以很容易地扩展到支持固定大小的多签名和阈值签名，以及“无脚本脚本”，这些脚本允许在签名中编码闪电支付通道的语义。而对于ECDSA，这要困难得多。Schnorr签名的批量验证也是可能的，这使得它们的验证速度比比特币的ECDSA签名快得多。
 
+Schnorr的签名，连同Taproot和无脚本脚本，承诺让所有比特币输出看起来都一样，无论它们属于一个人，还是属于许多人，都代表着托管、Liquid挂钩、闪电通道或智能合约。通过这种方式，他们将大大提高比特币的隐私。
+
 无脚本脚本（Scriptless scripts）是扩展两方Schnorr多签名协议的一种方法。该协议允许两个用户联合生成一个签名，使联合签名具有与普通签名相同的大小和使用相同的验证方程。使用无脚本脚本，可以扩展此协议，当最后一方完成签名时，还会向另一方泄露额外的秘密。这个额外的秘密可以像在Lighting HTLC中使用的“哈希像原（hash preimages）”一样使用，而且还有一个额外的好处，那就是它不会出现在区块链上。它还具有更多的代数结构，这使得它在连接多个支付通道时可以“重新盲化”，从而修正了闪电网络的隐私限制，即路径中的每个通道都需要使用相同的路径。
+
+无脚本脚本可以极大地改善隐私，它允许用户创建长路径的支付通道，而不用使用相同的哈希像原将它们链接起来，还可以防止这些哈希显示给区块链。eltoo可以提高可扩展性，它使用的是SIGHASH_NOINPUT，这是比特币的另一个提议，允许闪电用户在一定的空间内无限期地维护支付通道。
 
 Taproot 是为比特币提出的一个提议，所有的输出都用一个签名密钥，可以用一个签名消费。使用多重签名和无脚本脚本，可以使用这些单签名对多方交易、闪电支付通道等进行编码。Taproot还允许这个密钥提交到一个额外的脚本，以防无脚本脚本不够用。但是在合作的情况下，从来没有显示过这个额外的脚本。Taproot 不能隐藏资金流向和具体金额的，只能隐藏合约内容，而且如果双方不愿意合作，可能还是会暴露合约的内容
 
 Graftroot 是另一个被提出的扩展方案，它不太可能很快被包含在比特币中，它进一步允许Taproot签署者签署替代的消费路径，而不是使用Taproot输出中提交的脚本。由于没有对可以签署多少消费策略的限制，在用户有1000条消费路径的情况下，这将大大提高效率。然而，在实践中还不清楚这是否是用户所希望的。
+
+大大提高了多签名的可伸缩性，允许创建具有非常多参与者的多重签名，同时比特币区块链不需要任何空间成本。它们还可以用来在比特币和Liquid之间创建原子交换交易，而且除了普通交易之外，不需要额外的比特币空间成本。
+
+Schnorr签名方案会遇到重放攻击（Replay Attack）的问题，如果不去研究新的机制，目前的MuSig签名方案就无法保护在虚拟机中进行签名的用户。可以被解决： https://zkproof.org/workshop2/main.html
 
 
 ## RSK
