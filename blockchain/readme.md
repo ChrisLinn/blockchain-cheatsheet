@@ -300,6 +300,16 @@ Reduces the space required for transactions in a block and eliminates transactio
 
 ### MimbleWimble
 
++ https://github.com/mimblewimble/docs/wiki/MimbleWimble-Origin
++ https://download.wpsoftware.net/bitcoin/wizardry/mimblewimble.pdf
++ https://github.com/mimblewimble/grin/blob/master/doc/intro.md
+* [Grin 交易原理详解](https://www.longhash.com.cn/news/145)
+* [Mimblewimble explained like you’re 12](https://medium.com/beam-mw/mimblewimble-explained-like-youre-12-d779a5bb483d)
+* [张韧全面解析 MimbleWimble](https://mp.weixin.qq.com/s?__biz=MzUzNzg4NTAzOA==&mid=2247485610&idx=1&sn=e296a5c4e13cc194b76982af3c145f40&chksm=fae168abcd96e1bdbf7272566de64d69c822d614518a09360f725acc5be444fb3fb5a1035351&mpshare=1&scene=1&srcid=0325fDDI1XeZAhHgF6fCKJjg&pass_ticket=D1SY%2FSFIGgI7aWe8aWZDU7arUhabZE76G0iajOdbaQhRJSkDiBvR36vEcbpjpSnL#rd)
+* [Beam and the Mimblewimble Protocol Breathe Life Back into Online Privacy Go to the profile of Alex Broudy](https://medium.com/coinmonks/beam-breathes-life-back-into-online-privacy-38d2c50c807d)
+* [Circle 极致解读 : MimbleWimble 及两个实现 Grin 与 Beam](https://www.chainnews.com/articles/179305830457.htm)
+
+
 可以用来改善区块链的隐私，同时通过将无关数据移出区块链来提高可伸缩性。
 
 MimbleWimble允许将多个交易压缩为一个，这样可以节省空间和计算机资源。
