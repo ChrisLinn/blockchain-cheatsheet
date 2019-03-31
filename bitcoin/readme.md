@@ -167,9 +167,10 @@ __注意__:
 + https://explorer.acinq.co/
 + https://github.com/altangent/lnd-explorer
 
+
+Readings:
+
 + [闪电网络三部曲](https://bitcoinmagazine.com/articles/understanding-the-lightning-network-part-building-a-bidirectional-payment-channel-1464710791/)
-+ [硬核科普闪电网络](https://s1.rylink.com/info_detail/239)
-+ [闪电网络很难懂？你需要看看这篇文章 | 硬核科普](https://mp.weixin.qq.com/s?__biz=MzI5MTQ5NDU3NQ==&mid=2247486659&idx=1&sn=94db69d14664c220ca191d5b035e2163&chksm=ec0e8303db790a15f74d30a1d6543ec1304d493ca27d5fbdfd8e28a1c11388426739b4b5780d&mpshare=1&scene=1&srcid=0219PRXw1NHaFPc1NUTUMnut&pass_ticket=ZXFSXlAoCmg3o1yqnjc%2Fh8k6L%2Fsjw9vfkYkGOa095ZweYpoUSlvB2Cqdd4UBkp%2FV#rd)
 + https://yeasy.gitbooks.io/blockchain_guide/content/bitcoin/lightning_network.html
 + https://blog.bitmex.com/zh_cn-the-lightning-network/
 + https://lightning.engineering/technology.html
@@ -192,6 +193,8 @@ Relative locktime:[7] the ability to specify when a transaction output may be sp
 Revocable Sequence Maturity Contract (RSMC):[1] a contract used in Lightning to revoke the previous commitment transaction. This is allowed through mutual consent in Lightning by both parties signing a new commitment transaction and releasing the data necessary to create breach remedy transactions for the previous commitment transaction. This property allows Lightning to support bi-directional payment channels, recover from failed HTLC routing attempts without needing to commit to the blockchain, as well as provide advanced features such as PILPPs.
 
  -->
+
+ 微支付通道 -> 双向支付通道 -> 闪电网络
 
 [比特币白皮书](https://bitcoin.org/bitcoin.pdf) 发表于 2009 年，[闪电网络白皮书](https://lightning.network/lightning-network-paper.pdf) 发表于 2016 年。闪电网络起源于比特币的扩容问题。闪电网络是基于微支付通道演进而来，创造性的设计出了两种类型的交易合约：序列到期可撤销合约 RSMC（Revocable Sequence Maturity Contract，哈希时间锁定合约 HTLC（Hashed Timelock Contract）。RSMC 用来完成两个节点之间的交易确认，解决了通道中币单向流动问题，HTLC ，用来将多个节点连接成一个网络，解决了币跨节点传递的问题。这两个类型的交易组合构成了闪电网络。
 
