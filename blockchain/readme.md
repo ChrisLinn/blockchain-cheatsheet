@@ -299,15 +299,21 @@ Reduces the space required for transactions in a block and eliminates transactio
 ## 隐私
 
 ### MimbleWimble
+官方文档:
 
 + https://github.com/mimblewimble/docs/wiki/MimbleWimble-Origin
 + https://download.wpsoftware.net/bitcoin/wizardry/mimblewimble.pdf
 + https://github.com/mimblewimble/grin/blob/master/doc/intro.md
+
+
+MimbleWimble 白皮书的诞生基于 2013 年发表的一篇匿名论文。这篇论文中使用了单向聚合签名（one-way aggregate signatures ），并搭配一种新的密码原语——配对加密，尽管这种密码原语在学术界不太受信任。此外，MimbleWimble 白皮书还参考了比特币核心开发者 Gregory Maxwell 提出的两项隐私建议——机密交易和 CoinJoin。所谓的 CoinJoin，即当你想要转账时 , 可以找到另外一些也想转账的人 , 你们分别签名自己的输入，共同创建一笔交易。CoinJoin 的核心思想是利用比特币的一笔交易中可以有多个输入以及多个输出这一点 , 将多笔交易合并 , 让人难以分辨哪笔输入对应哪笔输出 , 进而达到难以追踪某个地址的资金的来源或去向的目的。最初的 MimbleWimble 白皮书使用了与比特币相同的椭圆曲线加密技术，引起了诸多比特币研究者的关注。Blockstream 的数学家、应用密码学家 Andrew Poelstra 就是其中一员，他对 MimbleWimble 白皮书进行了改进，于 2016 年 10 月发布了[「precise」版本](https://download.wpsoftware.net/bitcoin/wizardry/mimblewimble.pdf)。长久以来，Andrew Poelstra 的工作重点一直是保护隐私，致力于比特币的机密交易和「无脚本脚本」。
+
 * [Grin 交易原理详解](https://www.longhash.com.cn/news/145)
 * [Mimblewimble explained like you’re 12](https://medium.com/beam-mw/mimblewimble-explained-like-youre-12-d779a5bb483d)
 * [张韧全面解析 MimbleWimble](https://mp.weixin.qq.com/s?__biz=MzUzNzg4NTAzOA==&mid=2247485610&idx=1&sn=e296a5c4e13cc194b76982af3c145f40&chksm=fae168abcd96e1bdbf7272566de64d69c822d614518a09360f725acc5be444fb3fb5a1035351&mpshare=1&scene=1&srcid=0325fDDI1XeZAhHgF6fCKJjg&pass_ticket=D1SY%2FSFIGgI7aWe8aWZDU7arUhabZE76G0iajOdbaQhRJSkDiBvR36vEcbpjpSnL#rd)
 * [Beam and the Mimblewimble Protocol Breathe Life Back into Online Privacy Go to the profile of Alex Broudy](https://medium.com/coinmonks/beam-breathes-life-back-into-online-privacy-38d2c50c807d)
 * [Circle 极致解读 : MimbleWimble 及两个实现 Grin 与 Beam](https://www.chainnews.com/articles/179305830457.htm)
+* [干货 | Grin 中的交易详解](https://mp.weixin.qq.com/s?__biz=MzIwODA3NDI5MA==&mid=2652527482&idx=1&sn=368fb732aaec0ab82c7c19d95d40347c&chksm=8ce65827bb91d13115692b9d8606b75626ce2f220a8913fcf449661cc733ba04197d199a2f8f&mpshare=1&scene=1&srcid=0331jlqRTwIZqLoaU64CFD8u&pass_ticket=LCwm7pt75YIDrx58YM7d%2BrVl8Z7s6Nuy94z0u4QJdWF%2Fvz7JHcBVvsG%2FQdVXJ7vp#rd)
 
 
 可以用来改善区块链的隐私，同时通过将无关数据移出区块链来提高可伸缩性。
