@@ -173,6 +173,9 @@ __注意__:
 + https://lightning.engineering/technology.html
 + https://en.bitcoin.it/wiki/Hash_Time_Locked_Contracts
 + https://en.bitcoin.it/wiki/Payment_channels
++ https://gist.github.com/bretton/0b22a0503a9eba09df86a23f3d625c13
++ https://github.com/lightningnetwork/lnd/blob/master/sample-lnd.conf
++ https://ln-zap.github.io/zap-tutorials/iOS-remote-node-setup.html
 
 <!-- 
 Relative Lock Time
