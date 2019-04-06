@@ -28,14 +28,16 @@ __Block Header__
 + 如果给定一个 tx hash，最少还需要知道哪些信息才能确定该 tx 是否在一个block中
 + 
 
-### [Coinbase](https://en.bitcoin.it/wiki/Coinbase)
+### Coinbase
+
+see [https://en.bitcoin.it/wiki/Coinbase](https://en.bitcoin.it/wiki/Coinbase)
+
 挖矿类型交易(generation)的“输入”的内容。可包含任意信息，比如创始区块中包含的是:
 ```
 The Times 03/Jan/2009 Chancellor on brink of second bailout for banks
 ```
 
 扩展阅读: [比特币有哪几种交易类型?](/bitcoin/readme.md#transaction)
-
 
 ## GHOST rule
 + __GHOST (Greedy Heaviest-Observed Sub-Tree) rule/protocol__
@@ -241,13 +243,12 @@ Cosmos 的底层是由 Cosmos SDK 构建，Cosmos SDK 可以理解为一个更�
 
 ### Interledger
 
-## Segregated Witness (SegWit) 隔离见证
-
-Reduces the space required for transactions in a block and eliminates transaction malleability, which allows for significant blockchain pruning optimizations.
-
 ## Projects
 
-### [Chain](https://github.com/chain/chain)
+### Chain
+
+see [https://github.com/chain/chain](https://github.com/chain/chain)
+
 企业级的区块链平台架构，针对金融领域，金融机构可以在上面创建和发行数字资产。共识协议采用联邦拜占庭协议，支持多种数字资产，适合联盟链。
 
 ### OpenLedger
