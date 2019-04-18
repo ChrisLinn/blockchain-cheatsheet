@@ -278,7 +278,6 @@ Revocable Sequence Maturity Contract (RSMC):[1] a contract used in Lightning to 
     - 希望赚交易费用，而闪电网络把大量小额交易都隔离开了
 
 ##### 闪电网络
-
 see [Lightning Network](#lightning-network)
 
 + 主要支持者:Bitcoin Core
