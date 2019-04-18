@@ -39,6 +39,37 @@ The Times 03/Jan/2009 Chancellor on brink of second bailout for banks
 
 扩展阅读: [比特币有哪几种交易类型?](/bitcoin/readme.md#transaction)
 
+### transaction commitment, input/output commitment
+#### Commitment Schemes
+Commitment schemes are a way for one counterparty to commit to a value such that the value committed remains private, but can be revealed at a later time when the committing party divulges a necessary parameter of the commitment process. Strong commitment schemes must be both information hiding and computationally binding.
+
+[Wikipedia](https://en.wikipedia.org/wiki/Commitment_scheme):
+A commitment scheme is a cryptographic primitive that allows one to commit to a chosen value (or chosen statement) while keeping it hidden to others, with the ability to reveal the committed value later. Commitment schemes are designed so that a party cannot change the value or statement after they have committed to it: that is, commitment schemes are binding. Commitment schemes have important applications in a number of cryptographic protocols including secure coin flipping, zero-knowledge proofs, and secure computation.
+
+##### Pedersen commitment
++ https://github.com/adjoint-io/pedersen-commitment
++ https://crypto.stackexchange.com/questions/54735/what-are-the-pros-and-cons-of-pedersen-commitments-vs-hash-based-commitments
++ https://crypto.stackexchange.com/questions/9704/why-is-the-pedersen-commitment-computationally-binding
++ https://crypto.stackexchange.com/questions/40306/pedersen-commitments-and-addition
++ https://crypto.stackexchange.com/questions/54439/why-is-the-pedersen-commitment-perfectly-hiding
++ https://crypto.stackexchange.com/questions/54735/what-are-the-pros-and-cons-of-pedersen-commitments-vs-hash-based-commitments
++ https://crypto.stackexchange.com/questions/64437/what-is-a-pedersen-commitment
+
+The Pedersen commitment sheme allows a sender to create a commitment to a secret value. They may then later open the commitment and reveal the value in a verifiable manner that binds them to their commitment. 
+
+A commitment shceme consists of a three stages:
+
++ Setup
++ Commit
++ Open
+
+Pedersen commitment scheme has the following properties:
+
++ Hiding: A dishonest party cannot discover the honest party's value.
++ Binding: A dishonest party cannot open his or her commitment in more than one way.
++ Non-correlation: A dishonest party cannot commit to a value that is in some significant way correlated to the honest party's value.
+
+
 ## GHOST rule
 + __GHOST (Greedy Heaviest-Observed Sub-Tree) rule/protocol__
     + Sompolinsky, Y., and Zohar, A. Accelerating Bitcoin’s transaction processing. fast money grows on trees, not chains. In Financial Cryptography (Puerto Rico, 2015).
