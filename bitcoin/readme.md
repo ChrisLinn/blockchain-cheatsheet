@@ -198,12 +198,12 @@ bech32 发送支持允许付款的接收者在重新花费时节省费用。
 
 在比较简单的 multisig 交易（那些只使用单个 OP_CHECKMULTSIG 操作码的事务）时会变得复杂，因为 k-of-n multisig 输入的大小取决于签名的数量（k）和公钥的数量（n）。 因此，为了简单起见，我们将仅绘制传统 P2SH-multisig 与封装的 P2SH-P2WSH multisig 大小对比（上到传统 P2SH 支持的15-of-15）。 我们可以看到，切换到 P2SH-P2WSH 可以节省大约 40％（1-of-2 multisig）到大约 70％（15-of-15）。
 
-![segwit-multisig-size-p2sh-to-p2sh-p2wsh](2019-04-segwit-multisig-size-p2sh-to-p2sh-p2wsh.png)
+![segwit-multisig-size-p2sh-to-p2sh-p2wsh](/img/optech/2019-04-segwit-multisig-size-p2sh-to-p2sh-p2wsh.png)
 
 
 然后，我们可以将 P2SH-P2WSH 与原生 P2WSH 进行比较，可以看到每个交易节省约 35 个字节的额外恒定大小，即约 5％ 到 15％。
 
-![segwit-multisig-size-p2sh-p2wsh-to-p2wsh.png](2019-04-segwit-multisig-size-p2sh-p2wsh-to-p2wsh.png)
+![segwit-multisig-size-p2sh-p2wsh-to-p2wsh.png](/img/optech/2019-04-segwit-multisig-size-p2sh-p2wsh-to-p2wsh.png)
 
 上面描述的脚本占了几乎所有与非原生 segwit 地址一起使用的脚本。（更复杂脚本的用户，例如在 LN 中使用的脚本，现在大多使用原生 segwit。）那些效率较低的脚本类型目前占用区块容量的大部分（总区块权重）。切换到原生 segwit 以减少交易的权重可以将费用减少相同的百分比，而无需改变确认所需的时间 - 其他什么都不用改。
 
