@@ -125,7 +125,7 @@
     * 第九步，把这 4 个字节加在第五步的结果后面，作为校验。
     * 第十步，用 base58 表示法变换一下地址。
 + bech32
-    * [segwit](#segregated-witness-segwit-%E9%9A%94%E7%A6%BB%E8%A7%81%E8%AF%81)
+    * Bech32 is a [segwit](#segregated-witness-segwit-%E9%9A%94%E7%A6%BB%E8%A7%81%E8%AF%81) address format specified by [BIP 0173](https://en.bitcoin.it/wiki/BIP_0173).
     * P2SH
         - https://bitcoin.stackexchange.com/questions/65856/how-do-bech32-addresses-compare-to-p2sh-addresses-in-transaction-size
 
@@ -183,6 +183,32 @@ __为什么不直接用大区块？__
 2.2 更好的实现 闪电网络 ：闪电网络的具体实现需要创建一系列相互依赖的父子交易记录，需要先对子交易记录签名，然后将子交易记录交换后，再对父交易记录签名并广播。所以，有了隔离见证后，才能更完美的支持闪电网络。
 
 2.3 花费未确认的交易： 如果 Alice 在交易1支付 Bob一些币，Bob 在交易2 使用收到的付款支付给Charlie，然后Alice的付款发生延展性修改,并用不同的txid确认， 那么交易2现在是无效的，而Charlie就不会被支付。如果Bob是值得信赖的，他会重新发出一笔交易给查理；但如果他不是，他可以简单地把这些比特币留给自己。
+
+
+### 节省费用
+bech32 发送支持允许付款的接收者在重新花费时节省费用。
+
+对于在第一版比特币中实现的传统 P2PKH 地址格式，授权花费的 scriptSig 通常为 107 vbytes。 对于 P2SH 封装的 segwit P2WPKH，这个信息被移动到 witness 见证数据字段，该字段仅消耗 1/4 的 vbytes（27 vbytes），但其 P2SH 开销增加 23 vbytes，总共 50 vbytes。 对于原生 segwit P2WPKH，没有 P2SH 开销，所以共使用 27 个 vbytes。
+
+这意味着，P2SH-P2WPKH 比 P2PKH 节省了 50% 以上的空间，而 P2WPKH 又比 P2SH-P2WPKH 节省了近 50%，或直接比 P2PKH 节省了75%。但是，支出交易不仅包含 scriptSigs 和见证数据，因此我们通常比较节省了多少空间的方式是通过看原型交易。 例如，我们想象一个典型的事务包含一个输入和两个输出（一个到接收者;一个作为找零回到消费者）。 在这种情况下：
+
++ 支出 P2PKH 的总交易大小为 220 vbytes
++ 支出 P2SH-P2WPKH 的大小为 167 vbytes（节省24％）
++ 支出 P2WPKH 输出的大小为 141 vbytes（与 P2SH-P2WPKH 相比节省16％，与 P2PKH 相比节省35％）
+
+在比较简单的 multisig 交易（那些只使用单个 OP_CHECKMULTSIG 操作码的事务）时会变得复杂，因为 k-of-n multisig 输入的大小取决于签名的数量（k）和公钥的数量（n）。 因此，为了简单起见，我们将仅绘制传统 P2SH-multisig 与封装的 P2SH-P2WSH multisig 大小对比（上到传统 P2SH 支持的15-of-15）。 我们可以看到，切换到 P2SH-P2WSH 可以节省大约 40％（1-of-2 multisig）到大约 70％（15-of-15）。
+
+![segwit-multisig-size-p2sh-to-p2sh-p2wsh](2019-04-segwit-multisig-size-p2sh-to-p2sh-p2wsh.png)
+
+
+然后，我们可以将 P2SH-P2WSH 与原生 P2WSH 进行比较，可以看到每个交易节省约 35 个字节的额外恒定大小，即约 5％ 到 15％。
+
+![segwit-multisig-size-p2sh-p2wsh-to-p2wsh.png](2019-04-segwit-multisig-size-p2sh-p2wsh-to-p2wsh.png)
+
+上面描述的脚本占了几乎所有与非原生 segwit 地址一起使用的脚本。（更复杂脚本的用户，例如在 LN 中使用的脚本，现在大多使用原生 segwit。）那些效率较低的脚本类型目前占用区块容量的大部分（总区块权重）。切换到原生 segwit 以减少交易的权重可以将费用减少相同的百分比，而无需改变确认所需的时间 - 其他什么都不用改。
+
+但也不是什么改变也没有。由于交易使用较少的块权重，因此可用于其他交易的权重更多。如果可用区块权重的供应增加且需求量保持不变，手续费应该会下降（除非它们已经是默认的最低转发费用）。这意味着更多的人花费原生 segwit 输入不仅降低了那些花费者的费用，而且降低了每个创建交易的人的费用 - 包括支持发送到 bech32 地址的钱包和服务。
+
 
 别的一些好处:
 
