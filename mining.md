@@ -3,6 +3,9 @@
 + [Realtime mining hardware profitability](https://www.asicminervalue.com/)
 + [WhatToMine](https://whattomine.com/)
 
+## BetterHash
+可能会 替代 stratum, 可以用来解决 矿池不需矿工同意挪动算力改挖其他币
+
 ## 挖矿进化史
 历史上,各种 PoW 数字货币曾设计了若干种
 Anti-ASIC 算法,试图达到这一目标,但这些算法都不尽人意。这些算法大致可

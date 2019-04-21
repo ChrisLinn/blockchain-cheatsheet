@@ -26,7 +26,7 @@ __Block Header__
 
 + merkle tree root hash 作用
 + 如果给定一个 tx hash，最少还需要知道哪些信息才能确定该 tx 是否在一个block中
-+ 
+
 
 ### Coinbase
 
@@ -81,6 +81,24 @@ Pedersen commitment scheme has the following properties:
     * GHOST 升级版
     * bitcoin 原本的规则可以保证在任何时候至少有一个节点知道主链是什麽——因为它知道所有的区块。GHOST 则无法保证这一点。(虽然通过广播所有的区块可以解决，但是这又带来 DoS 的风险——恶意节点狂发低难度的区块。这种情况下，GHOST表现得比原生协议要差，因为广播区块开销超过了选链规则带来的好处等到GHOST有实用解决方案，比如说广播区块头而非整个块，可以用来补足 bitcoin-NG)
     * GHOST 中，被剪枝的子树上的区块只在分岔点影响链选择。Bitcoin-NG 在高带宽和吞吐的情况下分叉很小，使得算力更加充分被利用，选链更加公平。
+
+### pruning
+once your node has downloaded the block data and validated the blocks/transactions in it, it throws away the old data that it no longer needs (since it's already been validated).
+
+
+## transaction 'pinning'?
+Transaction pinning happens when:
+
++ I broadcast a transaction that signals opt-in RBF
++ the transaction does not get confirmed because the feerate is too low
++ someone else broadcasts a new (child) transaction spending one of the outputs of my transaction
++ I now can't bump the fee on the transaction unless I include a fee greater than that of the combined original transaction + the child transaction (BIP 125, rule 3).
+
+If the child transaction in (3) is large (eg a commercial service sweeping up lots of transaction outputs), then the total fee that __I'd need to pay for a valid RBF would be very large__.
+
+In this scenario, my original transaction has been 'pinned' by the child transaction.
+
+Russell O'Connor has proposed [changing the RBF policy rules](https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2018-February/015717.html) to alleviate this problem.
 
 
 ## 公有链 vs 联盟链 vs 私有链

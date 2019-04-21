@@ -168,7 +168,46 @@ James O’Beirne 在 Bitcoin-Dev mailing list 发了个 [帖子](https://lists.l
         * 数字 1 隔断 HRP 与地址的数据部分
         * HRP `bc`: mainnet
         * HRP `tb`: testnet
-- 
++ Sending to a P2PKH address vs Sending to a equivalent bech32 P2WPKH address
+    * P2PKH
+        - for `1B6FkNg199ZbPJWG5zjEiDekrCc2P7MVyC`, base58check library will decode that to a 20-byte commitment:
+            ```
+            6eafa604a503a0bb445ad1f6daa80f162b5605d6
+            ```
+        - This commitment is inserted into a scriptPubKey template:
+            ```
+            OP_DUP OP_HASH160 OP_PUSH20 6eafa604a503a0bb445ad1f6daa80f162b5605d6 OP_EQUALVERIFY OP_CHECKSIG
+            ```
+        - Converting the opcodes to hex, this looks like:
+            ```
+            76a9146eafa604a503a0bb445ad1f6daa80f162b5605d688ac
+            ```
+        - This is inserted into the scriptPubKey part of an output that also includes the length of the script (25 bytes) and the amount being paid:
+            ```
+                 amount                           scriptPubKey
+            |--------------|  |------------------------------------------------|
+            00e1f505000000001976a9146eafa604a503a0bb445ad1f6daa80f162b5605d688ac
+                            |
+                size: 0x19 -> 25 bytes            
+            ```
++ `scriptpubkey` vs `scriptsigs` 
+    * 在两笔交易中, 按顺序组合并执行, 分别锁定和解锁
+    * `scriptpubkey` 的原因是 地址只不过是公钥的哈希值, 发送方不知道接收方的公钥
+    * ![LockingUnlocking](/img/LockingUnlocking.png)
+
+## getaddressinfo
+An current example of the descriptor format with key origin information and an error-detecting checksum:
+```
+$ bitcoin-cli getaddressinfo bc1qsksdpqqmsyk9654puz259y0r84afzkyqdfspvc | jq .desc
+"wpkh([f6bb4c63/0'/0'/21']034ed70f273611a3f21b205c9151836d6fa9051f74f6e6bbff67238c9ebc7d04f6)#mtdep7g7"
+```
+
++ The address is a Witness Public Key Hash `wpkh()`, otherwise known as P2WPKH. Descriptors can succinctly describe all common uses of P2PKH, P2SH, P2WPKH, P2WSH, and nested segwit.
++ The [key origin](https://github.com/bitcoin/bitcoin/blob/master/doc/descriptors.md#key-origin-identification) is described between the square brackets `[]`.
+    * `f6bb4c63` is a fingerprint that identifies the key at the root of the path provided. The fingerprint is the first 32 bits of its `ripemd(sha256())` hash as [defined by BIP32](https://github.com/bitcoin/bips/blob/master/bip-0032.mediawiki#key-identifiers). This makes it easy for tools, such as those used with PSBTs, to work with multisig scripts and other cases where you have multiple signing devices using different keys.
+    * `/0'/0'/21'` is the HD key path, corresponding to `m/0'/0'/21'` in standard [BIP32](https://github.com/bitcoin/bips/blob/master/bip-0032.mediawiki) notation. This allows a wallet that doesn’t have all of its public keys precomputed to know which private key it needs to generate in order to produce the signature. (Bitcoin Core precomputes its public keys and so usually doesn’t need this information when used as a cold wallet—but hardware wallets with minimal storage and computational speed need HD path information in order to work efficiently.)
++ The actual public key used to generate the P2WPKH key hash is `034ed7...04f6`
++ A checksum following a # protects the descriptor string against typos on import, `mtdep7g7`
 
 ## mul-sig 多重签名
 
@@ -428,6 +467,9 @@ sqrt(n_max) = 2.4061596916800453e+38
 而 log(n_max) = 176.75253104278605
 
 虽然 sqrt 后量级已经大大减少，但还是 trillion trillion trillion 级别，在一个可以预见的时间内无法破解。所以，即便使用了 Grover 算法，也无法有效地通过钱包地址破解出公钥，进而进一步使用 Shor 算法从公钥破解出私钥。
+
+### NewHope 密钥交换协议
+[该协议](https://newhopecrypto.org/) 被认为可抵抗量子计算机的攻击，因此今天记录两个对等体之间通信的窃听者将无法在将来解密该数据他们拥有一台快速量子计算机。
 
 ## Schnorr签名
 
