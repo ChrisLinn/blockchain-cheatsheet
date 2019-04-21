@@ -40,6 +40,12 @@
     * https://bitnodes.earn.com/nodes/live-map/
     * https://bitnodes.earn.com/nodes/?q=China
 
+## Network status
++ [Johoe’s mempool statistics](https://jochen-hoenicke.de/queue/#0,1w)
++ [P2SH.info’s fee estimate tracker](https://p2sh.info/dashboard/db/fee-estimation?orgId=1)
++ [BitcoinStats](http://bitcoinstats.com/network/propagation/)
+
+
 ## 设计思想
 + 为什么 block 设计为 1M？
     * 在比特币诞生之初，比特币的发明者中本聪并没有特意限制区块的大小，区块大小在其自身数据结构的控制下最大可以达到 32MB
@@ -85,6 +91,12 @@
 + 全节点
 + SPV 轻节点
 
+## fast sync
+Gregory Maxwell, who [implemented the assumed valid feature](https://github.com/bitcoin/bitcoin/issues/9484), 跳过 the assumed valid block 之前的  script evaluation，可以使新用户减少 80% 的同步时间。用户仍然要计算 utxo 集来验证币的所有权。
+
+James O’Beirne 在 Bitcoin-Dev mailing list 发了个 [帖子](https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2019-April/016825.html) 讨论要不要连区块链信息包括 uxto 集也直接下载了。好处是 可以把同步时间减少 95% 甚至更多，坏处是随着区块越来越大，新用户没法 trustlessly verify Bitcoin’s UTXO state，只能信任已有用户。
+
+
 ## Verification
 > 比特币节点如何验证一个区块 (适用于 BTC/BCH-ABC/BCH-SV)
 
@@ -128,6 +140,30 @@
     * Bech32 is a [segwit](#segregated-witness-segwit-%E9%9A%94%E7%A6%BB%E8%A7%81%E8%AF%81) address format specified by [BIP 0173](https://en.bitcoin.it/wiki/BIP_0173).
     * P2SH
         - https://bitcoin.stackexchange.com/questions/65856/how-do-bech32-addresses-compare-to-p2sh-addresses-in-transaction-size
++ Bech32_address --> scriptPubKey in python
+    ```
+    >>> import segwit_addr
+    >>> HRP='bc'
+    >>> good_address='bc1qd6h6vp99qwstk3z668md42q0zc44vpwkk824zh'
+    >>> typo_address='bc1qd6h6vp99qwstk3z669md42q0zc44vpwkk824zh'
+    >>> wrong_network_address='tb1q3wrc5yq9c300jxlfeg7ae76tk9gsx044ucyg7a'
+    >>> segwit_addr.decode(HRP, good_address)
+    (0, [110, 175, 166, 4, 165, 3, 160, 187, 68, 90, 209, 246, 218, 168, 15, 22, 43, 86, 5, 214])
+
+    >>> segwit_addr.decode(HRP, typo_address)
+    (None, None)
+
+    >>> segwit_addr.decode(HRP, wrong_network_address)
+    (None, None)
+
+    >>> witver, witprog = segwit_addr.decode(HRP, good_address)
+    >>> bytes([witver + 0x50 if witver else 0, len(witprog)] + witprog).hex()
+    '00146eafa604a503a0bb445ad1f6daa80f162b5605d6'
+    ```
+    + Bech32 addresses have a Human-Readable Part (HRP) that indicates what network the address is for. 
+        * 数字 1 隔断 HRP 与地址的数据部分
+        * HRP `bc`: mainnet
+        * HRP `tb`: testnet
 
 ## mul-sig 多重签名
 
