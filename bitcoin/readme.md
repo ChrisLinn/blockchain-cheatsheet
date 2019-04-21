@@ -41,8 +41,9 @@
     * https://bitnodes.earn.com/nodes/?q=China
 
 ## Network status
++ [Bitcoin Optech Dashboards](https://dashboard.bitcoinops.org/)
 + [Johoe’s mempool statistics](https://jochen-hoenicke.de/queue/#0,1w)
-+ [P2SH.info’s fee estimate tracker](https://p2sh.info/dashboard/db/fee-estimation?orgId=1)
++ [P2SH.info](https://p2sh.info/)
 + [BitcoinStats](http://bitcoinstats.com/network/propagation/)
 
 
@@ -125,17 +126,20 @@ James O’Beirne 在 Bitcoin-Dev mailing list 发了个 [帖子](https://lists.l
 
 
 ## 地址
-+ 比特币地址的生成过程是？ 
-    * 第一步，随机选取一个 32 字节的数、大小介于 1 ~ 0xFFFF FFFF FFFF FFFF FFFF FFFF FFFF FFFE BAAE DCE6 AF48 A03B BFD2 5E8C D036 4141 之间，作为私钥。 
-    * 第二步，使用椭圆曲线加密算法（ECDSA-secp256k1）计算私钥所对应的非压缩公钥。  
-    * 第三步，计算公钥的 SHA-256 哈希值。
-    * 第四步，取上一步结果，计算 RIPEMD-160 哈希值。
-    * 第五步，取上一步结果，前面加入地址版本号。
-    * 第六步，取上一步结果，计算 SHA-256 哈希值。
-    * 第七步，取上一步结果，再计算一下 SHA-256 哈希值。
-    * 第八步，取上一步结果的前 4 个字节。
-    * 第九步，把这 4 个字节加在第五步的结果后面，作为校验。
-    * 第十步，用 base58 表示法变换一下地址。
++ see https://en.bitcoin.it/wiki/Address
+    * ![Address_map.jpg](/img/Address_map.jpg)
++ [比特币地址 version 1 (P2PKH)的生成过程是？ ](https://en.bitcoin.it/wiki/Technical_background_of_version_1_Bitcoin_addresses)
+    * ![PubKeyToAddr](/img/PubKeyToAddr.png)
+        - 第一步，随机选取一个 32 字节的数、大小介于 1 ~ 0xFFFF FFFF FFFF FFFF FFFF FFFF FFFF FFFE BAAE DCE6 AF48 A03B BFD2 5E8C D036 4141 之间，作为私钥。 
+        - 第二步，使用椭圆曲线加密算法（ECDSA-secp256k1）计算私钥所对应的非压缩公钥。  
+        - 第三步，计算公钥的 SHA-256 哈希值。
+        - 第四步，取上一步结果，计算 RIPEMD-160 哈希值。
+        - 第五步，取上一步结果，前面加入地址版本号。
+        - 第六步，取上一步结果，计算 SHA-256 哈希值。
+        - 第七步，取上一步结果，再计算一下 SHA-256 哈希值。
+        - 第八步，取上一步结果的前 4 个字节。
+        - 第九步，把这 4 个字节加在第五步的结果后面，作为校验。
+        - 第十步，用 base58 表示法变换一下地址。
 + bech32
     * Bech32 is a [segwit](#segregated-witness-segwit-%E9%9A%94%E7%A6%BB%E8%A7%81%E8%AF%81) address format specified by [BIP 0173](https://en.bitcoin.it/wiki/BIP_0173).
     * P2SH
@@ -164,6 +168,7 @@ James O’Beirne 在 Bitcoin-Dev mailing list 发了个 [帖子](https://lists.l
         * 数字 1 隔断 HRP 与地址的数据部分
         * HRP `bc`: mainnet
         * HRP `tb`: testnet
+- 
 
 ## mul-sig 多重签名
 
