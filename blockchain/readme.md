@@ -274,9 +274,11 @@ __两个不同账本上价值的流通。__ 从业务角度看，跨链技术就
 
 ### COSMOS
 
++ [软硬核：彻底读懂 Cosmos 如何一键发链与万链互联](https://mp.weixin.qq.com/s?__biz=MzI1Mzk4ODIwOA==&mid=2247487918&idx=1&sn=c5fc5d9f952611eba4a97cf2f0ed306e&chksm=e9cd4db1debac4a76c6d31100e385439ab65025ec050789e92d5537f80113b43c6b1e9b70959&mpshare=1&scene=24&srcid=0314oSWk6KTcpDqIJK1AVHqP&pass_ticket=ZXFSXlAoCmg3o1yqnjc%2Fh8k6L%2Fsjw9vfkYkGOa095ZweYpoUSlvB2Cqdd4UBkp%2FV#rd)
+* [How to Build a Blockchain App with Cosmos SDK](https://bbs.chainon.io/d/3339-how-to-build-a-blockchain-app-with-cosmos-sdk)
++ [谈论 COSMOS 时，我们到底在谈论什么？](https://www.chainnews.com/articles/262063844998.htm)
 + [写在跨链项目Cosmos上线前夜](https://mp.weixin.qq.com/s/bViNUPfOErxD5jNU7NDTMg)
 + [Cosmos 的前世今生、未来前景和投资价值](https://mp.weixin.qq.com/s/AmyCTCu6u_3fEgRD2RlxsQ)
-+ [软硬核：彻底读懂 Cosmos 如何一键发链与万链互联](https://mp.weixin.qq.com/s?__biz=MzI1Mzk4ODIwOA==&mid=2247487918&idx=1&sn=c5fc5d9f952611eba4a97cf2f0ed306e&chksm=e9cd4db1debac4a76c6d31100e385439ab65025ec050789e92d5537f80113b43c6b1e9b70959&mpshare=1&scene=24&srcid=0314oSWk6KTcpDqIJK1AVHqP&pass_ticket=ZXFSXlAoCmg3o1yqnjc%2Fh8k6L%2Fsjw9vfkYkGOa095ZweYpoUSlvB2Cqdd4UBkp%2FV#rd)
 + [Cosmos主网上线了，它将给行业带来哪些改变？](https://mp.weixin.qq.com/s?__biz=MzI5MTQ5NDU3NQ==&mid=2247486805&idx=1&sn=8769bc8f884c89f0bd05e82dd22fd315&chksm=ec0e8295db790b83fbe73bd7ded0dafd0fca93d6b11089bf056e3d05ce667515d46ab48afea3&mpshare=1&scene=1&srcid=&pass_ticket=ZXFSXlAoCmg3o1yqnjc%2Fh8k6L%2Fsjw9vfkYkGOa095ZweYpoUSlvB2Cqdd4UBkp%2FV#rd)
 + https://trycosmos.dev/
 * [Cosmos / ATOM Staking Guide](https://bbs.chainon.io/d/3114)
@@ -289,6 +291,11 @@ __两个不同账本上价值的流通。__ 从业务角度看，跨链技术就
 Cosmos 的底层是由 Cosmos SDK 构建，Cosmos SDK 可以理解为一个更好帮助开发者开发的工具包，这个工具包含着区块链重要的共识机制，与各种模块化的功能（比如投票功能，治理架构，通信协定），因为 Cosmos SDK 底层构想，使得每个依照 Cosmos SDK 搭建的区块链都具备了相同的基因，可以看到图中都包含了绿色部分的 Tendermint 共识机制及其它上述提到 SDK 模块化的功能，具备相同基因的区块链项目就像留着相同血液的兄弟姐妹只需要通过相似的家族规定（Cosmos 里的 IBC 跨链通信）就可以更容易齐心合作，这就是 Cosmos 构建价值互联网的秘密。
 
 简单来讲，Cosmos 既可以实现商用的区块链快速部署，又可以实现原有区块链系统的信息互通，Cosmos Hub 本体承担起信息中心港的职责。
+
+
+### PolkaDot vs COSMOS
+https://www.8btc.com/article/259379
+
 
 ### Interledger
 
@@ -393,6 +400,8 @@ MimbleWimble并没完全解决“交易隐私”问题，它让交易在区块�
 + https://www.odaily.com/post/5133827
 + https://www.jianshu.com/p/77b44709ca37
 + https://www.chainnode.com/tutorial/4683
++ https://learnblockchain.cn/2019/04/18/learn-zkSNARK/
++ http://ceur-ws.org/Vol-2344/short11.pdf
 
 
 > 阿里巴巴知道打开藏着财宝的山洞的咒语。强盗抓住他，让他说出咒语。

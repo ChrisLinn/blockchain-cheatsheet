@@ -13,6 +13,7 @@
     * [Filecoin](altcoin/filecoin.md)
     * Zcash
     * [EOS](altcoin/eos.md)
+    * [Stable Coin](altcoin/stablecoin.md)
 * [Wallet](wallet.md)
 * [Mining](mining.md)
 * [网络](network.md)
