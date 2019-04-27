@@ -1,4 +1,6 @@
 # Exchange
+https://github.com/Lianantech/Exchange-security-issues
+https://github.com/slowmist/Knowledge-Base
 
 ## 中心化交易所
 + 平台币
