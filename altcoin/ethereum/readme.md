@@ -4,8 +4,6 @@
 
 https://learnblockchain.cn/2019/04/09/easy-evm/
 
-## Smart Contract 智能合约开发
-+ 以太坊外部账户和合约账户的差别？ 
 
 ## Gas
 
