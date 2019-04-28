@@ -20,3 +20,7 @@
     * a cloud-based service that makes powerful smart contract security analysis to anyone
         - https://github.com/ConsenSys/truffle-security
 + [Panvala](http://www.panvala.com/)
+
+## Testing
++ https://github.com/MichalZalecki/tdd-solidity-intro
++ https://github.com/sc-forks/solidity-coverage
