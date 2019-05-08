@@ -18,6 +18,7 @@
 * [Wallet](wallet.md)
 * [Mining](mining.md)
 * [网络](network.md)
+* [GoLang](golang.md)
 * [架构](architect.md)
 * [Exchange](exchange.md)
 * [Miscs](misc.md)
