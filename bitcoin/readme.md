@@ -473,6 +473,11 @@ sqrt(n_max) = 2.4061596916800453e+38
 
 ## Schnorr签名
 
+__TODO:__
++ https://bitcointechtalk.com/scaling-bitcoin-schnorr-signatures-abe3b5c275d1
++ https://bitcointechtalk.com/what-is-a-bitcoin-merklized-abstract-syntax-tree-mast-33fdf2da5e2f
++ eltoo
+
 可以用来改善区块链的隐私，同时通过将无关数据移出区块链来提高可伸缩性。
 
 任何多重签名协议，如BitGo或闪电网络使用的协议，都将与普通点对点交易一样小。由此节省的空间总量很难估计，但如果每个人都采用这种方法，预计比特币区块链的容量将增加10-20%。
@@ -481,7 +486,7 @@ Schnorr签名可以很容易地扩展到支持固定大小的多签名和阈值�
 
 Schnorr的签名，连同Taproot和无脚本脚本，承诺让所有比特币输出看起来都一样，无论它们属于一个人，还是属于许多人，都代表着托管、Liquid挂钩、闪电通道或智能合约。通过这种方式，他们将大大提高比特币的隐私。
 
-无脚本脚本（Scriptless scripts）是扩展两方Schnorr多签名协议的一种方法。该协议允许两个用户联合生成一个签名，使联合签名具有与普通签名相同的大小和使用相同的验证方程。使用无脚本脚本，可以扩展此协议，当最后一方完成签名时，还会向另一方泄露额外的秘密。这个额外的秘密可以像在Lighting HTLC中使用的“哈希像原（hash preimages）”一样使用，而且还有一个额外的好处，那就是它不会出现在区块链上。它还具有更多的代数结构，这使得它在连接多个支付通道时可以“重新盲化”，从而修正了闪电网络的隐私限制，即路径中的每个通道都需要使用相同的路径。
+无脚本脚本（Scriptless scripts）是扩展两方Schnorr多签名协议的一种方法。该协议允许两个用户联合生成一个签名，使联合签名具有与普通签名相同的大小和使用相同的验证方程。使用无脚本脚本，可以扩展此协议，当最后一方完成签名时，还会向另一方泄露额外的秘密。这个额外的秘密可以像在Lighting HTLC中使用的“哈希原像（hash preimages）”一样使用，而且还有一个额外的好处，那就是它不会出现在区块链上。它还具有更多的代数结构，这使得它在连接多个支付通道时可以“重新盲化”，从而修正了闪电网络的隐私限制，即路径中的每个通道都需要使用相同的路径。
 
 无脚本脚本可以极大地改善隐私，它允许用户创建长路径的支付通道，而不用使用相同的哈希像原将它们链接起来，还可以防止这些哈希显示给区块链。eltoo可以提高可扩展性，它使用的是SIGHASH_NOINPUT，这是比特币的另一个提议，允许闪电用户在一定的空间内无限期地维护支付通道。
 
@@ -492,6 +497,23 @@ Graftroot 是另一个被提出的扩展方案，它不太可能很快被包含�
 大大提高了多签名的可伸缩性，允许创建具有非常多参与者的多重签名，同时比特币区块链不需要任何空间成本。它们还可以用来在比特币和Liquid之间创建原子交换交易，而且除了普通交易之外，不需要额外的比特币空间成本。
 
 Schnorr签名方案会遇到重放攻击（Replay Attack）的问题，如果不去研究新的机制，目前的MuSig签名方案就无法保护在虚拟机中进行签名的用户。可以被解决： https://zkproof.org/workshop2/main.html
+
+### bip-taproot & bip-tapscript
+总结 from: https://bitcoinops.org/en/newsletters/2019/05/14/
+
+__TODO:__ [address generation differences](https://bitcoinops.org/en/newsletters/2019/05/14/)
+
++ [bip-taproot](https://github.com/sipa/bips/blob/bip-schnorr/bip-taproot.mediawiki) 允许通过 Schnorr-style 签名  或 通过 merklized script 默克尔化脚本 进行花费
++ [bip-tapscript](https://github.com/sipa/bips/blob/bip-schnorr/bip-tapscript.mediawiki) 定义了 用于 bip-taproot 中 merkle spend 默克尔花费的脚本语言（与 bitcoin 中现有脚本相近但稍有不同）。
++ 单签 P2PKH 和 P2WPKH 中，生成私钥，派生出公钥，对公钥进行哈希然后生成地址的 witness program。Taproot 中 哈希这一步被省略，所以 地址中会直接包含 公钥。
++ 花费 P2PKH 或 P2WPKH 需要在 inpu 中包含 公钥。Taproot 中公钥会在花费的 UTXO 中提供，所以可以省略好几个 vbytes。
++ 创建 Taproot output 和 创建一个 P2WSH output 占用基本差不多空间；但花费一个单签 Taproot 比起 P2WPKH 节省 40% 的空间。而节省交易体积就有助节省交易费。
++ 交易消息摘要中的 double-SHA256 hashing 其实不能提供额外的安全帮助。所以 Taproot 中换成了只进行一次。
++ 对 多签来说，Taproot 无论有多少密钥和签名，占用大小都一样。而 P2WSH 中每多一个公钥就要增加 8.5 vbytes，每多一个签名就要增加 18.25 vbytes。
+    * ![2019-05-taproot-multisig-size](/img/optech/2019-05-taproot-multisig-size.png)
++ Tapscript 中不再接受 ECDSA 签名。
++ Tapscript 中废除了 OP_CHECKMULTISIG 和 OP_CHECKMULTISIGVERIFY。 可以使用 OP_CHECKSIGADD (OP_CSADD) 来替代，并可以显著加速批量验证签名。
++ 通过 taproot 和 tapscript，single-sig, multisig, and MAST-based spends 都可以只用同一个 public key 和签名,那么追踪用户在使用 bitcoin 哪一个特性就更难，这算是对抗追踪、对抗审查的一个好事。
 
 
 ## RSK
