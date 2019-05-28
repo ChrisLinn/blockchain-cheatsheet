@@ -539,7 +539,7 @@ __TODO:__ [address generation differences](https://bitcoinops.org/en/newsletters
   </tbody>
 </table>
     * Taproot
-        - Taproot 中 哈希这一步被省略，所以 bech32 地址中会直接包含公钥, 伴随着一点小改变。 Currently, 33-byte Bitcoin-style pubkeys are encoded to start with either a 0x02 or 0x03 to allow validators to reconstruct the key’s Y-coordinate on the secp256k1 elliptic curve; in bip-taproot, the value of this byte is reduced by two so that 0x02 becomes 0x00 and 0x03 becomes 0x01. The meaning stays the same but using the low bit for the values frees up the remaining bits for future soft forks. Also the witness version is changed from the 0 used for P2WPKH/P2WSH to a 1.
+        - Taproot 中 哈希这一步被省略，所以 bech32 地址中会直接包含公钥, 伴随着一点小改变。 33-byte 比特币公钥 以 0x02 或 0x03 开头，以便验证者在secp256k1椭圆曲线上重建密钥的 Y-坐标; bip-taproot 中该值会被减2，于是 0x02 变成 0x00， 0x03 变成 0x01 但含义不变。这样（换成使用低位）的好处是，把剩下的位省下用来将来软分叉。此外， witness version 从P2WPKH/P2WSH 中的 0 变成了 1.
 <table>
   <thead>
     <tr>
