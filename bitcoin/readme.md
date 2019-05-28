@@ -506,6 +506,71 @@ __TODO:__ [address generation differences](https://bitcoinops.org/en/newsletters
 + [bip-taproot](https://github.com/sipa/bips/blob/bip-schnorr/bip-taproot.mediawiki) 允许通过 Schnorr-style 签名  或 通过 merklized script 默克尔化脚本 进行花费
 + [bip-tapscript](https://github.com/sipa/bips/blob/bip-schnorr/bip-tapscript.mediawiki) 定义了 用于 bip-taproot 中 merkle spend 默克尔花费的脚本语言（与 bitcoin 中现有脚本相近但稍有不同）。
 + 单签 P2PKH 和 P2WPKH 中，生成私钥，派生出公钥，对公钥进行哈希然后生成地址的 witness program。Taproot 中 哈希这一步被省略，所以 地址中会直接包含 公钥。
+    * P2WPKH
+<table>
+  <thead>
+    <tr>
+      <th>Object</th>
+      <th>Operation</th>
+      <th>Example result</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>Private key</td>
+      <td>read 32 bytes from <a href="https://en.wikipedia.org/wiki/Cryptographically_secure_pseudorandom_number_generator">CSPRNG</a>, or using <a href="https://github.com/bitcoin/bips/blob/master/bip-0032.mediawiki">BIP32</a> HD derivation</td>
+      <td><code class="highlighter-rouge">0x807d[...]0101</code></td>
+    </tr>
+    <tr>
+      <td>Public key</td>
+      <td>point(0x807d[…]0101), or using <a href="https://github.com/bitcoin/bips/blob/master/bip-0032.mediawiki">BIP32</a> HD public derivation</td>
+      <td><code class="highlighter-rouge">0x02e5[...]3c23</code></td>
+    </tr>
+    <tr>
+      <td>Hash</td>
+      <td>ripemd(sha256(0x0202e5[…]3c23))</td>
+      <td><code class="highlighter-rouge">0x006e[...]05d6</code></td>
+    </tr>
+    <tr>
+      <td>Address</td>
+      <td>bech32.encode(‘bc’, 0, 0x006e[…]05d6)</td>
+      <td><code class="highlighter-rouge">bc1qd6[...]24zh</code></td>
+    </tr>
+  </tbody>
+</table>
+    * Taproot
+        - Taproot 中 哈希这一步被省略，所以 bech32 地址中会直接包含公钥, 伴随着一点小改变。 Currently, 33-byte Bitcoin-style pubkeys are encoded to start with either a 0x02 or 0x03 to allow validators to reconstruct the key’s Y-coordinate on the secp256k1 elliptic curve; in bip-taproot, the value of this byte is reduced by two so that 0x02 becomes 0x00 and 0x03 becomes 0x01. The meaning stays the same but using the low bit for the values frees up the remaining bits for future soft forks. Also the witness version is changed from the 0 used for P2WPKH/P2WSH to a 1.
+<table>
+  <thead>
+    <tr>
+      <th>Object</th>
+      <th>Operation</th>
+      <th>Example result</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>Private key</td>
+      <td>(Same as above)</td>
+      <td><code class="highlighter-rouge">0x807d[...]0101</code></td>
+    </tr>
+    <tr>
+      <td>Public key</td>
+      <td>(Same as above)</td>
+      <td><code class="highlighter-rouge">0x02e5[...]3c23</code></td>
+    </tr>
+    <tr>
+      <td>Alter key prefix</td>
+      <td>(key[0] - 2),key[1:33])</td>
+      <td><code class="highlighter-rouge">0x00e5[...]3c23</code></td>
+    </tr>
+    <tr>
+      <td>Address</td>
+      <td>bech32.encode(‘bc’, 1, 0x00e5[…]3c23)</td>
+      <td><code class="highlighter-rouge">bc1pqr[...]xg73</code></td>
+    </tr>
+  </tbody>
+</table>
 + 花费 P2PKH 或 P2WPKH 需要在 inpu 中包含 公钥。Taproot 中公钥会在花费的 UTXO 中提供，所以可以省略好几个 vbytes。
 + 创建 Taproot output 和 创建一个 P2WSH output 占用基本差不多空间；但花费一个单签 Taproot 比起 P2WPKH 节省 40% 的空间。而节省交易体积就有助节省交易费。
 + 交易消息摘要中的 double-SHA256 hashing 其实不能提供额外的安全帮助。所以 Taproot 中换成了只进行一次。
