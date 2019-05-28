@@ -501,8 +501,6 @@ Schnorr签名方案会遇到重放攻击（Replay Attack）的问题，如果不
 ### bip-taproot & bip-tapscript
 总结 from: https://bitcoinops.org/en/newsletters/2019/05/14/
 
-__TODO:__ [address generation differences](https://bitcoinops.org/en/newsletters/2019/05/14/)
-
 + [bip-taproot](https://github.com/sipa/bips/blob/bip-schnorr/bip-taproot.mediawiki) 允许通过 Schnorr-style 签名  或 通过 merklized script 默克尔化脚本 进行花费
 + [bip-tapscript](https://github.com/sipa/bips/blob/bip-schnorr/bip-tapscript.mediawiki) 定义了 用于 bip-taproot 中 merkle spend 默克尔花费的脚本语言（与 bitcoin 中现有脚本相近但稍有不同）。
 + 单签 P2PKH 和 P2WPKH 中，生成私钥，派生出公钥，对公钥进行哈希然后生成地址的 witness program。Taproot 中 哈希这一步被省略，所以 地址中会直接包含 公钥。
