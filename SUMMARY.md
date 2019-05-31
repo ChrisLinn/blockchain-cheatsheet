@@ -4,6 +4,7 @@
 * [Bitcoin](bitcoin/readme.md)
 * [Blockchain](blockchain/readme.md)
     * [Attack](blockchain/attack.md)
++ [随机性](randomness.md)
 + [Explorer](explorer.md)
 * [AltCoin](altcoin/readme.md)
     * [Ethereum](altcoin/ethereum/readme.md)

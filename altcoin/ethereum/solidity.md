@@ -5,6 +5,7 @@
 + Solidity 中如何定义修改器和回退函数？ 
 
 ## Ethereum Security Tools
++ Slither
 + [tintinweb](https://github.com/tintinweb/) Visual Auditors
     * [Solidity](https://marketplace.visualstudio.com/items?itemName=tintinweb.solidity-visual-auditor)
     * [Vyper](https://marketplace.visualstudio.com/items?itemName=tintinweb.vscode-vyper)
