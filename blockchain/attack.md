@@ -1,4 +1,13 @@
 # Attack
+需要考虑的安全问题:
+
++ 直接获益
++ 作废一条链
++ 低代价消耗资源
++ 攻击网络节点
+    * 拒绝服务
+    * 网络隔离
+    * 欺骗节点
 
 ## Double-spending Attack
 区块链不能完全防止 double-spending attack（双重花费攻击，双花攻击）。
