@@ -21,6 +21,13 @@
     * a cloud-based service that makes powerful smart contract security analysis to anyone
         - https://github.com/ConsenSys/truffle-security
 + [Panvala](http://www.panvala.com/)
++ https://github.com/melonproject/oyente
++ https://github.com/quoscient/octopus
++ https://github.com/ConsenSys/mythril
++ https://github.com/CryptoExperts/wyverse
++ https://github.com/Imanfeng/Blockchain-Public-Chain-and-Smart-Contract-Vulnerability
++ https://github.com/nvonpentz/solidity-exploits
++ https://github.com/ConsenSys/smart-contract-best-practices
 
 ## Testing
 + https://github.com/MichalZalecki/tdd-solidity-intro
