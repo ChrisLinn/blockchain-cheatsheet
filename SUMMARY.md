@@ -20,6 +20,7 @@
 * [Mining](mining.md)
 * [网络](network.md)
 * [GoLang](golang.md)
+* [涉及密码学的编程](crypto-coding.md)
 * [架构](architect.md)
 * [Exchange](exchange.md)
 * [Miscs](misc.md)
