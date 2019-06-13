@@ -274,7 +274,7 @@ __两个不同账本上价值的流通。__ 从业务角度看，跨链技术就
 ### PolkaDot
 
 ### COSMOS
-
++ https://www.preethikasireddy.com/posts/how-does-cosmos-work-part1
 + [软硬核：彻底读懂 Cosmos 如何一键发链与万链互联](https://mp.weixin.qq.com/s?__biz=MzI1Mzk4ODIwOA==&mid=2247487918&idx=1&sn=c5fc5d9f952611eba4a97cf2f0ed306e&chksm=e9cd4db1debac4a76c6d31100e385439ab65025ec050789e92d5537f80113b43c6b1e9b70959&mpshare=1&scene=24&srcid=0314oSWk6KTcpDqIJK1AVHqP&pass_ticket=ZXFSXlAoCmg3o1yqnjc%2Fh8k6L%2Fsjw9vfkYkGOa095ZweYpoUSlvB2Cqdd4UBkp%2FV#rd)
 * [How to Build a Blockchain App with Cosmos SDK](https://bbs.chainon.io/d/3339-how-to-build-a-blockchain-app-with-cosmos-sdk)
 + [谈论 COSMOS 时，我们到底在谈论什么？](https://www.chainnews.com/articles/262063844998.htm)
