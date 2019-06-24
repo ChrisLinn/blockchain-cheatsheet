@@ -34,7 +34,7 @@
 + 使用 HMAC-SHA512 用于完整性验证
 + 使用带有 salt 的SHA-256 或 SHA-512 用于 hashing
 
-
+---
 
 - https://bloodzer0.github.io/ossa/application-security/sdl/go-scp/
     + go语言安全编码规范（中文版）
