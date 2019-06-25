@@ -53,7 +53,7 @@
                 + 移植到别的平台后可能会跑不安全的 func
 + Avoid mixing security and abstraction levels of cryptographic primitives in the same API layer
     + 没细研究.......
-+ 应该用 unsigned bytes 来表示 binary data
++ 应该用 unsigned bytes 来表示 binary data (bytestrings)
     + C 中 char 类型的正负是 implementation-defined 的, 那么比如对于这段代码
     ```c
     int decrypt_data(const char *key, char *bytes, size_t len);
@@ -71,6 +71,11 @@
         //...
     }
     ```
+        + 如果 char 是 signed 型的，`buf[0]` 可能为负
+            + `malloc` 和 `memcpy` 的范围可能很大
+            + `name[name_len] = 0;` 语句存在 heap corruption 的危险
+            + 如果 `buf[0]` 为 `255`, `name_len` 则会为 `-1`, 
+                + 那么就造成了 allocate a 0-byte buffer, 然后 memcpy (size_t)-1 这么大(过大)的数据进该 buffer 中, 造成 [非法堆内存访问](https://stackoverflow.com/questions/13669329/what-is-a-memory-stomp)
 + Use strong randomness
 + Always typecast shifted values
 
