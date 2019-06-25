@@ -8,7 +8,7 @@
 + 条件执行语句判断不应和 secret 有关 (avoid branching controlled by secret data)
     * 不同 branch 执行时间不同，那么可利用执行时间来猜测 condition, 从而猜测 secret
         - 比如 RSA 快速幂取余算法, [在密码硬件中使用会被攻击](https://wiki.x10sec.org/crypto/asymmetric/rsa/rsa_side_channel/)
-        ```
+        ```c
         int PowerMod(int a, int b, int c)
         {
             int ans = 1;
@@ -34,8 +34,45 @@
         return Q
         ```  
 + 同理 loop bounds 也不应该和 secret 有关
-+ table look-ups indexed
++ avoids table look-ups indexed by secret data
+    + 没细研究.......
++ 注意编译器是否优化掉了不该优化的代码, 比如本来要清除内存中的secret，结果被编译器一优化，不清除了
+    + 解决办法：对比真正生成的汇编代码
++ 记得可靠地(!)清空 secect
+    + 不幸的是以下两种语言无法保证一定能清空
+        * 带GC的语言
+            - Go, Java, JS...
+        * 使用immutable strings的语言
+            - Swift, Obj-C...
++ 避免 secure 和 insecure 的 API 的混淆
+    + 不同平台函数的安全性不一样
+        * 不要假设平台安全
+        * 如果 override 掉 不安全的 func？
+            - 如果 override 掉 不安全的 func？
+                + override 失败则仍会跑不安全的 func
+                + 移植到别的平台后可能会跑不安全的 func
++ Avoid mixing security and abstraction levels of cryptographic primitives in the same API layer
+    + 没细研究.......
++ 应该用 unsigned bytes 来表示 binary data
+    + C 中 char 类型的正负是 implementation-defined 的, 那么比如对于这段代码
+    ```c
+    int decrypt_data(const char *key, char *bytes, size_t len);
 
+    void fn(...) {
+        //...
+        char *name;
+        char buf[257];
+        decrypt_data(key, buf, 257);
+
+        int name_len = buf[0];
+        name = malloc(name_len + 1);
+        memcpy(name, buf+1, name_len);
+        name[name_len] = 0;
+        //...
+    }
+    ```
++ Use strong randomness
++ Always typecast shifted values
 
 ---
 
