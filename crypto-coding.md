@@ -115,3 +115,8 @@
 
 - https://bloodzer0.github.io/ossa/application-security/sdl/go-scp/
     + go语言安全编码规范（中文版）
+
+---
+
++ 亦可参考 [PacktPublishing/Security-with-Go 的 Cryptography 章节代码](https://github.com/PacktPublishing/Security-with-Go/tree/master/Chapter06)
+    * [目录](https://www.packtpub.com/networking-and-servers/security-go)
