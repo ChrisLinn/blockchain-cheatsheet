@@ -5,7 +5,7 @@
 + 传统方式 比较字符串是否相等，为了快，逐位比较一有不同就返回
     * 但这样可以通过 函数执行的时间来猜测 前多少位相等
     * 防止这种攻击的方式是无论如何（字符串是否相等，多少位相等）都固定时间（每一位都比完）才返回
-+ 条件执行语句判断不应 和secret 有关, avoid branching controlled by secret data
++ 条件执行语句判断不应和 secret 有关 (avoid branching controlled by secret data)
     * 不同 branch 执行时间不同，那么可利用执行时间来猜测 condition, 从而猜测 secret
         - 比如 RSA 快速幂取余算法, [在密码硬件中使用会被攻击](https://wiki.x10sec.org/crypto/asymmetric/rsa/rsa_side_channel/)
         ```
