@@ -1,4 +1,4 @@
-# Crypyto Coding
+# Crypto Coding
 
 总结自: https://github.com/veorq/cryptocoding (介绍了一些 side channel attack)
 
