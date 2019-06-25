@@ -38,4 +38,3 @@
 
 - https://bloodzer0.github.io/ossa/application-security/sdl/go-scp/
     + go语言安全编码规范（中文版）
-- https://github.com/PacktPublishing/Security-with-Go\
