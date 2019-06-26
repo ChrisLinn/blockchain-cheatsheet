@@ -103,6 +103,13 @@ Russell O'Connor has proposed [changing the RBF policy rules](https://lists.linu
 
 ## 公有链 vs 联盟链 vs 私有链
 
+### 联盟链
++ https://github.com/hyperledger
++ https://github.com/libra/libra
++ https://github.com/EYBlockchain
++ https://github.com/jpmorganchase/quorum
+
+
 ## 拜占庭将军问题
 
 ## Consensus 共识
