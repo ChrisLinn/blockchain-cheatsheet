@@ -77,10 +77,15 @@
             + 如果 `buf[0]` 为 `255`, `name_len` 则会为 `-1`, 
                 + 那么就造成了 allocate a 0-byte buffer, 然后 memcpy (size_t)-1 这么大(过大)的数据进该 buffer 中, 造成 [非法堆内存访问](https://stackoverflow.com/questions/13669329/what-is-a-memory-stomp)
 + 保证强随机性
+    + __TBD__
++ Always typecast shifted values
+    + __TBD__
+
+<!-- 
     + leaking just one bit of each random number in the DSA will reveal a private key astonishingly quickly. Lack of randomness can be surprisingly hard to diagnose: the Debian random number generator failure in OpenSSL went unnoticed for 2 years, compromising a vast number of keys. The requirements on random numbers for cryptographic purposes are very stringent: most pseudorandom number generators (PRNG) fail to meet them.
     + Bad solutions
     + Solution
-+ Always typecast shifted values
+-->
 
 ---
 
@@ -115,6 +120,7 @@
 
 - https://bloodzer0.github.io/ossa/application-security/sdl/go-scp/
     + go语言安全编码规范（中文版）
+        + __TBD__
 
 ---
 
