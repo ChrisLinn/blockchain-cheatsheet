@@ -4,6 +4,3 @@
 ---
 
 DApps 开发参考: [awesome-dapps](https://github.com/HAOYUatHZ/awesome-dapps)
-
-猎头挖人请访问: [awesome-chinese-blockchain-developers](https://github.com/HAOYUatHZ/awesome-chinese-blockchain-developers)
-
