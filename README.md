@@ -3,4 +3,4 @@
 
 ---
 
-DApps 开发参考: [awesome-dapps](https://github.com/HAOYUatHZ/awesome-dapps)
+DApps 开发参考: [awesome-dapps-source-code](https://github.com/HAOYUatHZ/awesome-dapps-source-code)
