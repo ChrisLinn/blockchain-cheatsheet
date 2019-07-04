@@ -124,6 +124,12 @@ James O’Beirne 在 Bitcoin-Dev mailing list 发了个 [帖子](https://lists.l
 ## UXTO
 + 为什么设计 UTXO？
 
+## Script
++ script IDE/Debugger
+    * https://github.com/siminchen/bitcoinIDE
+    * https://webbtc.com/script
+    * http://www.crmarsh.com/script-playground/
+    * https://ide.bitauth.com/
 
 ## 地址
 + see https://en.bitcoin.it/wiki/Address
