@@ -364,6 +364,10 @@ Revocable Sequence Maturity Contract (RSMC):[1] a contract used in Lightning to 
 + 可能存在的攻击
     * 女巫攻击把中继站的资金池掳走，耗时很久才返还
 
+### rebalancing 
+__TODO__
+
+
 ## ECDSA Failures
 
 ## Colored Coin
