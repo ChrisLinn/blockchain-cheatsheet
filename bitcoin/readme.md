@@ -359,6 +359,8 @@ Revocable Sequence Maturity Contract (RSMC):[1] a contract used in Lightning to 
     * 女巫攻击把中继站的资金池掳走，耗时很久才返还
 
 ## ECDSA Failures
++ ECDSA Failures
++ https://github.com/coinexchain/docs/blob/master/190722-secp256k1-ecdsa-dangers.pdf
 
 ## Colored Coin
 
