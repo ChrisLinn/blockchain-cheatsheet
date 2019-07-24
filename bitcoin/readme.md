@@ -124,6 +124,12 @@ James O’Beirne 在 Bitcoin-Dev mailing list 发了个 [帖子](https://lists.l
 ## UXTO
 + 为什么设计 UTXO？
 
+## Script
++ script IDE/Debugger
+    * https://github.com/siminchen/bitcoinIDE
+    * https://webbtc.com/script
+    * http://www.crmarsh.com/script-playground/
+    * https://ide.bitauth.com/
 
 ## 地址
 + see https://en.bitcoin.it/wiki/Address
@@ -357,6 +363,10 @@ Revocable Sequence Maturity Contract (RSMC):[1] a contract used in Lightning to 
     * 解决办法是多建闪电网络节点
 + 可能存在的攻击
     * 女巫攻击把中继站的资金池掳走，耗时很久才返还
+
+### rebalancing 
+__TODO__
+
 
 ## ECDSA Failures
 + ECDSA Failures

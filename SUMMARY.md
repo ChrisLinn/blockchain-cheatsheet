@@ -2,6 +2,7 @@
 
 * [README](README.md)
 * [Bitcoin](bitcoin/readme.md)
+    - [PR 学习](bitcoin/pr-review.md)
 * [Blockchain](blockchain/readme.md)
     * [Attack](blockchain/attack.md)
 + [Explorer](explorer.md)
