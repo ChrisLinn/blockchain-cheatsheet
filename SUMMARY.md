@@ -21,6 +21,7 @@
 * [Wallet](wallet.md)
 * [Mining](mining.md)
 * [网络](network.md)
+* [Sharding](sharding.md)
 * [GoLang](golang.md)
 * [涉及密码学的编程](crypto-coding.md)
 * [Exchange](exchange.md)
