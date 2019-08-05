@@ -369,6 +369,9 @@ __TODO__
 
 
 ## ECDSA Failures
++ ECDSA Failures
++ https://github.com/coinexchain/docs/blob/master/190722-secp256k1-ecdsa-dangers.pdf
++ https://safecurves.cr.yp.to/
 
 ## Colored Coin
 
