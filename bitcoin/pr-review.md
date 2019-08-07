@@ -3,16 +3,23 @@ https://bitcoin-core-review-club.github.io 学习整理, 带你入门 bitcoin PR
 
 ## #15505
 ## #15713
+__refactor: Replace chain relayTransactions/submitMemoryPool by higher method (wallet)__
+
+https://github.com/bitcoin/bitcoin/pull/15713
+
+以前的 代码，wallet 和 node 的 功能杂糅在一起
+
+比如这个pr 中，wallet 可以调动 node 广播交易给peer
 
 ## #15169 
-
-Parallelize CheckInputs() in AcceptToMemoryPool() (mempool)
+__Parallelize CheckInputs() in AcceptToMemoryPool() (mempool)__
 
 https://github.com/bitcoin/bitcoin/pull/15169
 
 将交易放进mempool的 checkinput 由串行改造成 并行
 
 check against policy before consensus rules
+
 policy 是入池原则，consensus是验块原则, __policy 会更严__
 
 check input 的 validity
