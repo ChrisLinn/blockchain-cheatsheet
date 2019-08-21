@@ -7,9 +7,28 @@ __refactor: Replace chain relayTransactions/submitMemoryPool by higher method (w
 
 https://github.com/bitcoin/bitcoin/pull/15713
 
-以前的 代码，wallet 和 node 的 功能杂糅在一起
-
-比如这个pr 中，wallet 可以调动 node 广播交易给peer
++ 以前的 代码，wallet 和 node 的 功能杂糅在一起
+    + 比如这个pr 中，由于历史原因, wallet 仍可以调动 node 广播交易给peer
+- 交易什么时候会被广播呢？
+    + 新块 (a new block, a new chain tip)到来时，如果交易池中的交易没被包含在新块，则会被广播
+        * 主要是为了防止当发送交易时，网络掉线没能广播出去。
+            - 本来最好在wallet层通知一下user，该tx没被relay成功。但这只是一个重构的PR，所以保持原有逻辑。
+        * 注意会造成 privacy 问题，后续会改进
+            - 目前的想法是 rebroadcast 的交易里面，不仅有你的，也有别人的交易。避免被知道哪个交易是哪个节点发出来的。
+- submit tx 到 mempool 失败可能的原因？
+    + https://github.com/bitcoin/bitcoin/pull/15713#discussion_r306122680
+        * consensus-invalid or policy-invalid tx
+            - duplicate tx
+            - non-standard tx
+                + https://bitcoin.stackexchange.com/questions/52528/how-is-a-standard-bitcoin-transaction-defined
+            - exceed MAX_FEE_EXCEEDED
+            - below minRelayTxFee
+            - ...
+        * 交易池 overflow
+        * ...
+- 什么是 locking order？ 为什么要按同样的顺序 acquire lock？
+    + thread consistency, 防止可能的 死锁
+    - 比特币编译时 可以开启 `--enable-debug` 检查 lock 顺序
 
 ## #15169 
 __Parallelize CheckInputs() in AcceptToMemoryPool() (mempool)__
