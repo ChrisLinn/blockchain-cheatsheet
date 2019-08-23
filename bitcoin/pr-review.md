@@ -1,7 +1,10 @@
 # PR 学习
 https://bitcoin-core-review-club.github.io 学习整理, 带你入门 bitcoin PR 的思维学习，培养给 bitcoin 提 PR 的能力。
 
+<!-- 
 ## #15505
+ -->
+
 ## #15713
 __refactor: Replace chain relayTransactions/submitMemoryPool by higher method (wallet)__
 
@@ -55,6 +58,7 @@ script & sigs
 verify valid inputs
 而不是 verify valid tx
 
+<!-- 
 ## #15481
 ## #15996
 ## #16060
@@ -63,7 +67,7 @@ verify valid inputs
 ## #15834
 ## #10823
 ## #15557
-
+ -->
 
 <!-- 
 OPTECH
