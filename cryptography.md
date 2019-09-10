@@ -9,3 +9,9 @@
 - EdDSA vs ECDSA
     + https://crypto.stackexchange.com/questions/58380/ecdsa-eddsa-and-ed25519-relationship-compatibility
     * https://crypto.stackexchange.com/questions/60383/what-is-the-difference-between-ecdsa-and-eddsa
+
+## ZKP academa
++ conference
+    * Zk proof workshop
+    * ZK #lux
+    * Zcash 的 #Zcon1
