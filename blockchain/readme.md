@@ -405,7 +405,7 @@ MimbleWimble并没完全解决“交易隐私”问题，它让交易在区块�
 
 ### 零知识证明
 
-
++ https://github.com/sec-bit/learning-zkp
 + https://zhuanlan.zhihu.com/p/24440530
 + https://www.leiphone.com/news/201803/egFu5MwIsweBU2WY.html
 + https://www.odaily.com/post/5133827

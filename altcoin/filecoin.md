@@ -4,6 +4,9 @@
 * [IPFS/filecoin 技术架构分析](https://www.jianshu.com/c/06ddad58490f)
 
 ## IPFS协议
++ https://github.com/ipfs/research-CRDT
++ https://github.com/ipfs/specs/tree/master/bitswap
+    * https://github.com/heems/bssim
 
 ### IPFS vs BitTorrent
 + IPFS deduplicates across "torrents"
