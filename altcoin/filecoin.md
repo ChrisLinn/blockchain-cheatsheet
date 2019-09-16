@@ -7,6 +7,7 @@
 + https://github.com/ipfs/research-CRDT
 + https://github.com/ipfs/specs/tree/master/bitswap
     * https://github.com/heems/bssim
++ https://github.com/dedis/student_19_libp2p_tlc
 
 ### IPFS vs BitTorrent
 + IPFS deduplicates across "torrents"
