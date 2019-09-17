@@ -51,6 +51,8 @@ Anti-ASIC 算法,试图达到这一目标,但这些算法都不尽人意。这�
     * https://github.com/sammy007/open-ethereum-pool
     * https://github.com/sammy007/monero-stratum
     * https://github.com/luke-jr/eloipool
++ solo pook
+    * http://solo.ckpool.org/
 + keep alive
 + bits, int, difficulty, hashrate
     * 用前导零来估算 int
