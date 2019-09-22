@@ -15,3 +15,11 @@
     * Zk proof workshop
     * ZK #lux
     * Zcash 的 #Zcon1
+
+## MPC
++ http://u.cs.biu.ac.il/~lindell/MPC-resources.html
++ https://guutboy.github.io
++ https://github.com/rdragos/awesome-mpc
++ https://eprint.iacr.org/2018/450.pdf
++ http://www.multipartycomputation.com/mpc-software
++ https://marsella.github.io/static/mpcsok.pdf
