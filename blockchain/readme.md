@@ -226,6 +226,16 @@ PoW+PoS机制共同作用的数字货币，其工作原理是， __除了通过�
             + 寻找ancestor验证
     * 并发的交易在做共识的时候 网络分区了怎么办
 
+
+papers:
+
++ Fairness and Efficiency in DAG-based Cryptocurrencies
+    * https://arxiv.org/pdf/1910.02059.pdf
+        - do not analyse the security, but the chain quality (fairness) and the tx latency (efficiency)
++ Cryptanalysis of Curl-P and Other Attacks on the IOTA Cryptocurrency
+    * https://i.blackhat.com/us-18/Wed-August-8/us-18-Narula-Heilman-Cryptanalysis-of-Curl-P-wp.pdf
+        - This one makes IOTA to change their hash algorithm and use a centralised validator
+
 ### Algorand
 
 解决 DPoS 腐败，贿赂，串通后的集权行为。
