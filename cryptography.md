@@ -22,6 +22,7 @@
     * Zcash 的 #Zcon1
 
 ## MPC
++ https://www.mpcalliance.org/learn
 + https://github.com/rdragos/awesome-mpc
 + [From Keys to Databases – Real-World Applications of Secure Multi-Party Computation](https://eprint.iacr.org/2018/450.pdf)
 + http://www.multipartycomputation.com/mpc-software
