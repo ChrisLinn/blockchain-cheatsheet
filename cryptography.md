@@ -2,6 +2,7 @@
 
 ## Math
 + Binary Quadratic Forms, An Algorithmic Approach - Algorithms and Computation in Mathematics • Volume 20
++ https://crypto.stackexchange.com/questions/53321/what-are-the-coordinates-of-a-generator-point
 + https://www.michaelstraka.com/posts/classgroups/
 + https://docs.google.com/document/d/1sdZqVdXOY9h85oVP2E47SFDMlsAbiPZY1LcaPAZ5LV8/edit
 
