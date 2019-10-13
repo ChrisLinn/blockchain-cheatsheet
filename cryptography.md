@@ -17,6 +17,7 @@
     * https://crypto.stackexchange.com/questions/60383/what-is-the-difference-between-ecdsa-and-eddsa
 
 ## ZKP academa
++ https://github.com/AdamISZ/from0k2bp
 + conference
     * Zk proof workshop
     * ZK #lux
