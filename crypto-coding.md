@@ -121,6 +121,7 @@
 - https://bloodzer0.github.io/ossa/application-security/sdl/go-scp/
     + go语言安全编码规范（中文版）
         + __TBD__
++ https://github.com/SalusaSecondus/CryptoGotchas
 
 ---
 
