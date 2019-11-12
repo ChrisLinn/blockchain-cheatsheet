@@ -5,6 +5,8 @@
 + https://crypto.stackexchange.com/questions/53321/what-are-the-coordinates-of-a-generator-point
 + https://www.michaelstraka.com/posts/classgroups/
 + https://docs.google.com/document/d/1sdZqVdXOY9h85oVP2E47SFDMlsAbiPZY1LcaPAZ5LV8/edit
++ http://safecurves.cr.yp.to/
++ https://blog.cr.yp.to/index.html
 
 ## EdDSA
 + https://sefiks.com/2018/12/24/a-gentle-introduction-to-edwards-curve-digital-signature-algorithm-eddsa/
