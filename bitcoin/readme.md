@@ -313,6 +313,7 @@ Readings:
 
 + [闪电网络三部曲](https://bitcoinmagazine.com/articles/understanding-the-lightning-network-part-building-a-bidirectional-payment-channel-1464710791/)
 + https://yeasy.gitbooks.io/blockchain_guide/content/bitcoin/lightning_network.html
++ https://github.com/ElementsProject/lightning/blob/master/doc/deployable-lightning.pdf
 + https://blog.bitmex.com/zh_cn-the-lightning-network/
 + https://lightning.engineering/technology.html
 + https://en.bitcoin.it/wiki/Hash_Time_Locked_Contracts
@@ -499,7 +500,7 @@ Schnorr签名可以很容易地扩展到支持固定大小的多签名和阈值�
 
 Schnorr的签名，连同Taproot和无脚本脚本，承诺让所有比特币输出看起来都一样，无论它们属于一个人，还是属于许多人，都代表着托管、Liquid挂钩、闪电通道或智能合约。通过这种方式，他们将大大提高比特币的隐私。
 
-无脚本脚本（Scriptless scripts）是扩展两方Schnorr多签名协议的一种方法。该协议允许两个用户联合生成一个签名，使联合签名具有与普通签名相同的大小和使用相同的验证方程。使用无脚本脚本，可以扩展此协议，当最后一方完成签名时，还会向另一方泄露额外的秘密。这个额外的秘密可以像在Lighting HTLC中使用的“哈希原像（hash preimages）”一样使用，而且还有一个额外的好处，那就是它不会出现在区块链上。它还具有更多的代数结构，这使得它在连接多个支付通道时可以“重新盲化”，从而修正了闪电网络的隐私限制，即路径中的每个通道都需要使用相同的路径。
+无脚本脚本（Scriptless scripts）是扩展两方Schnorr多签名协议的一种方法。该协议允许两个用户联合生成一个签名，使联合签名具有与普通签名相同的大小和使用相同的验证方程。使用无脚本脚本，可以扩展此协议，当最后一方完成签名时，还会向另一方泄露额外的秘密。这个额外的秘密可以像在Lightning HTLC中使用的“哈希原像（hash preimages）”一样使用，而且还有一个额外的好处，那就是它不会出现在区块链上。它还具有更多的代数结构，这使得它在连接多个支付通道时可以“重新盲化”，从而修正了闪电网络的隐私限制，即路径中的每个通道都需要使用相同的路径。
 
 无脚本脚本可以极大地改善隐私，它允许用户创建长路径的支付通道，而不用使用相同的哈希像原将它们链接起来，还可以防止这些哈希显示给区块链。eltoo可以提高可扩展性，它使用的是SIGHASH_NOINPUT，这是比特币的另一个提议，允许闪电用户在一定的空间内无限期地维护支付通道。
 

@@ -1,18 +1,5 @@
 # Sharding
 
-+ https://github.com/SebastianElvis/sharding-bib
-+ MIT 6.852
-+ ethz
-    * https://disco.ethz.ch/courses/ss04/distcomp/
-    * https://disco.ethz.ch/courses/ss03/distcomp/
-    * https://disco.ethz.ch/courses/podc/
-    * https://disco.ethz.ch/courses/distsys/
-+ MIT 6.S974
-    * theoretical
-+ MIT 6.824
-    * distributed system
-+ talent-plan
-
 ## 1% Attack
 
 + 状态分片（智能合约状态同步&数据可用性相关）、交易分片（需要防止双花） 涉及 跨分片通信 和  状态交换，这里不进行讨论

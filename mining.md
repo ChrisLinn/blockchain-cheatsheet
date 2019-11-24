@@ -18,6 +18,8 @@ Anti-ASIC 算法,试图达到这一目标,但这些算法都不尽人意。这�
 + [Scrypt 算法](altcoin/scrypt.html#scrypt-%E7%AE%97%E6%B3%95)
 
 ## PoS
++ https://www.stakingrewards.com/
++ https://github.com/wetez-project/pos-book
 + [币龄](blockchain/readme.html#pos-proof-of-stake%E6%9D%83%E7%9B%8A%E8%AF%81%E6%98%8E)
     * PoS 矿池, 超级节点
 
