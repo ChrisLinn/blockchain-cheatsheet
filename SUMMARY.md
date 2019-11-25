@@ -21,7 +21,9 @@
 * [Wallet](wallet.md)
 * [Mining](mining.md)
 * [网络](network.md)
-* [Sharding](sharding.md)
++ Layer 2
+    * [Sharding](layer2/sharding.md)
+    * [State Channel](layer2/state-channel.md)
 * [GoLang](golang.md)
 * [涉及密码学的编程](crypto-coding.md)
 * [Exchange](exchange.md)
