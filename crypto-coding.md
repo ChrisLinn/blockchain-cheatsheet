@@ -118,6 +118,16 @@
 
 ---
 
+secure channel:
+
++ When you build a transport, it should offer a broadcast channel as well as point-to-point channels connecting every pair of parties. Your transport should also employ suitable end-to-end encryption (TLS with an [AEAD cipher](https://en.wikipedia.org/wiki/Authenticated_encryption#Authenticated_encryption_with_associated_data_(AEAD)) is recommended) between parties to ensure that a party can only read the messages sent to it.
++ Within your transport, each message should be wrapped with a session ID that is unique to a single run of the keygen, signing or re-sharing rounds. This session ID should be agreed upon out-of-band and known only by the participating parties before the rounds begin. Upon receiving any message, your program should make sure that the received session ID matches the one that was agreed upon at the start.
++ Additionally, there should be a mechanism in your transport to allow for "reliable broadcasts", meaning parties can broadcast a message to other parties such that it's guaranteed that each one receives the same message. There are several examples of algorithms online that do this by sharing and comparing hashes of received messages.
++ Timeouts and errors should be handled by your application. The method WaitingFor may be called on a Party to get the set of other parties that it is still waiting for messages from.
+
+
+---
+
 - https://bloodzer0.github.io/ossa/application-security/sdl/go-scp/
     + go语言安全编码规范（中文版）
         + __TBD__
