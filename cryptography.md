@@ -10,7 +10,7 @@
 + https://github.com/sobolevn/awesome-cryptography
 + https://github.com/pFarb/awesome-crypto-papers
 + https://github.com/SebastianElvis/crypto-lecture-notes/
-+ https://tlu.tarilabs.com/cryptography/
++ https://tlu.tarilabs.com/cryptography/cryptography.html
 + https://github.com/isislovecruft/library--/tree/master/cryptography%20%26%20mathematics
 
 ## EdDSA
