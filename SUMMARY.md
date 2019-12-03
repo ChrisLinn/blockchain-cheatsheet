@@ -27,6 +27,7 @@
 * [GoLang](golang.md)
 * [涉及密码学的编程](crypto-coding.md)
 * [Exchange](exchange.md)
+* [博弈论](game-theory.md)
 * [Miscs](misc.md)
 * [Resources](res.md)
 
