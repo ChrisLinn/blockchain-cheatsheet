@@ -15,10 +15,10 @@
     * http://crypto.stanford.edu/~dabo/cryptobook/
     * http://www.wisdom.weizmann.ac.il/~oded/foc-book.html
     * http://cacr.uwaterloo.ca/hac/
+    * https://crypto.stanford.edu/~blynn/
+    * http://math.tut.fi/~ruohonen/MC.pdf
 + https://tlu.tarilabs.com/cryptography/cryptography.html
 + https://github.com/isislovecruft/library--/tree/master/cryptography%20%26%20mathematics
-+ https://crypto.stanford.edu/~blynn/
-+ http://math.tut.fi/~ruohonen/MC.pdf
 
 ## EdDSA
 + https://sefiks.com/2018/12/24/a-gentle-introduction-to-edwards-curve-digital-signature-algorithm-eddsa/
