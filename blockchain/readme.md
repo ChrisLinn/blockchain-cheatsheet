@@ -418,13 +418,18 @@ MimbleWimble并没完全解决“交易隐私”问题，它让交易在区块�
 + https://eprint.iacr.org/2016/046.pdf
     * 入门
 + https://github.com/matter-labs/awesome-zero-knowledge-proofs
++ https://www.yuque.com/u428635/scg32w/edmn74
 + https://github.com/sec-bit/learning-zkp
++ https://learnblockchain.cn/2019/04/18/learn-zkSNARK/
++ https://learnblockchain.cn/categories/basic/%E9%9B%B6%E7%9F%A5%E8%AF%86%E8%AF%81%E6%98%8E/
++ https://medium.com/coinmonks/comparing-general-purpose-zk-snarks-51ce124c60bd
++ https://github.com/spring-epfl/zksk
++ https://github.com/AdamISZ/from0k2bp
 + https://zhuanlan.zhihu.com/p/24440530
 + https://www.leiphone.com/news/201803/egFu5MwIsweBU2WY.html
 + https://www.odaily.com/post/5133827
 + https://www.jianshu.com/p/77b44709ca37
 + https://www.chainnode.com/tutorial/4683
-+ https://learnblockchain.cn/2019/04/18/learn-zkSNARK/
 + http://ceur-ws.org/Vol-2344/short11.pdf
 
 
