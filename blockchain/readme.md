@@ -417,7 +417,16 @@ MimbleWimble并没完全解决“交易隐私”问题，它让交易在区块�
 
 + https://eprint.iacr.org/2016/046.pdf
     * 入门
++ ZK-SNARK 入门: https://arxiv.org/abs/1906.07221
+    * https://medium.com/@imolfar/why-and-how-zk-snark-works-1-introduction-the-medium-of-a-proof-d946e931160
+        - https://mp.weixin.qq.com/s?__biz=MzIxNjkwODE5NQ==&mid=2247484148&idx=1&sn=7cc0f42d16cdc9dd3ec9aced08b68ee8&exportkey=AXUOFMzIGB6pC%2Ff5FENqKio%3D&pass_ticket=LkZdJ5gNUYOZr%2F4hH0UU5HjMF%2FmGPzmiyFkfMI6V%2BTtQgKZcUltI5UcJ4OaP6ZZB
+    * https://medium.com/@imolfar/why-and-how-zk-snark-works-2-proving-knowledge-of-a-polynomial-f817760e2805
++ https://hashcloak.substack.com/
++ Comparing General Purpose zk-SNARKs
+    + https://medium.com/coinmonks/comparing-general-purpose-zk-snarks-51ce124c60bd
++ http://diyhpl.us/wiki/transcripts/scalingbitcoin/tel-aviv-2019/survey-of-progress-in-zero-knowledge-proofs-towards-trustless-snarks/
 + https://github.com/matter-labs/awesome-zero-knowledge-proofs
++ https://github.com/christianlundkvist/libsnark-tutorial
 + https://www.yuque.com/u428635/scg32w/edmn74
 + https://github.com/sec-bit/learning-zkp
 + https://learnblockchain.cn/2019/04/18/learn-zkSNARK/
