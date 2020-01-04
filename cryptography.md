@@ -2,6 +2,7 @@
 
 ## Math
 + Binary Quadratic Forms, An Algorithmic Approach - Algorithms and Computation in Mathematics • Volume 20
++ https://crypto.stackexchange.com/questions/10467/what-is-the-lowest-level-of-mathematics-required-in-order-to-understand-how-encr
 + https://crypto.stackexchange.com/questions/53321/what-are-the-coordinates-of-a-generator-point
 + https://www.michaelstraka.com/posts/classgroups/
 + https://docs.google.com/document/d/1sdZqVdXOY9h85oVP2E47SFDMlsAbiPZY1LcaPAZ5LV8/edit
@@ -10,10 +11,17 @@
 + https://github.com/sobolevn/awesome-cryptography
 + https://github.com/pFarb/awesome-crypto-papers
 + https://github.com/SebastianElvis/crypto-lecture-notes/
+    * https://cseweb.ucsd.edu/~mihir/papers/gb.pdf
+    * http://crypto.stanford.edu/~dabo/cryptobook/
+    * http://www.wisdom.weizmann.ac.il/~oded/foc-book.html
+    * http://cacr.uwaterloo.ca/hac/
+    * https://crypto.stanford.edu/~blynn/
+    * http://math.tut.fi/~ruohonen/MC.pdf
 + https://tlu.tarilabs.com/cryptography/cryptography.html
 + https://github.com/isislovecruft/library--/tree/master/cryptography%20%26%20mathematics
 + [Elliptic Curve Handbook](http://webs.ucm.es/BUCM/mat/doc8354.pdf)
 + [An intensive introduction to cryptography](https://github.com/boazbk/crypto)
++ https://github.com/claucece/useful-crypto-resources
 
 ## EdDSA
 + https://sefiks.com/2018/12/24/a-gentle-introduction-to-edwards-curve-digital-signature-algorithm-eddsa/
