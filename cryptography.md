@@ -19,7 +19,9 @@
     * http://math.tut.fi/~ruohonen/MC.pdf
 + https://tlu.tarilabs.com/cryptography/cryptography.html
 + https://github.com/isislovecruft/library--/tree/master/cryptography%20%26%20mathematics
-https://github.com/claucece/useful-crypto-resources
++ [Elliptic Curve Handbook](http://webs.ucm.es/BUCM/mat/doc8354.pdf)
++ [An intensive introduction to cryptography](https://github.com/boazbk/crypto)
++ https://github.com/claucece/useful-crypto-resources
 
 ## EdDSA
 + https://sefiks.com/2018/12/24/a-gentle-introduction-to-edwards-curve-digital-signature-algorithm-eddsa/

@@ -1,8 +1,26 @@
 # Blockchain
 
+## 搭建简易版区块链
++ golang
+    * https://github.com/Jeiwan/blockchain_go
+        * https://jeiwan.net/
+    * https://github.com/liuchengxu/blockchain-tutorial
+    * https://github.com/izqui/blockchain
+    - https://github.com/piotrnar/gocoin
+    * https://github.com/33cn/chain33
+    * https://github.com/crisadamo/gochain
+    * https://github.com/kofj/naivechain
+    * https://github.com/chaors/PublicBlockChain_go
++ python
+    * https://github.com/dvf/blockchain
+        * https://hackernoon.com/learn-blockchains-by-building-one-117428612f46
+    * https://bigishdata.com/2017/10/17/write-your-own-blockchain-part-1-creating-storing-syncing-displaying-mining-and-proving-work/
+
+
+## 区块文件结构(Bitcoin)
+
 不同币种的区块链结构可能不同，但 PoW 系的结构基本相似。此处以 Bitcoin 的区块链结构为例。
 
-## Bitcoin 区块文件结构
 __Block__
 
 | Size | Field | Description|
@@ -241,7 +259,6 @@ papers:
 解决 DPoS 腐败，贿赂，串通后的集权行为。
 
 采用 图灵奖获得者Silvio Micali 的随机加密的方法，在 __每个区块__ 诞生的时候 __随机__ 在公链上选出独立的代表，(每次都随机，所以可以防止贿选) __然后，采用拜占庭协议__(擅长运用于少量节点，高效的共识速度，并具有容错性。) 来对新区块产生共识。
-
 
 ## 主网
 
