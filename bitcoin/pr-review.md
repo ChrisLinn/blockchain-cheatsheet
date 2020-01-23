@@ -35,16 +35,26 @@ https://github.com/bitcoin/bitcoin/pull/15505
 
 __TODO__
 
-+ transaction relay (转发交易) message flow 的顺序： 
++ transaction relay (转发 **未确认** 交易) message flow 的顺序： 
     + `INV -> GETDATA -> TX` 
         * 如果无法给 `GETDATA` 响应一个所求的交易，就会返回一个 `NOTFOUND` 而不是 `TX`
             - 以前会无视 `NOTFOUND`, [PR#15834](https://github.com/bitcoin/bitcoin/pull/15834) 之后引入了对于 `NOTFOUND` 内部维护信息的机制 (clearing the internal map of in-flight transactions). 
             - 这个PR 想要通过马上请求那些给我们发送过该笔交易的 `INV` 的播出节点, 来实际使用 `NOTFOUND` 的信息
-    + 这个 PR 触碰了中央的 P2P loop `CConnman::ThreadMessageHandler()` 
+    + 这个 PR 触碰了核心的 P2P loop `CConnman::ThreadMessageHandler()` 
         * 给 `SendMessages()` 加了一个序号计数
         * 这个计数器是用来在每次的循环中确定性地选择一个节点来请求交易
             - 这个交易就是另有一人给我们回复 `NOTFOUND` 的那笔交易
-
++ 什么时候会遇到 `NOTFOUND`
+    * 孤儿交易
+        - 当节点给我们发送一个我们找不到 其父交易时，我们会向它请求 parent
+            + 我们没给他发 INV 就给他直接发了 GETDATA
+        - 什么时候会找不到 父交易？
+            + 启动节点时
+                * 父节点被转发时我们还没启动好
++ blocks-only clients
+    * __TODO__
++ re-org
+    * __TODO__
 
 
 ## #15713
