@@ -2,7 +2,31 @@
 https://bitcoin-core-review-club.github.io 学习整理, 带你入门 bitcoin PR 的思维学习，培养给 bitcoin 提 PR 的能力。
 
 <!-- 
-## #15505
+
+## #17477 Remove the mempool's NotifyEntryAdded and NotifyEntryRemoved signals (validation)
+## #17860 fuzz: BIP 42, BIP 30, CVE-2018-17144 (tests)
+## #14053 Add address-based index (attempt 4?) (utxo db and indexes)
+## #17639 Add make check-valgrind to run the unit tests under Valgrind (tests)
+## #16702 Supplying and using asmap to improve IP bucketing in addrman (p2p)
+## #16426 Reverse cs_main, cs_wallet lock order and reduce cs_main locking (wallet)
+## #16698 Rework rebroadcast logic to improve privacy (mempool, p2p, wallet)
+## #16442 Serve BIP 157 compact filters (p2p)
+## #17303 Stop relaying non-mempool txs, improve tx privacy slightly (p2p)
+## #15845 Fast rescan with BIP157 block filters (wallet)
+## #15921 Tidy up ValidationState interface (validation)
+## #15934 Merge settings one place instead of five places (config)
+## #16279 Return the AcceptBlock CValidationState directly in ProcessNewBlock (validation)
+## #16939 Delay querying DNS seeds if addrman is populated (p2p)
+## #16401 Package relay (p2p)
+## #16202 Refactor network message deserialization (net processing)
+## #15204 Add Open External Wallet action (gui)
+## #16688 Add validation interface logging (logging)
+## #16512 Shuffle inputs and outputs after joining psbts (rpc)
+## #15759 Add 2 outbound blocks-only connections (p2p)
+## #15931 Remove GetDepthInMainChain dependency on locked chain interface (wallet)
+## #16115 On bitcoind startup, write config args to debug.log (config)
+## #16345 Add getblockbyheight method / support @height in place of blockhash for getblock etc (rpc)
+## #15505 Request NOTFOUND transactions immediately from other outbound peers, when possible (p2p)
  -->
 
 ## #15713
@@ -69,15 +93,3 @@ verify valid inputs
 ## #15557
  -->
 
-<!-- 
-OPTECH
-
----
-Brainstorming just-in-time routing and free channel rebalancing: sometimes LN nodes receive a routed payment that they reject because their outbound channel for that payment doesn’t currently have a high enough balance to support it. Rene Pickhardt previously proposed Just-In-Time (JIT) routing where the node would attempt to move funds into that channel from one or more of its other channel balances. If successful, the payment could then be routed; otherwise, it would be rejected like normal. Because the routed payment might fail for other reasons and prevent the routing node from earning any fees, any JIT rebalance operations need to be free or they could end up costing the node money in a way that attackers could exploit.
-
-In a new post to the Lightning-Dev mailing list, pseudonymous LN developer ZmnSCPxj describes two situations in which other profit-maximizing nodes might allow free rebalances. The first case is the observation that the next hop in the route will receive its own routing fee paid by the spender if the payment succeeds. ZmnSCPxj describes a method by which the next hop’s node can make their part of the rebalance contingent on receipt of the routing income, ensuring that they either get paid or the rebalance doesn’t happen. This would require additional communication between nodes and so it’s a change that probably needs further discussion in order to be considered for addition to the LN specification.
-
-The second case ZmnSCPxj describes is other nodes along the rebalance path who themselves want to rebalance one or more of their channels in the same direction as the routing node. These nodes can allow free routing in that direction to encourage someone to perform that rebalancing. This second case doesn’t require any changes to the LN specification: nodes can already set their routing fees to zero, allowing any other nodes to attempt JIT routing with free rebalances. The worst case would be that a payment that would’ve failed anyway will take a bit longer to return a failure message to the spender, a delay equal to the amount of time any routing nodes spent attempting to rebalance their channels in order to support the payment.
----
-
- -->
