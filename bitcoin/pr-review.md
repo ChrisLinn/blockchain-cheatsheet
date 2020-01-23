@@ -33,8 +33,6 @@ __Request NOTFOUND transactions immediately from other outbound peers, when poss
 
 https://github.com/bitcoin/bitcoin/pull/15505
 
-__TODO__
-
 + transaction relay (转发 **未确认** 交易) message flow 的顺序： 
     + `INV -> GETDATA -> TX` 
         * 如果无法给 `GETDATA` 响应一个所求的交易，就会返回一个 `NOTFOUND` 而不是 `TX`
@@ -51,10 +49,30 @@ __TODO__
         - 什么时候会找不到 父交易？
             + 启动节点时
                 * 父节点被转发时我们还没启动好
+        - 也就是说，重启时 收到 INV 有可能 不按顺序：在收到父交易之前就收到了子交易
 + blocks-only clients
-    * __TODO__
+    * blocks-only clients 会用 [VERSION message](https://btcinformation.org/en/developer-reference#version) 中的 relay flag 来说明他们不转发交易
 + re-org
-    * __TODO__
+    * 1) get new block and see that it's got more work than tip
+    * 2) run ActivateBestChain, which tries to move to the best chain, which will 
+        - 2a) rewind blocks, adding txs to mempool
+        - 2b) connect new blocks, removing txs from mempool that in the new block
+- 为什么这个PR中按顺序挑选拨出节点，而不是随机
+    + 就怕找之前要过的节点们又要一次啊
++ 平均连接多少节点？
+    * 8 outbound + 117 inbound = 125
++ 比起 inbound (主动连接我们的)，我们更加信任outbound（我们主动连接的）peer
+    * 怕被 inbound peers 日蚀攻击，withhold 交易
++ an attacker could circumvent that by sending us NOTFOUND right before the GETDATA times out, and then we would be likely to ask the tx from another inbound node, that is also controlled by the attacker.
+    * time delay attack
+        - https://github.com/bitcoin/bitcoin/pull/14897 想要修复这个问题，但是又引入了新bug
+            + retry logic 很容易出错，很多 edge cases
++ bitcoin 中 P2P 功能测试框架 很难测试 PR
+    * 受限于 _CConnman_ 和 _MockNetworkRouter_
+    * 目前很难完全模拟 inbound/outbound behavior  
+    * 可以看看 https://github.com/bitcoin/bitcoin/issues/14210 中的讨论
+    * 比如 相同子网或 IP 下的 peers 就需要特殊逻辑
+        * 有办法解决，比如用 namespace 来 fake IP
 
 
 ## #15713
