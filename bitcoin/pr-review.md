@@ -26,8 +26,16 @@ https://bitcoin-core-review-club.github.io 学习整理, 带你入门 bitcoin PR
 ## #15931 Remove GetDepthInMainChain dependency on locked chain interface (wallet)
 ## #16115 On bitcoind startup, write config args to debug.log (config)
 ## #16345 Add getblockbyheight method / support @height in place of blockhash for getblock etc (rpc)
-## #15505 Request NOTFOUND transactions immediately from other outbound peers, when possible (p2p)
  -->
+
+## #15505
+__Request NOTFOUND transactions immediately from other outbound peers, when possible (p2p)__
+
+https://github.com/bitcoin/bitcoin/pull/15505
+
+__TODO__
+
+
 
 ## #15713
 __refactor: Replace chain relayTransactions/submitMemoryPool by higher method (wallet)__
