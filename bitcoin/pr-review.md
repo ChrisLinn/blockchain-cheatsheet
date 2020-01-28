@@ -33,7 +33,7 @@ https://github.com/bitcoin/bitcoin/pull/16345
 
 + `getblock`  RPC 接受一个 block hash 作为它的第一个参数，然后返回该 block 的相关信息
     * 之前如果想 通过 高度来查的话，需要 `getblockhash <height` -> `getblock <hash>`
-    * 有什么改进建议
+    * 有一些 PR 提出了 改进建议
         * 纯 overloading
             - 可以传 hash 也可以传 高度
                 + 但这样 会增加 代码相关处理逻辑的复杂度， 比如 一串hex中都是数字，很难判断这到底是高度还是 hash
@@ -48,7 +48,7 @@ https://github.com/bitcoin/bitcoin/pull/16345
             - PR#16439 比较优雅，没什么 duplicate code
         * [新增一个 RPC 接口 `getblockatheight`](https://github.com/bitcoin/bitcoin/pull/16345)
             - duplicate code 太多
-        * JSON RPC promiose pipelinig
+        * JSON RPC promise pipelinig
         * [等等](https://github.com/bitcoin/bitcoin/pull/16439#issuecomment-514038924)
 + https://github.com/fanquake/core-review 中有不少 辅助 review PR 的工具
 + 用 height 还是要自己小心处理 re-org 和 orphan 的逻辑，在接近 tip 的时候，by height 不靠谱
