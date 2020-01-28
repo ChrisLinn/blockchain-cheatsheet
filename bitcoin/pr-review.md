@@ -32,9 +32,9 @@ https://bitcoin-core-review-club.github.io 学习整理, 带你入门 bitcoin PR
 https://github.com/bitcoin/bitcoin/pull/16345
 
 + `getblock`  RPC 接受一个 block hash 作为它的第一个参数，然后返回该 block 的相关信息
-    * 之前如果想 通过 高度来查的话，需要 `getblockhash <height` -> `getblock <hash>`
+    * 之前如果想 通过 高度来查的话，需要调用 `getblockhash <height` 然后再调用 `getblock <hash>`
     * 有一些 PR 提出了 改进建议
-        * 纯 overloading
+        * 纯 overloading: PR#8457， PR#14858
             - 可以传 hash 也可以传 高度
                 + 但这样 会增加 代码相关处理逻辑的复杂度， 比如 一串hex中都是数字，很难判断这到底是高度还是 hash
                 + 就算 overload 了其实参数类型也还是字符串
