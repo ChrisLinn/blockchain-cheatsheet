@@ -25,8 +25,35 @@ https://bitcoin-core-review-club.github.io 学习整理, 带你入门 bitcoin PR
 ## #15759 Add 2 outbound blocks-only connections (p2p)
 ## #15931 Remove GetDepthInMainChain dependency on locked chain interface (wallet)
 ## #16115 On bitcoind startup, write config args to debug.log (config)
-## #16345 Add getblockbyheight method / support @height in place of blockhash for getblock etc (rpc)
  -->
+
+## #16345 Add getblockbyheight method / support @height in place of blockhash for getblock etc (rpc)
+
+https://github.com/bitcoin/bitcoin/pull/16345
+
++ `getblock`  RPC 接受一个 block hash 作为它的第一个参数，然后返回该 block 的相关信息
+    * 之前如果想 通过 高度来查的话，需要 `getblockhash <height` -> `getblock <hash>`
+    * 有什么改进建议
+        * 纯 overloading
+            - 可以传 hash 也可以传 高度
+                + 但这样 会增加 代码相关处理逻辑的复杂度， 比如 一串hex中都是数字，很难判断这到底是高度还是 hash
+                + 就算 overload 了其实参数类型也还是字符串
+                    * hex string 或 "@<height>"
+            * PR#8457 直接改了 参数 名，会导致不兼容
+                + PR#8457 中其实是参考了 getblockstats 中的参数 hash_or_height
+                + bitcoin 代码的历史遗留包袱果然很重, getblockstats 中是接受 hash_or_height 其他的一些 RPC 又是接受 hash
+                    * getblockheader, preciousblock, invalidateblock, getchaintxstats, getblockfilter, getrawtransaction, gettxoutproof...
+            * PR#14858 保留了参数名，但是叫做 blockhash 却可以传 height 会很奇怪 
+        * overloading with prefix "@": PR#16317, PR#16439
+            - PR#16439 比较优雅，没什么 duplicate code
+        * [新增一个 RPC 接口 `getblockatheight`](https://github.com/bitcoin/bitcoin/pull/16345)
+            - duplicate code 太多
+        * JSON RPC promiose pipelinig
+        * [等等](https://github.com/bitcoin/bitcoin/pull/16439#issuecomment-514038924)
++ https://github.com/fanquake/core-review 中有不少 辅助 review PR 的工具
++ 用 height 还是要自己小心处理 re-org 和 orphan 的逻辑，在接近 tip 的时候，by height 不靠谱
+
+
 
 ## #15505
 __Request NOTFOUND transactions immediately from other outbound peers, when possible (p2p)__
@@ -52,7 +79,7 @@ https://github.com/bitcoin/bitcoin/pull/15505
         - 也就是说，重启时 收到 INV 有可能 不按顺序：在收到父交易之前就收到了子交易
 + blocks-only clients
     * blocks-only clients 会用 [VERSION message](https://btcinformation.org/en/developer-reference#version) 中的 relay flag 来说明他们不转发交易
-+ re-org
++ 区块重组 (re-org) 逻辑
     * 1) get new block and see that it's got more work than tip
     * 2) run ActivateBestChain, which tries to move to the best chain, which will 
         - 2a) rewind blocks, adding txs to mempool
@@ -81,7 +108,7 @@ __refactor: Replace chain relayTransactions/submitMemoryPool by higher method (w
 https://github.com/bitcoin/bitcoin/pull/15713
 
 + 以前的 代码，wallet 和 node 的 功能杂糅在一起
-    + 比如这个pr 中，由于历史原因, wallet 仍可以调动 node 广播交易给peer
+    + 比如这个 pr 中，由于历史原因, wallet 仍可以调动 node 广播交易给peer
 - 交易什么时候会被广播呢？
     + 新块 (a new block, a new chain tip)到来时，如果交易池中的交易没被包含在新块，则会被广播
         * 主要是为了防止当发送交易时，网络掉线没能广播出去。
