@@ -45,6 +45,7 @@ https://github.com/bitcoin/bitcoin/pull/16345
                     * getblockheader, preciousblock, invalidateblock, getchaintxstats, getblockfilter, getrawtransaction, gettxoutproof...
             * PR#14858 保留了参数名，但是叫做 blockhash 却可以传 height 会很奇怪 
         * overloading with prefix "@": PR#16317, PR#16439
+            - 上面提到的 "@<height>"
             - PR#16439 比较优雅，没什么 duplicate code
         * [新增一个 RPC 接口 `getblockatheight`](https://github.com/bitcoin/bitcoin/pull/16345)
             - duplicate code 太多
@@ -137,7 +138,7 @@ https://github.com/bitcoin/bitcoin/pull/15169
 
 将交易放进mempool的 checkinput 由串行改造成 并行
 
-check against policy before consensus rules
+检查 policy 之前会先检查 consensus rules
 
 policy 是入池原则，consensus是验块原则, __policy 会更严__
 
