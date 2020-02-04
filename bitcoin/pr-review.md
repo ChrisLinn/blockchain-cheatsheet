@@ -28,6 +28,8 @@ https://bitcoin-core-review-club.github.io 学习整理, 带你入门 bitcoin PR
 
 ## #16115 On bitcoind startup, write config args to debug.log (config)
 
+https://github.com/bitcoin/bitcoin/pull/16115
+
 + configuration 通过 config file + 命令行参数
     * https://github.com/bitcoin/bitcoin/pull/15934 解释了 config 是如何被综合起来的
 - Bitcoin Core log shrinking
