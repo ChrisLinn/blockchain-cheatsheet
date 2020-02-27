@@ -22,6 +22,8 @@
 + [Elliptic Curve Handbook](http://webs.ucm.es/BUCM/mat/doc8354.pdf)
 + [An intensive introduction to cryptography](https://github.com/boazbk/crypto)
 + https://github.com/claucece/useful-crypto-resources
++ 图解密码学
++ Applied Cryptography: Protocols, Algorithms, and Source Code in C 应用密码学
 
 ## EdDSA
 + https://sefiks.com/2018/12/24/a-gentle-introduction-to-edwards-curve-digital-signature-algorithm-eddsa/
