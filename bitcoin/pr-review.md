@@ -24,8 +24,23 @@ https://bitcoin-core-review-club.github.io 学习整理, 带你入门 bitcoin PR
 ## #16512 Shuffle inputs and outputs after joining psbts (rpc)
 ## #15759 Add 2 outbound blocks-only connections (p2p)
 ## #15931 Remove GetDepthInMainChain dependency on locked chain interface (wallet)
-## #16115 On bitcoind startup, write config args to debug.log (config)
  -->
+
+## #16115 On bitcoind startup, write config args to debug.log (config)
+
+https://github.com/bitcoin/bitcoin/pull/16115
+
++ configuration 通过 config file + 命令行参数
+    * https://github.com/bitcoin/bitcoin/pull/15934 解释了 config 是如何被综合起来的
+- Bitcoin Core log shrinking
+    + ShrinkDebugFile() in logging.cpp
+        * by Satoshi: https://github.com/jnewbery/bitcoin/blob/0bbbee96b742e4ad0fd5e1d3c33e4bd2247e4445/util.cpp#L456
+    + truncates start of log file if over 10MB * 110% = 11MB
+    + called in init at startup, before logging anything else
++ bitcoind does not rotate its own log files, but relies a system's logrotate
++ IBD, Initial Block Download
++ https://github.com/bitcoin/bitcoin/blob/master/doc/reduce-memory.md
++ https://jlopp.github.io/bitcoin-core-config-generator/
 
 ## #16345 Add getblockbyheight method / support @height in place of blockhash for getblock etc (rpc)
 
