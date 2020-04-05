@@ -71,3 +71,6 @@
 + https://marsella.github.io/static/mpcsok.pdf
 + https://www.eng.biu.ac.il/hazay/publications/
 + https://sharemind.cyber.ee/research/
+
+# VDF
++ https://vdfresearch.org/
