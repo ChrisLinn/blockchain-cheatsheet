@@ -63,3 +63,11 @@
 
 ## VDF
 see: https://blog.priewienv.me/post/verifiable-delay-function-1/
+
+## [Mining for Privacy: How to Bootstrap a Snarky Blockchain](https://eprint.iacr.org/2020/401.pdf)
+
+Achilles heel: If the randomness used for the generation is known, the soundness of the proof system can be broken with devastating consequences for the underlying blockchain system that utilises them
+
+chicken-and-egg
+
+
