@@ -64,6 +64,12 @@
 ## VDF
 see: https://blog.priewienv.me/post/verifiable-delay-function-1/
 
+### RSA Groups assumption
+Everyone seems to love VDFs, but the complexity theory around them is a bit underwhelming — why do they only work against adversaries with a polynomial compute advantage?
+
+[A Note on Low Order Assumptions in RSA groups](https://eprint.iacr.org/2020/402)
+
+
 ## [Mining for Privacy: How to Bootstrap a Snarky Blockchain](https://eprint.iacr.org/2020/401.pdf)
 
 Achilles heel: If the randomness used for the generation is known, the soundness of the proof system can be broken with devastating consequences for the underlying blockchain system that utilises them
