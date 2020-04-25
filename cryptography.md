@@ -26,6 +26,7 @@
 + https://github.com/claucece/useful-crypto-resources
 + 图解密码学
 + Applied Cryptography: Protocols, Algorithms, and Source Code in C 应用密码学
++ [Mathematics of Isogeny Based Cryptography](https://arxiv.org/abs/1711.04062)
 
 ## EdDSA
 + https://sefiks.com/2018/12/24/a-gentle-introduction-to-edwards-curve-digital-signature-algorithm-eddsa/
