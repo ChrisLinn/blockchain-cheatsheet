@@ -38,13 +38,18 @@
     + [Introduction to Cryptography](http://www.cs.umd.edu/~jkatz/crypto/s19/lectures.html) from UMD
         + [Lecture notes for Fall '02](http://www.cs.umd.edu/~jkatz/crypto/f02/lectures.html)
         + [Suggested Readings](http://www.cs.umd.edu/~jkatz/crypto/f02/readings.html)
+    - Introduction to Modern Cryptography (2nd edition)](http://www.cs.umd.edu/~jkatz/imc.html) by Jonathan Katz and Yehuda Lindell
     + [Cryptography](https://people.eecs.berkeley.edu/~alexch/classes/CS276-F2017.html) from Berkeley
     + [Advanced Cryptography](https://people.eecs.berkeley.edu/~sanjamg/classes/cs294-spring18/) from Berkeley
     + [A Theorist's Toolkit](https://www.cs.cmu.edu/~odonnell/toolkit13/) from CMU
+    - [A Course in Cryptography](http://www.cs.cornell.edu/courses/cs4830/2010fa/lecnotes.pdf) by Rafael Pass and Abhi Shelat
+    + [Handbook of Applied Cryptography](https://notendur.hi.is/pgg/Handbook%20of%20Applied%20Cryptography.pdf)
+    + [Foundations of Cryptography 89-856](http://u.cs.biu.ac.il/~lindell/89-856/complete-89-856.pdf) by Yehuda Lindell
+    + [An intensive introduction to cryptography](https://github.com/boazbk/crypto) by Boaz Barak
 + https://tlu.tarilabs.com/cryptography/cryptography.html
 + https://github.com/isislovecruft/library--/tree/master/cryptography%20%26%20mathematics
 + [Elliptic Curve Handbook](http://webs.ucm.es/BUCM/mat/doc8354.pdf)
-+ [An intensive introduction to cryptography](https://github.com/boazbk/crypto)
+- [Pseudorandomness](https://people.seas.harvard.edu/~salil/pseudorandomness/) by Salil Vadhan
 + https://github.com/claucece/useful-crypto-resources
 + 图解密码学
 + Applied Cryptography: Protocols, Algorithms, and Source Code in C 应用密码学
