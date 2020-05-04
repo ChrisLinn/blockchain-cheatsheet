@@ -23,6 +23,24 @@
         * https://github.com/matthewdgreen/practicalcrypto
     + https://cse.iitkgp.ac.in/~debdeep/courses_iitkgp/FCrypto/index.htm
     + https://courses.cs.washington.edu/courses/cse599b/
+    + [Graduate Cryptography (Topics in Theory)](http://www.ccs.neu.edu/home/wichs/class/crypto-fall15/index.html) from Northeastern
+    + [Foundations of Cryptography](http://www.ccs.neu.edu/home/wichs/class/crypto-fall17/index.html) from Northeastern
+    + [Introduction to Cryptography](https://cims.nyu.edu/~regev/teaching/crypto_fall_2014/) from NYU
+    + [Randomness in Cryptography](https://cs.nyu.edu/courses/spring14/CSCI-GA.3220-001/index.html) from NYU
+    + [Cryptography](https://www.cs.princeton.edu/courses/archive/spring10/cos433/) from Princeton
+    + [Cryptography](https://courses.engr.illinois.edu/cs598man/sp2016/) from UIUC
+    + [Applied Cryptography](http://soc1024.ece.illinois.edu/teaching/ece498ac/fall2019/) from UIUC
+    + [Classics of Cryptography](https://crypto.stanford.edu/cs359c/17sp/index.html) from Stanford
+    + [Cryptography](https://moodle.cs.huji.ac.il/cs14/course/view.php?id=67531) from Hebrew
+    + [Cryptography](https://www.boazbarak.org/cs127spring16/) from Harvard
+    + [Advanced Topics in Cryptography](http://www.cs.umd.edu/~jkatz/gradcrypto2/scribes.html) from UMD
+        + [Suggested Readings](http://www.cs.umd.edu/~jkatz/gradcrypto2/links.html)
+    + [Introduction to Cryptography](http://www.cs.umd.edu/~jkatz/crypto/s19/lectures.html) from UMD
+        + [Lecture notes for Fall '02](http://www.cs.umd.edu/~jkatz/crypto/f02/lectures.html)
+        + [Suggested Readings](http://www.cs.umd.edu/~jkatz/crypto/f02/readings.html)
+    + [Cryptography](https://people.eecs.berkeley.edu/~alexch/classes/CS276-F2017.html) from Berkeley
+    + [Advanced Cryptography](https://people.eecs.berkeley.edu/~sanjamg/classes/cs294-spring18/) from Berkeley
+    + [A Theorist's Toolkit](https://www.cs.cmu.edu/~odonnell/toolkit13/) from CMU
 + https://tlu.tarilabs.com/cryptography/cryptography.html
 + https://github.com/isislovecruft/library--/tree/master/cryptography%20%26%20mathematics
 + [Elliptic Curve Handbook](http://webs.ucm.es/BUCM/mat/doc8354.pdf)
@@ -60,6 +78,8 @@
     * [Foundations of Cryptography](http://u.cs.biu.ac.il/~lindell/89-856/complete-89-856.pdf)
     * [How To Simulate It – A Tutorial on the Simulation Proof Technique](https://eprint.iacr.org/2016/046.pdf)
     * ...
+- [Secure Computation](http://www.cs.umd.edu/~jkatz/gradcrypto2/f13/scribes.html) from UMD
++ [Special Topic in Cryptography: Secure Computation](https://people.eecs.berkeley.edu/~sanjamg/classes/cs294-spring16/) from Berkeley
 + [Distributing any Elliptic Curve Based Protocol](https://eprint.iacr.org/2019/768.pdf)
     * This (work) allows us to transform essentially any one-party protocol over an elliptic curve, into an n-party one
 + [Reliable and Secure Distributed Programming](https://github.com/ChrisLinn/chrislinn.ink/tree/master/assets/IntroductionToReliableAndSecur_Book_2011.pdf) (book)
