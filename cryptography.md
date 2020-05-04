@@ -19,6 +19,8 @@
     * http://math.tut.fi/~ruohonen/MC.pdf
     * [Practical Cryptographic Systems](http://spar.isi.jhu.edu/~mgreen/650.445/650.445__Main.html)
         * https://github.com/matthewdgreen/practicalcrypto
+    + https://cse.iitkgp.ac.in/~debdeep/courses_iitkgp/FCrypto/index.htm
+    + https://courses.cs.washington.edu/courses/cse599b/
 + https://tlu.tarilabs.com/cryptography/cryptography.html
 + https://github.com/isislovecruft/library--/tree/master/cryptography%20%26%20mathematics
 + [Elliptic Curve Handbook](http://webs.ucm.es/BUCM/mat/doc8354.pdf)
