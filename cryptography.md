@@ -72,6 +72,16 @@
     * Zk proof workshop
     * ZK #lux
     * Zcash 的 #Zcon1
++ https://docs.zkproof.org/reference
++ https://zkp.science/
++ https://github.com/zcash/zips/blob/master/protocol/protocol.pdf
++ https://github.com/zcash-hackworks/design-of-sapling-book
++ https://www.zfnd.org/blog/a-new-network-stack-for-zcash/
++ https://github.com/zcash/zips/blob/master/protocol/sapling.pdf
++ https://github.com/zcash/zips/blob/master/zip-0243.rst
++ https://docs.google.com/presentation/d/1qsOtMLiBVhVMbeB_R0heTSMRsKnhuOKfhACFiXKM-J0/edit#slide=id.p
++ https://github.com/arielgabizon/sapling-security-analysis
++ https://github.com/zcash/sapling-security-analysis/blob/master/MaryMallerUpdated.pdf
 
 ## MPC
 + https://www.mpcalliance.org/learn
