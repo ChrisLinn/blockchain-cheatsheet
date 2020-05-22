@@ -46,6 +46,7 @@
     + [Handbook of Applied Cryptography](https://notendur.hi.is/pgg/Handbook%20of%20Applied%20Cryptography.pdf)
     + [Foundations of Cryptography 89-856](http://u.cs.biu.ac.il/~lindell/89-856/complete-89-856.pdf) by Yehuda Lindell
     + [An intensive introduction to cryptography](https://github.com/boazbk/crypto) by Boaz Barak
+    + [Probabilistically Checkable and Interactive Proof Systems](https://people.eecs.berkeley.edu/~alexch/classes/CS294-S2019.html) from Berkeley
 + https://tlu.tarilabs.com/cryptography/cryptography.html
 + https://github.com/isislovecruft/library--/tree/master/cryptography%20%26%20mathematics
 + [Elliptic Curve Handbook](http://webs.ucm.es/BUCM/mat/doc8354.pdf)
