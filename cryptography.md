@@ -27,6 +27,7 @@
     + [Foundations of Cryptography](http://www.ccs.neu.edu/home/wichs/class/crypto-fall17/index.html) from Northeastern
     + [Introduction to Cryptography](https://cims.nyu.edu/~regev/teaching/crypto_fall_2014/) from NYU
     + [Randomness in Cryptography](https://cs.nyu.edu/courses/spring14/CSCI-GA.3220-001/index.html) from NYU
+    + [Introduction to Cryptography](https://cs.nyu.edu/courses/spring12/CSCI-GA.3210-001/)
     + [Cryptography](https://www.cs.princeton.edu/courses/archive/spring10/cos433/) from Princeton
     + [Cryptography](https://courses.engr.illinois.edu/cs598man/sp2016/) from UIUC
     + [Applied Cryptography](http://soc1024.ece.illinois.edu/teaching/ece498ac/fall2019/) from UIUC
