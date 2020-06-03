@@ -15,6 +15,7 @@
 + https://github.com/SebastianElvis/crypto-lecture-notes/[
     * https://cseweb.ucsd.edu/~mihir/papers/gb.pdf
     * http://crypto.stanford.edu/~dabo/cryptobook/
+        - https://toc.cryptobook.us/
     * http://www.wisdom.weizmann.ac.il/~oded/foc-book.html
     * http://cacr.uwaterloo.ca/hac/
     * https://crypto.stanford.edu/~blynn/
