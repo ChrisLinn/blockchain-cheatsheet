@@ -12,9 +12,10 @@
 + https://blog.cr.yp.to/index.html
 + https://github.com/sobolevn/awesome-cryptography
 + https://github.com/pFarb/awesome-crypto-papers
-+ https://github.com/SebastianElvis/crypto-lecture-notes/
++ https://github.com/SebastianElvis/crypto-lecture-notes/[
     * https://cseweb.ucsd.edu/~mihir/papers/gb.pdf
     * http://crypto.stanford.edu/~dabo/cryptobook/
+        - https://toc.cryptobook.us/
     * http://www.wisdom.weizmann.ac.il/~oded/foc-book.html
     * http://cacr.uwaterloo.ca/hac/
     * https://crypto.stanford.edu/~blynn/
@@ -28,6 +29,7 @@
     + [Foundations of Cryptography](http://www.ccs.neu.edu/home/wichs/class/crypto-fall17/index.html) from Northeastern
     + [Introduction to Cryptography](https://cims.nyu.edu/~regev/teaching/crypto_fall_2014/) from NYU
     + [Randomness in Cryptography](https://cs.nyu.edu/courses/spring14/CSCI-GA.3220-001/index.html) from NYU
+    + [Introduction to Cryptography](https://cs.nyu.edu/courses/spring12/CSCI-GA.3210-001/)
     + [Cryptography](https://www.cs.princeton.edu/courses/archive/spring10/cos433/) from Princeton
     + [Cryptography](https://courses.engr.illinois.edu/cs598man/sp2016/) from UIUC
     + [Applied Cryptography](http://soc1024.ece.illinois.edu/teaching/ece498ac/fall2019/) from UIUC
@@ -52,6 +54,8 @@
     + https://www.cs.princeton.edu/courses/archive/spr10/cos433/#NOTES
     + https://homes.esat.kuleuven.be/~nsmart/FHE-MPC/
     + http://www.cs.bu.edu/~reyzin/teaching/s11cs937/
+    + http://cs.brown.edu/~seny/2950v/
+        * https://web.engr.oregonstate.edu/~glencora/cs175/index.php/CourseScheduleSpring2018#w5H
 + https://tlu.tarilabs.com/cryptography/cryptography.html
 + https://github.com/isislovecruft/library--/tree/master/cryptography%20%26%20mathematics
 + [Elliptic Curve Handbook](http://webs.ucm.es/BUCM/mat/doc8354.pdf)
