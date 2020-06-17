@@ -19,6 +19,7 @@
     * http://www.wisdom.weizmann.ac.il/~oded/foc-book.html
     * http://cacr.uwaterloo.ca/hac/
     * https://crypto.stanford.edu/~blynn/
+        - https://crypto.stanford.edu/pbc/notes/
     * http://math.tut.fi/~ruohonen/MC.pdf
     * [Practical Cryptographic Systems](http://spar.isi.jhu.edu/~mgreen/650.445/650.445__Main.html)
         * https://github.com/matthewdgreen/practicalcrypto
@@ -48,7 +49,13 @@
     + [Handbook of Applied Cryptography](https://notendur.hi.is/pgg/Handbook%20of%20Applied%20Cryptography.pdf)
     + [Foundations of Cryptography 89-856](http://u.cs.biu.ac.il/~lindell/89-856/complete-89-856.pdf) by Yehuda Lindell
     + [An intensive introduction to cryptography](https://github.com/boazbk/crypto) by Boaz Barak
-    + [Probabilistically Checkable and Interactive Proof Systems](https://people.eecs.berkeley.edu/~alexch/classes/CS294-S2019.html) from Berkeley]
+    + [Probabilistically Checkable and Interactive Proof Systems](https://people.eecs.berkeley.edu/~alexch/classes/CS294-S2019.html) from Berkeley
+    + http://www.ccs.neu.edu/home/viola/classes/gems-08/
+    + https://www.cs.princeton.edu/courses/archive/spr10/cos433/#NOTES
+    + https://homes.esat.kuleuven.be/~nsmart/FHE-MPC/
+    + http://www.cs.bu.edu/~reyzin/teaching/s11cs937/
+    + http://cs.brown.edu/~seny/2950v/
+        * https://web.engr.oregonstate.edu/~glencora/cs175/index.php/CourseScheduleSpring2018#w5H
 + https://tlu.tarilabs.com/cryptography/cryptography.html
 + https://github.com/isislovecruft/library--/tree/master/cryptography%20%26%20mathematics
 + [Elliptic Curve Handbook](http://webs.ucm.es/BUCM/mat/doc8354.pdf)
@@ -57,6 +64,9 @@
 + 图解密码学
 + Applied Cryptography: Protocols, Algorithms, and Source Code in C 应用密码学
 + [Mathematics of Isogeny Based Cryptography](https://arxiv.org/abs/1711.04062)
++ **tools**
+    * https://kconrad.math.uconn.edu/blurbs/
+    * http://people.csail.mit.edu/vinodv/FHE/FHE-refs.html
 
 ## EdDSA
 + https://sefiks.com/2018/12/24/a-gentle-introduction-to-edwards-curve-digital-signature-algorithm-eddsa/
