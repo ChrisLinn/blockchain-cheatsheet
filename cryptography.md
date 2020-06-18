@@ -12,7 +12,7 @@
 + https://blog.cr.yp.to/index.html
 + https://github.com/sobolevn/awesome-cryptography
 + https://github.com/pFarb/awesome-crypto-papers
-+ https://github.com/SebastianElvis/crypto-lecture-notes/[
++ https://github.com/SebastianElvis/crypto-lecture-notes/
     * https://cseweb.ucsd.edu/~mihir/papers/gb.pdf
     * http://crypto.stanford.edu/~dabo/cryptobook/
         - https://toc.cryptobook.us/
@@ -41,7 +41,7 @@
     + [Introduction to Cryptography](http://www.cs.umd.edu/~jkatz/crypto/s19/lectures.html) from UMD
         + [Lecture notes for Fall '02](http://www.cs.umd.edu/~jkatz/crypto/f02/lectures.html)
         + [Suggested Readings](http://www.cs.umd.edu/~jkatz/crypto/f02/readings.html)
-    - Introduction to Modern Cryptography (2nd edition)](http://www.cs.umd.edu/~jkatz/imc.html) by Jonathan Katz and Yehuda Lindell
+    - [Introduction to Modern Cryptography (2nd edition)](http://www.cs.umd.edu/~jkatz/imc.html) by Jonathan Katz and Yehuda Lindell
     + [Cryptography](https://people.eecs.berkeley.edu/~alexch/classes/CS276-F2017.html) from Berkeley
     + [Advanced Cryptography](https://people.eecs.berkeley.edu/~sanjamg/classes/cs294-spring18/) from Berkeley
     + [A Theorist's Toolkit](https://www.cs.cmu.edu/~odonnell/toolkit13/) from CMU
