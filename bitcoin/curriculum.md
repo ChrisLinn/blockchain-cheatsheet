@@ -8,3 +8,4 @@
 + https://github.com/jonatack/bitcoin-development
 + https://github.com/jashmenn/bitcoin-reading-list
 + https://github.com/ScottWorks/ConsenSys-Academy-Notes
++ https://github.com/rustielin/Blockchain-Notes
