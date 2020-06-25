@@ -60,7 +60,10 @@
 + https://github.com/isislovecruft/library--/tree/master/cryptography%20%26%20mathematics
 + [Elliptic Curve Handbook](http://webs.ucm.es/BUCM/mat/doc8354.pdf)
 - [Pseudorandomness](https://people.seas.harvard.edu/~salil/pseudorandomness/) by Salil Vadhan
+- http://www.cs.columbia.edu/~tal/6261/SP20/reading/rand-survey.pdf
+- https://mnin.org/write/2006_sshcrypto.html
 + https://github.com/claucece/useful-crypto-resources
++ https://people.csail.mit.edu/rivest/crypto-security.html
 + 图解密码学
 + Applied Cryptography: Protocols, Algorithms, and Source Code in C 应用密码学
 + [Mathematics of Isogeny Based Cryptography](https://arxiv.org/abs/1711.04062)
