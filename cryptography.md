@@ -134,3 +134,9 @@
 
 # VDF
 + https://vdfresearch.org/
+
+# Prover
++ [verifpal](https://verifpal.com/res/pdf/manual.pdf)
+    * has a more intuitive language than tamarin or easycrypt
+        - [Tamarin](https://tamarin-prover.github.io/)
+        - easycrypt
