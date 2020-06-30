@@ -137,6 +137,12 @@
 
 # Prover
 + [verifpal](https://verifpal.com/res/pdf/manual.pdf)
+    * easy to learn
+        - flawn in earlier versions
+        + it now has ProVerif and Coq translators
     * has a more intuitive language than tamarin or easycrypt
         - [Tamarin](https://tamarin-prover.github.io/)
+            + hard to learn but can do more
+                * examples
+                    - https://www.wireguard.com/papers/wireguard-formal-verification.pdf
         - easycrypt
