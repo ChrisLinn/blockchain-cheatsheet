@@ -13,6 +13,7 @@
 + https://github.com/sobolevn/awesome-cryptography
 + https://github.com/pFarb/awesome-crypto-papers
 + https://github.com/SebastianElvis/crypto-lecture-notes/
+    * https://www.garykessler.net/library/crypto.html
     * https://cseweb.ucsd.edu/~mihir/papers/gb.pdf
     * http://crypto.stanford.edu/~dabo/cryptobook/
         - https://toc.cryptobook.us/
@@ -50,6 +51,7 @@
     + [Handbook of Applied Cryptography](https://notendur.hi.is/pgg/Handbook%20of%20Applied%20Cryptography.pdf)
     + [Foundations of Cryptography 89-856](http://u.cs.biu.ac.il/~lindell/89-856/complete-89-856.pdf) by Yehuda Lindell
     + [An intensive introduction to cryptography](https://github.com/boazbk/crypto) by Boaz Barak
+    - [Information-Theoretic Lower Bounds](https://theinformaticists.com/2019/09/16/online-lecture-information-theoretic-lower-bounds/)
     + [Probabilistically Checkable and Interactive Proof Systems](https://people.eecs.berkeley.edu/~alexch/classes/CS294-S2019.html) from Berkeley
     + http://www.ccs.neu.edu/home/viola/classes/gems-08/
     + https://www.cs.princeton.edu/courses/archive/spr10/cos433/#NOTES
