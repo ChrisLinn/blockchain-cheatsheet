@@ -69,6 +69,7 @@
 - https://mnin.org/write/2006_sshcrypto.html
 + https://github.com/claucece/useful-crypto-resources
 + https://people.csail.mit.edu/rivest/crypto-security.html
+- https://cseweb.ucsd.edu/~mihir/crypto-links.html
 + 图解密码学
 + Applied Cryptography: Protocols, Algorithms, and Source Code in C 应用密码学
 + [Mathematics of Isogeny Based Cryptography](https://arxiv.org/abs/1711.04062)
